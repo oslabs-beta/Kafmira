@@ -2,11 +2,11 @@
   "name": "kafmira",
   "version": "1.0.0",
   "description": "\"An Apache Kafka monitoring tool\"",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "NODE_ENV=productionnodemon server/server.js",
-    "build": "NODE_ENV=production webpack",
-    "dev": "cross-env NODE_ENV=development concurrently \"webpack-dev-server --open --hot\" \"nodemon server/server.js\""
+    "start": "electron .",
+    "watch": "webpack --config webpack.config.js --watch",
+    "pack": "electron-builder -mwl"
   },
   "nodemonConfig": {
     "ignore": [
@@ -26,13 +26,18 @@
   "homepage": "https://github.com/Gibran-Haq/Kafmira#readme",
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
     "axios": "^0.24.0",
     "babel-loader": "^8.2.3",
     "concurrently": "^6.4.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
+    "electron": "^16.0.4",
+    "electron-builder": "^22.14.5",
+    "electron-reload": "^2.0.0-alpha.1",
     "express": "^4.17.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",

@@ -7,7 +7,7 @@ class App extends Component {
   }
   render() {
     return (
-    <div>This is a react component</div>
+    <div>This is a react component DAWG</div>
     );
   }
 }
