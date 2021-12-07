@@ -1,5 +1,8 @@
 //this serves as the main file for the creation of the electron window
 
+//electron dev tools installer code
+// import installExtension, { REDUX_DEVTOOLS , REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
+
 //require app, and BrowserWindow from electron
 const { app, BrowserWindow } = require("electron");
 //require in path
@@ -25,7 +28,7 @@ function createWindow() {
   //serve the index.html upon window load
   win.loadFile("index.html");
 
-  // opens devtools upon window open
+  // opens chrome inpspect upon window open
   // win.webContents.openDevTools();
 }
 //requried for developer environment, comment this require fuction out before packaging in Electron
@@ -36,4 +39,9 @@ require("electron-reload")(__dirname, {
 // whenReady is a method of App, that will wait till the app mounts than it will invoke creatWindow
 app.whenReady().then(createWindow);
 
+// //new code here for react dev tools
+
+// app.whenReady().then(() => {
+//   installExtension([REDUX_DEVTOOLS, REACT_DEVELOPER_TOOL])
+// }).then(createWindow);
 
