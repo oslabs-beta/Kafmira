@@ -1,7 +1,10 @@
 //this serves as the main file for the creation of the electron window
 
 //electron dev tools installer code
-// import installExtension, { REDUX_DEVTOOLS , REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
+const {default: installExtension, REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
+
+//install electron-is-dev (check if electron is in dev mode or not) and require in here
+const isDev = require('electron-is-dev');
 
 //require app, and BrowserWindow from electron
 const { app, BrowserWindow } = require("electron");
@@ -25,6 +28,18 @@ function createWindow() {
     // },
     
   });
+
+//new code here to add react dev tools/redux dev tools if we're in dev mode (using electron is dev)
+if (isDev) {
+  installExtension(REACT_DEVELOPER_TOOLS)
+   .then((name) => console.log(`Added Extension:  ${name}`))
+   .catch((err) => console.log('An error occurred: ', err));
+
+  installExtension(REDUX_DEVTOOLS)
+   .then((name) => console.log(`Added Extension:  ${name}`))
+   .catch((err) => console.log('An error occurred: ', err));
+}
+
   //serve the index.html upon window load
   win.loadFile("index.html");
 
@@ -39,9 +54,4 @@ require("electron-reload")(__dirname, {
 // whenReady is a method of App, that will wait till the app mounts than it will invoke creatWindow
 app.whenReady().then(createWindow);
 
-// //new code here for react dev tools
-
-// app.whenReady().then(() => {
-//   installExtension([REDUX_DEVTOOLS, REACT_DEVELOPER_TOOL])
-// }).then(createWindow);
 

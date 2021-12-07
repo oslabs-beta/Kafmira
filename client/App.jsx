@@ -7,7 +7,10 @@ class App extends Component {
   }
   render() {
     return (
+  <div>
     <div>This is a react component DAWG</div>
+    <div>Further testing of dev tools</div>
+  </div>
     );
   }
 }
