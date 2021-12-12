@@ -1,0 +1,33 @@
+Example request to Prometheus and Expected Data Structure
+
+//1. Under Replicated Partitions Count (Score Card)
+    let underReplicated = fetch(
+      `http://localhost:${props.port}/api/v1/query?query=kafka_server_replicamanager_underreplicatedpartitions`
+    ).then((respose) => respose.json());
+
+//2. Actual request body - line 31 keys only needed for hard coding
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "kafka_network_socketserver_memorypoolavailable",
+                    "instance": "kafka:7071",
+                    "job": "kafka"
+                },
+                "value": [
+                    1639262351.207,
+                    "9223372036854776000"
+                ]
+            }
+        ]
+    }
+}
+
+//3. Update page state
+
+ .then((allData) => {
+        //1. Under Replicated Partitions Chart
+        setURP(allData[0].data.result[0].value[1])

@@ -8,13 +8,9 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-
 app.get('/', (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, '../index.html'))
 })
-
-
-
 
 
 
