@@ -30,6 +30,9 @@
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
     "@babel/runtime": "^7.16.3",
+    "@mui/icons-material": "^5.2.1",
+    "@mui/material": "^5.2.3",
+    "@mui/styled-engine-sc": "^5.1.0",
     "axios": "^0.24.0",
     "babel-loader": "^8.2.3",
     "chart.js": "^3.6.2",
@@ -58,6 +61,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.0",
     "style-loader": "^3.3.1",
+    "styled-components": "^5.3.3",
     "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0"
