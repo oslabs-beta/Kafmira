@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Navigate } from 'react-router';
 import { Box, Grid, TextField, Typography, Button } from '@material-ui/core';
 
 export default function PortEntry(){
@@ -8,11 +9,13 @@ export default function PortEntry(){
   const handleSubmit = (e) => {
       e.preventDefault();
       setPortError(false);
-
       if(!port){
         setPortError(true);
         console.log('Missing port; please enter and resubmit');
-    }
+      }
+      if(port === '9090'){
+        return(<Navigate to='/dashboard' />)
+      }
   }
 
   return(
