@@ -1,5 +1,7 @@
 import * as React from 'react';
+import '../styles.css'
 import { useState } from 'react';
+import GetLogo from './GetLogo';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -26,7 +28,7 @@ const TopBannerContainer = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Cluster Overview
           </Typography>
-          <Button color="inherit">Login</Button>
+          <GetLogo id = 'bannerLogo'/>
         </Toolbar>
       </AppBar>
     </Box>

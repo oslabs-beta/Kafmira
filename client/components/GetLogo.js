@@ -1,5 +1,5 @@
 import React  from 'react';
-import logo from './../logo/kafmiraLogoFin.png'
+import logo from '../../logo/KafmiraLogoFin.png'
 
 
 const GetLogo = () => {
