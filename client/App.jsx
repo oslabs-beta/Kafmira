@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 //import { Routes, Route } from 'react-router-dom';
+import BarChart from '../components/BarChart';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-  <div>
-    <div>This is a react component DAWG</div>
-    <div>Further testing of dev tools</div>
-  </div>
-    );
-  }
+const App =() => {
+  return (
+    <div>
+      <div>This is a react component DAWG</div>
+      <div>Further testing of dev tools</div>
+      <div><BarChart /></div>
+    </div>
+  )
 }
 
 export default App;
