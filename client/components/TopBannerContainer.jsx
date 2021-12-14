@@ -115,7 +115,7 @@ const TopBannerContainer = () => {
         </DrawerHeader>
         <Divider />
         <List>
-          {[['Cluster Overview', '/dashboard'], ['Producers', '/producers'], ['Consumers', '/consumers'], ['Brokers', '/brokers'], ['New Port(s)', '/portentry']].map(([text, route]) => (
+          {[['Cluster Overview', '/dashboard'], ['Producers', '/producers'], ['Consumers', '/consumers'], ['Brokers', '/brokers'], ['New Port(s)', '/']].map(([text, route]) => (
              <Link to={route}>
             <ListItem button key={text} >
               <ListItemText primary={text} />

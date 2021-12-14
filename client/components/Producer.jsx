@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navigate } from 'react-router';
 import { Button, Grid } from '@material-ui/core';
 import { Stack } from '@mui/material';
 
