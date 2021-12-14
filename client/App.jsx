@@ -14,12 +14,13 @@ const App =() => {
       <MainPageContainer />
       <div><PortEntry /></div>
       <div><BottomBanner /></div>
-      <div><ClusterContainer /></div>
+      {/* <div><ClusterContainer /></div> */}
       <Routes>
         <Route path='/dashboard' element={<MainPageContainer />} />
         {/* <Route path='/brokers' element={<BrokersPage />} />
         <Route path='/producers' element={<ProducersPage />} />
-        <Route path='/consumers' element={<ConsumersPage />} /> */}
+        <Route path='/consumers' element={<ConsumersPage />} />
+        <Route path='/portentry' element={<App />} /> */}
       </Routes>
 
     </div>

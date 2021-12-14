@@ -16,7 +16,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import { Navigate, HashRouter } from 'react-router';
+import {Link} from 'react-router-dom';
 const drawerWidth = 200;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -116,9 +116,11 @@ const TopBannerContainer = () => {
         <Divider />
         <List>
           {[['Cluster Overview', '/dashboard'], ['Producers', '/producers'], ['Consumers', '/consumers'], ['Brokers', '/brokers'], ['New Port(s)', '/portentry']].map(([text, route]) => (
-            <ListItem button key={text} onClick = {() => <Navigate to={route} />} >
+             <Link to={route}>
+            <ListItem button key={text} >
               <ListItemText primary={text} />
             </ListItem>
+            </Link>
           ))}
         </List>
       </Drawer>
