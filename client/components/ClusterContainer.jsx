@@ -2,20 +2,21 @@ import React, { useState } from 'react';
 import { Navigate } from 'react-router';
 import { Box, Grid } from '@material-ui/core';
 import Producer from './Producer.jsx';
-import Broker from './Broker.jsx'
+import Broker from './Broker.jsx';
+import Consumer from './Consumer.jsx';
 
 export default function ClusterContainer(){
   return(
     <Box sx={{ flexGrow: 1 }}>
     <Grid container spacing={9} >
       <Grid item>
-      <Producer />
+        <Producer />
       </Grid>
       <Grid item>
-      <Broker />
+        <Broker />
       </Grid>
       <Grid item>
-      {/* <Consumer />  */}
+        <Consumer /> 
      </Grid>
     </Grid>
   </Box>   
