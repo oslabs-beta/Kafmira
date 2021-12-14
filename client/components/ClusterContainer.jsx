@@ -6,7 +6,7 @@ import Broker from './Broker.jsx'
 
 export default function ClusterContainer(){
   return(
-    <Box sx={{ flexGrow: 1 }} >
+    <Box sx={{ flexGrow: 1 }}>
     <Grid container spacing={9} >
       <Grid item>
       <Producer />
