@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import BarChart from './components/BarChart';
-import MainPageContainer from './components/MainPageContainer.jsx'
-import GetLogo from './components/GetLogo';
+import PortEntry from './components/PortEntry.jsx';
+import GetLogo from './components/GetLogo.jsx';
+import MainPageContainer from './components/MainPageContainer.jsx';
 
 const App =() => {
   return (
   
     <div>
-      <MainPageContainer />
+      <div><BarChart /></div>
       <div><GetLogo /></div>
+      <div><PortEntry /></div>
       <Routes>
-        
+      <Route path='/dashboard' element={<MainPageContainer />} />
       </Routes>
     
     </div>
