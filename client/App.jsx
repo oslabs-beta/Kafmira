@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import MainPageContainer from './components/MainPageContainer.jsx';
-import BrokersPage from './components/BrokersPage.jsx'
-import ConsumersPage from './components/ConsumersPage.jsx'
-import ProducersPage from './components/ProducersPage.jsx'
-import LandingPage from './components/LandingPage.jsx';
-
+import BottomBanner from './components/BottomBanner.jsx';
+import MakeMetrics from './components/CriticalMetrics.jsx'; 
 const App =() => {
   return (
-    <HashRouter>
+  
+    <div>
+     
+
+      <div><GetLogo /></div>
+      <div><MakeMetrics/></div>
+      <MainPageContainer />
+      <div><PortEntry /></div>
+      <div><OutlinedCard/></div>
+      <div><BottomBanner /></div>
+      {/* <div><ClusterContainer /></div> */}
       <Routes>
         <Route path='/dashboard/*' element={<MainPageContainer />} />
         <Route path='/brokers/*' element={<BrokersPage />} />
