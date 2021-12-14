@@ -29,7 +29,7 @@ export default function PortEntry(){
     color="primary"
     gutterBottom
     >
-      Enter the JMX port your Kafka cluster is located on:
+      Enter the Promotheus port your Kafka cluster is located on:
       </Typography> 
     <form noValidate autoComplete="off" onSubmit={handleSubmit}>
     <TextField
