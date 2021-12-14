@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Navigate } from 'react-router';
 import { Box, Grid } from '@material-ui/core';
 import Producer from './Producer.jsx';
-import Broker from './Broker.jsx'
+import Broker from './Broker.jsx';
+import Consumer from './Consumer.jsx';
 
 export default function ClusterContainer(){
   return(

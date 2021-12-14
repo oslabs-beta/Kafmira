@@ -3,7 +3,7 @@ import { Container, Grid, Box, Typography, Link, Button, ButtonGroup, makeStyles
 import { Stack } from '@mui/material'
 import { Navigate } from 'react-router';
 
-export default function ConsumerContainer() {
+export default function Consumer() {
   return (
     <Box
       sx={{ flexGrow: 1 }}
