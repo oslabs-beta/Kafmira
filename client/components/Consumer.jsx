@@ -33,11 +33,11 @@ export default function Consumer() {
             <Button 
               // onClick=
               style={{ 
-                display: "flex",  
-                width: "10vw", 
-                height: "10vh", 
-                backgroundColor: "blue", 
-                borderRadius: "50%" 
+                display: 'flex',  
+                width: '10vw', 
+                height: '10vh', 
+                backgroundColor: 'orangered', 
+                borderRadius: '50%' 
               }}
             >
               <p style={{ 
@@ -52,11 +52,11 @@ export default function Consumer() {
             <Button 
               // onClick=
               style={{ 
-                display: "flex",  
-                width: "10vw", 
-                height: "10vh", 
-                backgroundColor: "blue", 
-                borderRadius: "50%" 
+                display: 'flex',  
+                width: '10vw', 
+                height: '10vh', 
+                backgroundColor: 'orangered', 
+                borderRadius: '50%' 
               }}
             >
               <p style={{ 
