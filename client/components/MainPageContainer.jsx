@@ -8,7 +8,7 @@ const MainPageContainer =() => {
       <TopBannerContainer />
       <ClusterContainer />
       {/* <CriticalMetrics /> */}
-      {/* <BottomBanner />  */}
+      <BottomBanner /> 
     </div>
   )
 }

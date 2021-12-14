@@ -9,13 +9,13 @@ export default function ClusterContainer(){
     <Box sx={{ flexGrow: 1 }} >
     <Grid container spacing={9} >
       <Grid item Producers >
-      <Producer />
+        <Producer />
       </Grid>
       <Grid item Brokers >
-      <Broker />
+        <Broker />
       </Grid>
       <Grid item Consumers>
-      {/* <Consumer />  */}
+        <Consumer /> 
      </Grid>
     </Grid>
   </Box>   
