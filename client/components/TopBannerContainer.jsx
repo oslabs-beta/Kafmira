@@ -16,8 +16,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-
-
+import {Link} from 'react-router-dom';
 const drawerWidth = 200;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -94,7 +93,6 @@ const TopBannerContainer = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Cluster Overview
           </Typography>
-          <GetLogo />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -117,10 +115,12 @@ const TopBannerContainer = () => {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Cluster Overview', 'Producers', 'Consumers', 'Brokers', 'New Port(s)'].map((text) => (
-            <ListItem button key={text}>
+          {[['Cluster Overview', '/dashboard'], ['Producers', '/producers'], ['Consumers', '/consumers'], ['Brokers', '/brokers'], ['New Port(s)', '/']].map(([text, route]) => (
+             <Link to={route}>
+            <ListItem button key={text} >
               <ListItemText primary={text} />
             </ListItem>
+            </Link>
           ))}
         </List>
       </Drawer>
@@ -130,71 +130,5 @@ const TopBannerContainer = () => {
     </Box>
   );
 }
-
-// const TopBannerContainer = () => {
-//   const theme = useTheme();
-//   const [open, setOpen] = React.useState(false);
-
-//   const handleDrawerOpen = () => {
-//     setOpen(true);
-//   };
-
-//   const handleDrawerClose = () => {
-//     setOpen(false);
-//   };
-
-//   return (
-//     <Box sx={{ display: 'flex' }}>
-//       <CssBaseline />
-//       <AppBar position="fixed" open={open}>
-//         <Toolbar>
-//           <IconButton
-//             color="inherit"
-//             aria-label="open drawer"
-//             onClick={handleDrawerOpen}
-//             edge="start"
-//             sx={{ mr: 2, ...(open && { display: 'none' }) }}
-//           >
-//             <MenuIcon />
-//           </IconButton>
-//           <Typography variant="h6" noWrap component="div">
-//             Cluster Overview
-//           </Typography>
-//         </Toolbar>
-//       </AppBar>
-//       <Drawer
-//         sx={{
-//           width: drawerWidth,
-//           flexShrink: 0,
-//           '& .MuiDrawer-paper': {
-//             width: drawerWidth,
-//             boxSizing: 'border-box',
-//           },
-//         }}
-//         variant="persistent"
-//         anchor="left"
-//         open={open}
-//       >
-//         <DrawerHeader>
-//           <IconButton onClick={handleDrawerClose}>
-//             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-//           </IconButton>
-//         </DrawerHeader>
-//         <Divider />
-//         <List>
-//           {['Cluster Overview', 'Producers', 'Consumers', 'Brokers'].map((text) => (
-//             <ListItem button key={text}>
-//               <ListItemText primary={text} />
-//             </ListItem>
-//           ))}
-//         </List>
-//       </Drawer>
-//       <Main open={open}>
-//         <DrawerHeader />
-//       </Main>
-//       <GetLogo />
-//       </Box>
-//       )
-//     }
 
 export default TopBannerContainer;
