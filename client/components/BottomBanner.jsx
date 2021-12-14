@@ -12,8 +12,8 @@ export default function BottomBanner() {
         // maxHeight={}
         align='center' 
         color='white'
-        borderColor='black'
-        border='solid'
+        // borderColor='black'
+        // border='solid'
         borderRadius='10px'
         bgcolor='info.main' 
       >
