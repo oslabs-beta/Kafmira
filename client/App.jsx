@@ -4,17 +4,18 @@ import PortEntry from './components/PortEntry.jsx';
 import GetLogo from './components/GetLogo.jsx';
 import MainPageContainer from './components/MainPageContainer.jsx';
 import BottomBanner from './components/BottomBanner.jsx';
-import ClusterContainer from './components/ClusterContainer.jsx';
-
+import MakeMetrics from './components/CriticalMetrics.jsx'; 
 const App =() => {
   return (
   
     <div>
-      <div><MakeMetrics/></div>
+     
 
       <div><GetLogo /></div>
+      <div><MakeMetrics/></div>
       <MainPageContainer />
       <div><PortEntry /></div>
+      <div><OutlinedCard/></div>
       <div><BottomBanner /></div>
       {/* <div><ClusterContainer /></div> */}
       <Routes>
