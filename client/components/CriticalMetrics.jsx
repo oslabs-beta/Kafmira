@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react';
-import {Typography, Button, Container, Grid, Paper, Card, CardContent } from '@material-ui/core';
-import OutlinedCard from './firstMetric.js';
+import {Typography, Grid, Card, CardContent, Container } from '@material-ui/core';
+
 
 // const useStyles = makeStyles({
 //   title: {
@@ -26,62 +26,63 @@ const MakeMetrics = () => {
   const value4 = 'over 9000'
 
   return (
-    <Grid container alignItems="stretch">
-      <Card sx={{ minWidth: 275 }}>
-        <CardContent>
-          <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-            Checking value = { metric1 }
-          </Typography>
-          <Typography sx={{fontSize:14}}>
-            Value: { value1 }
-
-          </Typography>
-        </CardContent>
-      </Card>
+    <Container>
+      <Grid container spacing={38}>
+        <Card sx={{ minWidth: 275, maxWidth: 275}}>
         
-      <Card sx={{ minWidth: 275 }}>
-        <CardContent>
-          <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-            Metric: { metric2 }
-          </Typography>
-          <Typography sx={{fontSize:14}}>
-            Value: { value2 }
-
-          </Typography>
-        </CardContent>
-      </Card>
-
+          <CardContent>
+            <Typography sx={{ fontSize: 20 }} color="primary" gutterBottom>
+              Metric: { metric1 }
+            </Typography>
+            <Typography sx={{fontSize:14}}>
+              Value: { value1 }
+            </Typography>
+          </CardContent>
+        </Card>
+          
         <Card sx={{ minWidth: 275 }}>
-        <CardContent>
-          <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-            Metric: { metric3 }
-          </Typography>
-          <Typography sx={{fontSize:14}}>
-            Value: { value3 }
+          <CardContent>
+            <Typography sx={{ fontSize: 20 }} color="primary" gutterBottom>
+              Metric: { metric2 }
+            </Typography>
+            <Typography sx={{fontSize:14}}>
+              Value: { value2 }
 
-          </Typography>
-        </CardContent>
-      </Card>
+            </Typography>
+          </CardContent>
+        </Card>
 
-        <Card sx={{ minWidth: 275 }}>
-        <CardContent>
-          <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-            Metric: { metric4 }
-          </Typography>
-          <Typography sx={{fontSize:14}}>
-            Value: {value4}
+          <Card sx={{ minWidth: 275 }}>
+          <CardContent>
+            <Typography sx={{ fontSize: 20 }} color="primary" gutterBottom>
+              Metric: { metric3 }
+            </Typography>
+            <Typography sx={{fontSize:14}}>
+              Value: { value3 }
 
-          </Typography>
-        </CardContent>
+            </Typography>
+          </CardContent>
+        </Card>
+
+          <Card sx={{ minWidth: 275 }}>
+          <CardContent>
+            <Typography sx={{ fontSize: 20 }} color="primary" gutterBottom>
+              Metric: { metric4 }
+            </Typography>
+            <Typography sx={{fontSize:14}}>
+              Value: {value4}
+
+            </Typography>
+          </CardContent>
 
 
 
-      </Card>
-    
-    
-    
-    </Grid>
-    
+        </Card>
+      
+      
+      
+      </Grid>
+    </Container>
     
   )
 }
