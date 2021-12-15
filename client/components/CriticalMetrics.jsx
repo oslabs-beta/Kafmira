@@ -1,15 +1,5 @@
 import React, { useState, useEffect }from 'react';
 import {Typography, Button, Container, Grid, Paper, Card, CardContent } from '@material-ui/core';
-import OutlinedCard from './firstMetric.js';
-
-// const useStyles = makeStyles({
-//   title: {
-//     textDecoration: 'underline',
-//     marginBottom: 20
-//   }
-
-
-// })
 
 
 const MakeMetrics = () => {
