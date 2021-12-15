@@ -21,7 +21,7 @@ export default function ProducerColumnContainer(){
   <div style = {{
     textAlign: 'center',
     height : '90vh', 
-    width: '25%',
+    width: '100%',
     border: '2px solid blue'}}>
     <h3>Producer(s)</h3>
       <Stack direction="column">
