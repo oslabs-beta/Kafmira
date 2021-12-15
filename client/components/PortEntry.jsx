@@ -31,7 +31,7 @@ export default function PortEntry(props){
         color="primary"
         gutterBottom
       >
-        Enter the Prometheus port your Kafka cluster is located on:
+        Enter the Promotheus port your Kafka cluster is located on:
       </Typography> 
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <TextField
