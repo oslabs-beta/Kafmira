@@ -14,17 +14,17 @@ const Item = styled(Button)(({ theme }) => ({
   borderBottom: '1px solid blue'
 }));
 
-export default function ProducerColumnContainer(){
+export default function ConsumerColumnContainer(){
   return(
   <div style = {{
     textAlign: 'center',
     height : '90vh', 
     width: '100%',
     border: '2px solid blue'}}>
-    <h3>Producer(s)</h3>
+    <h3>Consumer(s)</h3>
       <Stack direction="column">
-        <Item>Producer 1</Item>
-        <Item>Producer 2</Item>
+        <Item>Consumer 1</Item>
+        <Item>Consumer 2</Item>
       </Stack>
     </div>
   )
