@@ -16,16 +16,56 @@ const Item = styled(Button)(({ theme }) => ({
 
 export default function ConsumerColumnContainer(){
   return(
-  <div style = {{
-    textAlign: 'center',
-    height : '90vh', 
-    width: '100%',
-    border: '2px solid blue'}}>
-    <h3>Consumer(s)</h3>
-      <Stack direction="column">
-        <Item>Consumer 1</Item>
-        <Item>Consumer 2</Item>
-      </Stack>
+  // <div style = {{
+  //   textAlign: 'center',
+  //   height : '90vh', 
+  //   width: '100%',
+  //   border: '2px solid blue'}}>
+  //   <h3>Consumer(s)</h3>
+  //     <Stack direction="column">
+  //       <Item>Consumer 1</Item>
+  //       <Item>Consumer 2</Item>
+  //     </Stack>
+  //   </div>
+    <div>
+      <Typography 
+         variant='h3' 
+         align='center'
+      >
+        Your Consumers
+      </Typography>
+      <Box border='solid'>
+        <Grid 
+          container 
+          direction='column'  
+          justifyContent='flexStart'
+          alignItems='center'
+          spacing={1}
+         >
+          <Grid item>
+            <Card>
+                     <CardActionArea>
+                         <Button /*onClick={}*/>
+                             <Typography variant='h5'>
+                                 Consumer 1
+                             </Typography>
+                         </Button>
+                     </CardActionArea>
+                 </Card>
+             </Grid>
+             <Grid item>
+                 <Card>
+                     <CardActionArea>
+                         <Button /*onClick={}*/>
+                             <Typography variant='h5'>
+                                 Consumer 2
+                             </Typography>
+                         </Button>
+                     </CardActionArea>
+                 </Card>     
+          </Grid>
+        </Grid>
+      </Box>
     </div>
   )
 }
