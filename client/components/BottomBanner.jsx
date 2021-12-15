@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Grid, Box, Typography, Link } from '@material-ui/core'
+// import { createTheme } from '@mui/material/styles';
 
 export default function BottomBanner() {
   return (
@@ -7,15 +8,10 @@ export default function BottomBanner() {
       {/* can add sx prop to accept all system props as well as valid CSS */}
       <Box  
         p={2}
-        m={2}
-        // maxWidth={}
-        // maxHeight={}
+        mt={2}
         align='center' 
         color='white'
-        // borderColor='black'
-        // border='solid'
-        borderRadius='10px'
-        bgcolor='info.main' 
+        bgcolor='info.main'
       >
         <Container maxWidth='lg'> 
           <Box m={1.5} borderBottom={1}>
