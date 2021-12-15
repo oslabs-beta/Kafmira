@@ -43,4 +43,4 @@ const jsonMaker = n => {
   
 
 
-console.log(JSON.stringify(jsonMaker(10)))
+console.log(JSON.stringify(jsonMaker(1)))
