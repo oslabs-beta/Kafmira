@@ -1,5 +1,5 @@
 import React, { useState, useEffect }from 'react';
-import {Typography, Button, Container, Grid, Paper } from '@material-ui/core';
+import {Typography, Button, Container, Grid, Paper, Card, CardContent } from '@material-ui/core';
 import OutlinedCard from './firstMetric.js';
 
 // const useStyles = makeStyles({
@@ -13,25 +13,75 @@ import OutlinedCard from './firstMetric.js';
 
 
 const MakeMetrics = () => {
-  // const [metricName, setMetricName] = useState('');
-  // const [values, setValues] = useState('')
+  const metric1 = 'This is saved'
+  const value1 = 'this is a template literal'
 
+  const metric2 = 'To Metric'
+  const value2 = 'too value'
 
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/data')
-  //     .then(res => res.json())
-  //     .then(data => setValues(data))
+  const metric3 = 'tree-fidyy'
+  const value3 = 'the game'
 
-   
-    
-  // }, [])
+  const metric4 = 'power level'
+  const value4 = 'over 9000'
 
   return (
-    <div>
-      <Container>
-        <OutlinedCard/>
-      </Container>
-    </div>
+    <Grid container alignItems="stretch">
+      <Card sx={{ minWidth: 275 }}>
+        <CardContent>
+          <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+            Checking value = { metric1 }
+          </Typography>
+          <Typography sx={{fontSize:14}}>
+            Value: { value1 }
+
+          </Typography>
+        </CardContent>
+      </Card>
+        
+      <Card sx={{ minWidth: 275 }}>
+        <CardContent>
+          <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+            Metric: { metric2 }
+          </Typography>
+          <Typography sx={{fontSize:14}}>
+            Value: { value2 }
+
+          </Typography>
+        </CardContent>
+      </Card>
+
+        <Card sx={{ minWidth: 275 }}>
+        <CardContent>
+          <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+            Metric: { metric3 }
+          </Typography>
+          <Typography sx={{fontSize:14}}>
+            Value: { value3 }
+
+          </Typography>
+        </CardContent>
+      </Card>
+
+        <Card sx={{ minWidth: 275 }}>
+        <CardContent>
+          <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+            Metric: { metric4 }
+          </Typography>
+          <Typography sx={{fontSize:14}}>
+            Value: {value4}
+
+          </Typography>
+        </CardContent>
+
+
+
+      </Card>
+    
+    
+    
+    </Grid>
+    
     
   )
 }
