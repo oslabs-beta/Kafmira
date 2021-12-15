@@ -90,7 +90,7 @@ const TopBannerContainerBrokerPage = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center' }}>
             Brokers Overview
           </Typography>
         </Toolbar>
