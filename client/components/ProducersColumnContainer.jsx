@@ -1,9 +1,7 @@
 import * as React from 'react';
-import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import { Button } from '@mui/material';
-import { flexbox } from '@mui/system';
 
 const Item = styled(Button)(({ theme }) => ({
   ...theme.typography.body2,
