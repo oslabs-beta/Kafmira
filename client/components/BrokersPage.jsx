@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import TopBannerContainerBrokerPage from './TopBannerContainerBrokerPage.jsx';
-
+import BrokerGraphContainer from './BrokerGraphContainers.jsx';
 export default function BrokersPage(){
   return(
-  <TopBannerContainerBrokerPage/>
+    <div>
+      <TopBannerContainerBrokerPage/>
+      <BrokerGraphContainer/>
+    </div>
   )
 }
