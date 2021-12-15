@@ -3,6 +3,6 @@ import TopBannerContainerConsPage from './TopBannerContainerConsPage.jsx';
 
 export default function ConsumersPage(){
   return(
-  <TopBannerContainerConsPage/>
+    <TopBannerContainerConsPage/>
   )
 }

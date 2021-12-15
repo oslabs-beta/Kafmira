@@ -9,9 +9,18 @@ export default function BottomBanner() {
       <Box  
         p={2}
         mt={2}
-        align='center' 
-        color='white'
-        bgcolor='info.main'
+        align='center'
+        // try the flex first
+        // display='flex'
+        // justifyContent='flex-end'
+        // try the sx next if flex didnt work
+        sx={{
+          bgcolor: 'info.main',
+          color: 'white',
+          zIndex: 'tooltip',
+          left: '50%',
+          top: 100
+        }} 
       >
         <Container maxWidth='lg'> 
           <Box m={1.5} borderBottom={1}>
