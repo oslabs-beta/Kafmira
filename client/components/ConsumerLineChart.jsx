@@ -59,7 +59,7 @@ const ConsumerLineDummyData = () => {
             datasets: [
               {
                 label: 'Records per second',
-                data:[10, 20, 12, 13, 14, 15],
+                data:[3, 1, 2, 3, 0, 3],
                 backgroundColor: 'rgba(75, 192, 192, 0.6)',
                 borderColor:'rgba(75, 192, 192, 1)',
                 borderWidth: 4

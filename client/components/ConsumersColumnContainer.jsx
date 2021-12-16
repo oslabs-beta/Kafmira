@@ -36,7 +36,7 @@ export default function ConsumerColumnContainer(){
         <br></br>
         Total Records Consumed : 256
         <br></br>
-        Records Consumed / sec : 3       
+        Average Records Consumed / sec : 3       
         </Item>
       </Stack>
     </div>

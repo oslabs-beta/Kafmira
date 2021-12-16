@@ -52,7 +52,7 @@ const ConsumerBarDummyData = () => {
 
   return (
     <div>
-        <h3 style ={{textAlign : 'center'}}>Average Number of Records Written</h3>
+        <h3 style ={{textAlign : 'center'}}>Average Number of Records Consumed</h3>
         <div style={{height:"300px", width:"300px"}}>
         <Bar type='bar' data={{
             labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
