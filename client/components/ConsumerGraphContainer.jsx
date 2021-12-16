@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Box, Grid } from '@material-ui/core';
+import { Box, Grid, Typography } from '@material-ui/core';
 import ConsumerBarDummyData from './ConsumerBarChart.jsx'
 import ConsumerLineDummyData from './ConsumerLineChart.jsx'
 
 export default function ConsumerGraphContainer(){
   return(
+    <Box sx={{textAlign : 'center'}}>
+    <Typography variant ='h4'>Consumer 1</Typography>
     <Grid
     container
     spacing={4}
@@ -21,5 +23,6 @@ export default function ConsumerGraphContainer(){
         <ConsumerLineDummyData/>
       </Grid>
     </Grid>
+    </Box>
   )
 }
