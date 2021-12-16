@@ -52,7 +52,7 @@ const MakeProducerLineGraph = () => {
 
   return (
     <div>
-      <h3 style ={{textAlign: 'center'}}>Topics written per Second</h3>
+      <h3 style ={{textAlign: 'center'}}>Topics Written per Second</h3>
       <div style={{height:"300px", width:"300px"}}>
           <Chart type='line' data={ {
       labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
