@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Box, Grid } from '@material-ui/core';
+import MakeProducerLineGraph from './ProducerLineGraph.jsx';
+import MakeProducerBarGraph from './ProducerBarGragh.jsx';
+
+
 
 export default function ProducerGraphContainer(){
   return(
@@ -11,10 +15,10 @@ export default function ProducerGraphContainer(){
     alignItems="flex-start"
   >
   <Grid item xs={4}>
-    <Box border="1px solid black">Sample Graph Area 1</Box>
+    <MakeProducerLineGraph /> 
   </Grid>
   <Grid item xs={4}>
-    <Box border="1px solid black">Sample Graph Area 2</Box>
+    <MakeProducerBarGraph/>
   </Grid>
     </Grid>
   )

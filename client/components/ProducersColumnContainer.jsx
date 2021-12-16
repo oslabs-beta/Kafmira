@@ -27,16 +27,16 @@ export default function ProducerColumnContainer(){
         Producer 1 
         <br></br>
         <br></br>
-        Total Messages Sent : 237
+        Topics Written / Sec : 12   
         <br></br>
-        Topics Written To : 3       
+        Total Messages Sent : 600    
         </Item>
         <Item>Producer 2
         <br></br>
         <br></br>
-        Total Messages Sent : 135
+        Topics Written / Sec : 8 
         <br></br>
-        Topics Written To : 2 
+        Total Messages Sent : 478
         </Item>
       </Stack>
     </div>
