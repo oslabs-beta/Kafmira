@@ -19,7 +19,7 @@ export default function BottomBanner() {
         color: 'white',
         zIndex: 'tooltip',
         left: '50%',
-        top: 100
+        top: '100%'
       }} 
     >
       <Container maxWidth='lg'> 

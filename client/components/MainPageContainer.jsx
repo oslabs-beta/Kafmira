@@ -8,9 +8,15 @@ const MainPageContainer =() => {
   return (
     <div>
       <TopBannerContainer />
+      <div style ={{display: 'flex', flexDirection: 'column' , alignItems: 'center'}}>
       <ClusterContainer />
+    <div style={{marginTop: '10vh'}}>
       <MakeMetrics />
+    </div>
+      </div>
+      <div style = {{marginTop : '10vh'}}>
       <BottomBanner /> 
+      </div>
     </div>
   )
 }
