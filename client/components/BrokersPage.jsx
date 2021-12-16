@@ -10,10 +10,10 @@ export default function BrokersPage(){
 <TopBannerContainerBrokerPage/>
 <Box >
 <Grid container>
-  <Grid item xs={4}>
+  <Grid item xs={3}>
   <BrokerColumnContainer />  
   </Grid>
-  <Grid item xs={8}>
+  <Grid item xs={9}>
   <BrokerGraphContainer />
 </Grid>
 </Grid>

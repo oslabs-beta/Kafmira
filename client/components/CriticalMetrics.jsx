@@ -1,5 +1,6 @@
 import React, { useState, useEffect }from 'react';
-import {Typography, Button, Container, Grid, Paper, Card, CardContent } from '@material-ui/core';
+import {Typography, Button, Container, Grid, Paper, Card, CardContent, Divider } from '@material-ui/core';
+import { Box, flexbox } from '@mui/system';
 
 // const useStyles = makeStyles({
 //   title: {
@@ -12,27 +13,31 @@ import {Typography, Button, Container, Grid, Paper, Card, CardContent } from '@m
 
 
 const MakeMetrics = () => {
-  const metric1 = 'This is saved'
-  const value1 = 'this is a template literal'
+  const metric1 = 'Active Controller(s)'
+  const value1 = '1'
 
-  const metric2 = 'To Metric'
-  const value2 = 'too value'
+  const metric2 = 'Under-replicated Partitions'
+  const value2 = '0'
 
-  const metric3 = 'tree-fidyy'
-  const value3 = 'the game'
+  const metric3 = 'Offline Partitions'
+  const value3 = '0'
 
-  const metric4 = 'power level'
-  const value4 = 'over 9000'
+  // const metric4 = 'power level'
+  // const value4 = 'over 9000'
 
   return (
+  <Box>
     <Grid container alignItems="stretch">
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-            Checking value = { metric1 }
+            {/* Checking value =  */}
+            { metric1 }
           </Typography>
+          <Divider/>
           <Typography sx={{fontSize:14}}>
-            Value: { value1 }
+            {/* Value:  */}
+            { value1 }
 
           </Typography>
         </CardContent>
@@ -41,10 +46,13 @@ const MakeMetrics = () => {
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-            Metric: { metric2 }
+            {/* Metric:  */}
+            { metric2 }
           </Typography>
+          <Divider/>
           <Typography sx={{fontSize:14}}>
-            Value: { value2 }
+            {/* Value:  */}
+            { value2 }
 
           </Typography>
         </CardContent>
@@ -53,16 +61,19 @@ const MakeMetrics = () => {
         <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-            Metric: { metric3 }
+            {/* Metric:  */}
+            { metric3 }
           </Typography>
+          <Divider/>
           <Typography sx={{fontSize:14}}>
-            Value: { value3 }
+            {/* Value:  */}
+            { value3 }
 
           </Typography>
         </CardContent>
       </Card>
 
-        <Card sx={{ minWidth: 275 }}>
+        {/* <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
             Metric: { metric4 }
@@ -71,16 +82,16 @@ const MakeMetrics = () => {
             Value: {value4}
 
           </Typography>
-        </CardContent>
+        </CardContent> */}
 
 
 
-      </Card>
+      {/* </Card> */}
     
     
     
     </Grid>
-    
+  </Box>
     
   )
 }
