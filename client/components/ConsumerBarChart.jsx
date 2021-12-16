@@ -3,29 +3,29 @@ import React, { useState }  from "react";
 import { useEffect } from "react";
 // import {CategoryScale, Chart} from 'chart.js'; 
 // Chart.register(CategoryScale) 
+
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
-  } from 'chart.js'
-  import { Chart } from 'react-chartjs-2'
-  
-  ChartJS.register(
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+
+
+ChartJS.register(
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend
-  ) 
+);
 
-const BrokerDummyData = () => {
+const ConsumerBarDummyData = () => {
   // const [chartData, setChartData] = useState({});
 
 
@@ -52,23 +52,33 @@ const BrokerDummyData = () => {
 
   return (
     <div>
-      <h3 style ={{textAlign: 'center'}}>Record Read per Second</h3>
-      <div style={{height:"300px", width:"300px"}}>
-          <Chart type='line' data={ {
+        <h3 style ={{textAlign : 'center'}}>Average Number of Records Consumed</h3>
+        <div style={{height:"300px", width:"300px"}}>
+        <Bar type='bar' data={{
             labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
             datasets: [
-              {
-                label: 'Records per second',
-                data:[10, 20, 12, 13, 14, 15],
-                backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                borderColor:'rgba(75, 192, 192, 1)',
-                borderWidth: 4
-              }
+                {
+                    label: 'Total Records Written',
+                    data:[3, 4, 6, 9, 9, 12],
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor:'rgba(75, 192, 192, 1)',
+                    borderWidth: 4,
+                    barPercentage:0.9
+                }
             ]
-          }}/>
+            }}
+
+            options={{
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }}
+        />
       </div>
     </div>
   );
 };
 
-export default BrokerDummyData;
+export default ConsumerBarDummyData;

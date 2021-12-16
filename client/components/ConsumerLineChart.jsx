@@ -25,7 +25,7 @@ import {
   Legend
   ) 
 
-const BrokerDummyData = () => {
+const ConsumerLineDummyData = () => {
   // const [chartData, setChartData] = useState({});
 
 
@@ -52,14 +52,14 @@ const BrokerDummyData = () => {
 
   return (
     <div>
-      <h3 style ={{textAlign: 'center'}}>Record Read per Second</h3>
+      <h3 style ={{textAlign: 'center'}}>Records Consumed per Second</h3>
       <div style={{height:"300px", width:"300px"}}>
           <Chart type='line' data={ {
             labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
             datasets: [
               {
                 label: 'Records per second',
-                data:[10, 20, 12, 13, 14, 15],
+                data:[3, 1, 2, 3, 0, 3],
                 backgroundColor: 'rgba(75, 192, 192, 0.6)',
                 borderColor:'rgba(75, 192, 192, 1)',
                 borderWidth: 4
@@ -71,4 +71,4 @@ const BrokerDummyData = () => {
   );
 };
 
-export default BrokerDummyData;
+export default ConsumerLineDummyData;
