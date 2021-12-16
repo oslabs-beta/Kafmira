@@ -18,10 +18,7 @@ export default function BrokerGraphContainer(){
       <BrokerBarDummyData/>
     </Grid>
     <Grid item xs={4}>
-      
       <BrokerDummyData />
-      
-    
     </Grid>
   </Grid>
   )

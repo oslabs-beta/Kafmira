@@ -24,8 +24,20 @@ export default function ConsumerColumnContainer(){
     border: '2px solid blue'}}>
     <h3>Consumer(s)</h3>
       <Stack direction="column">
-        <Item>Consumer 1</Item>
-        <Item>Consumer 2</Item>
+        <Item>Consumer 1
+        <br></br>
+        <br></br>
+        Total Records Consumed : 313
+        <br></br>
+        Records Consumed / sec : 7       
+        </Item>
+        <Item>Consumer 2
+        <br></br>
+        <br></br>
+        Total Records Consumed : 256
+        <br></br>
+        Records Consumed / sec : 3       
+        </Item>
       </Stack>
     </div>
     // <div>
