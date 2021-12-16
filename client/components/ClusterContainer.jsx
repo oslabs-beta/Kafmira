@@ -6,8 +6,8 @@ import Consumer from './Consumer.jsx';
 
 export default function ClusterContainer(){
   return(
-    <Box sx={{ flexGrow: 1}} >
-    <Grid container spacing={9} >
+    <Box sx={{ display: 'flex', justifyContent: 'space-between'}} >
+    <Grid container spacing={10}>
       <Grid item>
         <Producer />
       </Grid>

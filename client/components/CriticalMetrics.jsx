@@ -26,7 +26,7 @@ const MakeMetrics = () => {
             { metric1 }
           </Typography>
           <Divider/>
-          <Typography sx={{fontSize:14}}>
+          <Typography sx={{fontSize:14 }}>
             {/* Value:  */}
             { value1 }
 
