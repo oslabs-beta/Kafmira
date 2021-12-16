@@ -3,7 +3,7 @@ import TopBannerContainer from './TopBannerContainer.jsx';
 import ClusterContainer from './ClusterContainer.jsx';
 import BottomBanner from './BottomBanner.jsx';
 import MakeMetrics from './CriticalMetrics.jsx';
-
+// talk with group about possible style sheet
 const MainPageContainer =() => {
   return (
     <div style = {{backgroundImage: 'linear-gradient(to bottom left, #66a6ff, #89f7fe)'}}>
