@@ -11,10 +11,10 @@ export default function ConsumersPage(){
   <TopBannerContainerConsPage/>
 <Box >
 <Grid container>
-  <Grid item xs={4}>
+  <Grid item xs={3}>
   <ConsumerColumnContainer />  
   </Grid>
-  <Grid item xs={8}>
+  <Grid item xs={9}>
   <ConsumerGraphContainer />
 </Grid>
 </Grid>

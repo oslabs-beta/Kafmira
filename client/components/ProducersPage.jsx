@@ -11,10 +11,10 @@ export default function ProducersPage(){
 <TopBannerContainerProdPage/>
 <Box >
 <Grid container>
-  <Grid item xs={4}>
+  <Grid item xs={3}>
   <ProducerColumnContainer />  
   </Grid>
-  <Grid item xs={8}>
+  <Grid item xs={9}>
   <ProducerGraphContainer />
 </Grid>
 </Grid>

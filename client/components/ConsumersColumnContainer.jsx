@@ -1,7 +1,8 @@
 import * as React from 'react';
-import Stack from '@mui/material/Stack';
+import { Container, Grid, Box, Typography, Link, Button, ButtonGroup, makeStyles } from '@material-ui/core'
+import { Card, CardActionArea, Stack } from '@mui/material'
 import { styled } from '@mui/material/styles';
-import { Button } from '@mui/material';
+
 
 const Item = styled(Button)(({ theme }) => ({
   ...theme.typography.body2,
@@ -27,5 +28,45 @@ export default function ConsumerColumnContainer(){
         <Item>Consumer 2</Item>
       </Stack>
     </div>
+    // <div>
+    //   <Typography 
+    //      variant='h4' 
+    //      align='center'
+    //   >
+    //     Consumers
+    //   </Typography>
+    //   <Box border='solid'>
+    //     <Grid 
+    //       container 
+    //       direction='column'  
+    //       justifyContent='flexStart'
+    //       alignItems='center'
+    //       spacing={1}
+    //      >
+    //       <Grid item>
+    //         <Card>
+    //                  <CardActionArea>
+    //                      <Button /*onClick={}*/>
+    //                          <Typography variant='h5'>
+    //                              Consumer 1
+    //                          </Typography>
+    //                      </Button>
+    //                  </CardActionArea>
+    //              </Card>
+    //          </Grid>
+    //          <Grid item>
+    //              <Card>
+    //                  <CardActionArea>
+    //                      <Button /*onClick={}*/>
+    //                          <Typography variant='h5'>
+    //                              Consumer 2
+    //                          </Typography>
+    //                      </Button>
+    //                  </CardActionArea>
+    //              </Card>     
+    //       </Grid>
+    //     </Grid>
+    //   </Box>
+    // </div>
   )
 }
