@@ -52,18 +52,17 @@ const BrokerDummyData = () => {
 
   return (
     <div>
-      <h3>Dummy Broker Line Data Chart</h3>
+      <h3 style ={{textAlign: 'center'}}>Record Read per Second</h3>
       <div style={{height:"300px", width:"300px"}}>
           <Chart type='line' data={ {
       labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
       datasets: [
         {
-          label: 'bytes per second',
+          label: 'Records per second',
           data:[10, 20, 12, 13, 14, 15],
           backgroundColor: 'rgba(75, 192, 192, 0.6)',
           borderColor:'rgba(75, 192, 192, 1)',
           borderWidth: 4
-
         }
       ]
     }}  />

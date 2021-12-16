@@ -23,8 +23,21 @@ export default function ProducerColumnContainer(){
     border: '2px solid blue'}}>
     <h3>Producer(s)</h3>
       <Stack direction="column">
-        <Item>Producer 1</Item>
-        <Item>Producer 2</Item>
+        <Item>
+        Producer 1 
+        <br></br>
+        <br></br>
+        Total Messages Sent : 237
+        <br></br>
+        Topics Written To : 3       
+        </Item>
+        <Item>Producer 2
+        <br></br>
+        <br></br>
+        Total Messages Sent : 135
+        <br></br>
+        Topics Written To : 2 
+        </Item>
       </Stack>
     </div>
   )
