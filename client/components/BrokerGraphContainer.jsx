@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Box, Grid } from '@material-ui/core';
+import BrokerDummyData from './LineChart.jsx'
+import BrokerBarDummyData from './BarChart.jsx';
+
+
 
 export default function BrokerGraphContainer(){
   return(
@@ -10,12 +14,15 @@ export default function BrokerGraphContainer(){
     justifyContent="center"
     alignItems="flex-start"
   >
-  <Grid item xs={4}>
-    <Box border="1px solid black">Sample Graph Area 1</Box>
-  </Grid>
-  <Grid item xs={4}>
-    <Box border="1px solid black">Sample Graph Area 2</Box>
-  </Grid>
+    <Grid item xs={4}>
+      <BrokerBarDummyData/>
     </Grid>
+    <Grid item xs={4}>
+      
+      <BrokerDummyData />
+      
+    
+    </Grid>
+  </Grid>
   )
 }
