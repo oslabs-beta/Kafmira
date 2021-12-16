@@ -59,7 +59,7 @@ const ConsumerBarDummyData = () => {
             datasets: [
                 {
                     label: 'Total Records Written',
-                    data:[100, 200, 300 , 400, 500, 600, 700, 800],
+                    data:[3, 4, 6, 9, 9, 12],
                     backgroundColor: 'rgba(75, 192, 192, 0.6)',
                     borderColor:'rgba(75, 192, 192, 1)',
                     borderWidth: 4,
