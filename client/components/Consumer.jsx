@@ -36,8 +36,9 @@ export default function Consumer() {
                 display: 'flex',  
                 width: '10vw', 
                 height: '10vh', 
-                backgroundColor: 'orangered', 
-                borderRadius: '50%' 
+                backgroundColor: '#089ba6', 
+                borderRadius: '50%',
+                border: "2px solid black" 
               }}
             >
               <p style={{ 
@@ -55,8 +56,9 @@ export default function Consumer() {
                 display: 'flex',  
                 width: '10vw', 
                 height: '10vh', 
-                backgroundColor: 'orangered', 
-                borderRadius: '50%' 
+                backgroundColor: '#089ba6', 
+                borderRadius: '50%',
+                border: "2px solid black" 
               }}
             >
               <p style={{ 
