@@ -52,13 +52,13 @@ const BrokerBarDummyData = () => {
 
   return (
     <div>
-      <h3>Dummy Data Broker Bar Chart</h3>
+      <h3 style ={{textAlign : 'center'}}>Total Records Written</h3>
       <div style={{height:"300px", width:"300px"}}>
       <Bar type='bar' data={ {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
         datasets: [
           {
-            label: 'some output per second',
+            label: 'Total Records Written',
             data:[100, 200, 300 , 400, 500, 600, 700, 800],
             backgroundColor: 'rgba(75, 192, 192, 0.6)',
             borderColor:'rgba(75, 192, 192, 1)',

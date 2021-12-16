@@ -23,8 +23,20 @@ export default function BrokerColumnContainer(){
     border: '2px solid blue'}}>
     <h3>Broker(s)</h3>
       <Stack direction="column">
-        <Item>Broker 1</Item>
-        <Item>Broker 2</Item>
+        <Item>Broker 1
+        <br></br>
+        <br></br>
+        Total Messages Sent : 800
+        <br></br>
+        Record(s) Read per Second : 15      
+        </Item>
+        <Item>Broker 2
+        <br></br>
+        <br></br>
+        Total Messages Sent : 659
+        <br></br>
+        Record(s) Read per Second : 12  
+        </Item>
       </Stack>
     </div>
   )
