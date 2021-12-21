@@ -1,3 +1,22 @@
+Start scripts
+  #1
+  "scripts": {
+    "start": "electron .",
+    "watch": "webpack --config webpack.config.js --watch",
+    "pack": "electron-builder -mwl"
+  }
+
+  #2
+  "scripts": {
+    "start": "electron . --no-sandbox .",
+    "watch": "webpack --config webpack.config.js --watch",
+    "pack": "electron-builder -mwl"
+  }
+
+
+
+###################################################################################
+
 Example request to Prometheus and Expected Data Structure
 
 //1. Under Replicated Partitions Count (Score Card)
