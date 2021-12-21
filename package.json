@@ -4,7 +4,7 @@
   "description": "\"An Apache Kafka monitoring tool\"",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "electron . --no-sandbox .",
     "watch": "webpack --config webpack.config.js --watch",
     "pack": "electron-builder -mwl"
   },
