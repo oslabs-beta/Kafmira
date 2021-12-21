@@ -2,10 +2,10 @@ import React from 'react'
 import { Container, Grid, Box, Typography, Link } from '@material-ui/core'
 // import { createTheme } from '@mui/material/styles';
 
-export default function BottomBanner() {
   // require shell property from electron and assign to variable
-  const shell = require('electron').shell;
+  // const shell = require('electron').shell;
 
+export default function BottomBanner() {
 
   return (
     <footer>
@@ -45,7 +45,7 @@ export default function BottomBanner() {
             Now keep in mind that these differences account for each individual link */}
           <Grid container direction='row' spacing={6}>
             <Grid item xs={12} sm={4}>
-              <Link onClick={shell.openExternal('https://github.com/oslabs-beta/Kafmira')} color='inherit'>
+              <Link onClick={()=> window.open('https://github.com/oslabs-beta/Kafmira', 'blank')} color='inherit'>
                 Need Help?
               </Link>
             </Grid>
