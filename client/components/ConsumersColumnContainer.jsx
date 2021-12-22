@@ -27,16 +27,16 @@ export default function ConsumerColumnContainer(){
         <Item>Consumer 1
         <br></br>
         <br></br>
-        Total Records Consumed : 313
+        Total Records Consumed : 709 
         <br></br>
-        Records Consumed / sec : 7       
+        Average Records Consumed / sec : 3 
         </Item>
         <Item>Consumer 2
         <br></br>
         <br></br>
-        Total Records Consumed : 256
+        Total Records Consumed : 653     
         <br></br>
-        Records Consumed / sec : 3       
+        Average Records Consumed / sec : 7  
         </Item>
       </Stack>
     </div>

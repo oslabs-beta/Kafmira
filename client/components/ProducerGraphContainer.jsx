@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
-import { Box, Grid } from '@material-ui/core';
+import { Box, Grid, Typography } from '@material-ui/core';
+import MakeProducerLineGraph from './ProducerLineGraph.jsx';
+import MakeProducerBarGraph from './ProducerBarGragh.jsx';
+
+
 
 export default function ProducerGraphContainer(){
   return(
+    <Box sx={{textAlign : 'center'}}>
+    <Typography variant ='h4'>Producer 1</Typography>
     <Grid
     container
     spacing={4}
@@ -11,11 +17,12 @@ export default function ProducerGraphContainer(){
     alignItems="flex-start"
   >
   <Grid item xs={4}>
-    <Box border="1px solid black">Sample Graph Area 1</Box>
+    <MakeProducerLineGraph /> 
   </Grid>
   <Grid item xs={4}>
-    <Box border="1px solid black">Sample Graph Area 2</Box>
+    <MakeProducerBarGraph/>
   </Grid>
     </Grid>
+    </Box>
   )
 }
