@@ -14,7 +14,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import {Link} from 'react-router-dom';
 import { red } from '@material-ui/core/colors';
@@ -92,7 +92,7 @@ const TopBannerContainer = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center' }}>
-            Cluster Overview
+            Ecosystem Overview
           </Typography>
         </Toolbar>
       </AppBar>
@@ -116,7 +116,7 @@ const TopBannerContainer = () => {
         </DrawerHeader>
         <Divider />
         <List>
-          {[['Cluster Overview', '/dashboard'], ['Producers', '/producers'], ['Consumers', '/consumers'], ['Brokers', '/brokers'], ['New Port(s)', '/']].map(([text, route]) => (
+          {[['Ecosystem Overview', '/dashboard'], ['Producers', '/producers'], ['Consumers', '/consumers'], ['Brokers', '/brokers'], ['New Port(s)', '/']].map(([text, route]) => (
              <Link to={route}>
             <ListItem button key={text} >
               <ListItemText primary={text} />
