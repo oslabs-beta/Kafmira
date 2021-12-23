@@ -4,13 +4,7 @@ import { Box, flexbox } from '@mui/system';
 
 
 const MakeMetrics = () => {
-  //  Hook to save the metric for Under Replicated Partition
-  const [URP, setURP] = useState('')
-
-
-  
-  
-  
+  let activeControllers = fetch()
   const metric1 = 'Active Controller(s)'
   const value1 = '1'
 
