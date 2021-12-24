@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Box, Grid } from '@material-ui/core';
 import { Button, Stack } from '@mui/material';
 import Producer from './Producer.jsx';
 //import Broker from './Broker.jsx';
 import Consumer from './Consumer.jsx';
 
+const mapStateToProps = (state) => {
+  return {
+    port: state.mainReducer.port
+  };
+};
 
-function ClusterContainer(){
+
+function ClusterContainer(props){
 
   const [totalBrokerCount, setTotalBrokerCount] = useState([])
 
@@ -53,4 +60,5 @@ function ClusterContainer(){
   )
 }
 
-export default ClusterContainer;
+//export default connect(mapStateToProps, null)(ClusterContainer);
+export default ClusterContainer
