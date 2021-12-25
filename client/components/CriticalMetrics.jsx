@@ -4,7 +4,14 @@ import { Box, flexbox } from '@mui/system';
 
 
 const MakeMetrics = () => {
-  let activeControllers = fetch()
+  useEffect(() => {
+    let activeControllers = fetch(
+    'http://localhost:9090/api/v1/query?query=kafka_controller_kafkacontroller_activecontrollercount'
+    ).then((respose) => respose.json());
+    
+  })
+  
+  
   const metric1 = 'Active Controller(s)'
   const value1 = '1'
 
