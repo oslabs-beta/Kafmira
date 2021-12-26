@@ -51,3 +51,7 @@ Example request to Prometheus and Expected Data Structure
  .then((allData) => {
         //1. Under Replicated Partitions Chart
         setURP(allData[0].data.result[0].value[1])
+
+
+
+  

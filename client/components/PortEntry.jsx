@@ -2,6 +2,36 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Grid, TextField, Typography, Button } from '@material-ui/core';
 import MainPageContainer from './MainPageContainer.jsx';
+import { addPortAction, addConnectionTimeAction } from '../actions/action.js';
+
+const mapStateToProps = (state) => {
+  return {
+    port: state.mainReducer.port,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addPortAction: (userInput) => {
+      dispatch(addPortAction(userInput));
+    },
+    addConnectionTimeAction: (timestamp) => {
+      dispatch(addConnectionTimeAction(timestamp));
+    }
+  };
+};
+
+const verifyPort = async (port) => {
+  let valid = false;
+  const url = `http://localhost:${port}/api/v1/query?query=up`;
+  await fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === 'success') valid = true;
+    })
+    .catch(err => console.log(err));
+  return valid;
+};
 
 export default function PortEntry(props){
   const [port, setPort] = useState('');
@@ -16,7 +46,7 @@ export default function PortEntry(props){
         console.log('Missing port; please enter and resubmit');
       }
       if(port === '9090'){
-        navigate("/dashboard")
+        navigate("/dashboard");
       }
   }
 
