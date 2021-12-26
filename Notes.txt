@@ -13,6 +13,7 @@ Start scripts
     "pack": "electron-builder -mwl"
   }
 
+Bottom Banner links open external windows currently but maybe find a way to open up in actual browser
 
 
 ###################################################################################
