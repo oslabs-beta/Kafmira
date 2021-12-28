@@ -25,8 +25,9 @@ function ClusterContainer(props){
     Promise.all([totalBrokers])
       .then((allData) => {
         //1. set Total Broker Count
-        setTotalBrokerCount(allData[0].data.result.length)}
-      )},[])
+        setTotalBrokerCount(allData[0].data.result.length)
+        })
+    },[])
 
   const broker = [];
   let n = 1;

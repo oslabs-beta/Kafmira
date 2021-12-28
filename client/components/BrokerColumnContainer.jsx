@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect} from 'react';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import { Button } from '@mui/material';
@@ -14,7 +14,44 @@ const Item = styled(Button)(({ theme }) => ({
   borderBottom: '1px solid blue'
 }));
 
-export default function BrokerColumnContainer(){
+export default function BrokerColumnContainer(props){
+
+  // create hook state variable and func for data that will be queried and saved
+  // Fetch active controller count to receive object of all Brokers in cluster
+  const [totalBrokerCount, setTotalBrokerCount] = useState([]);
+
+  // Purgatory Size - helps identify latency issues.  Purgatory is a placeholder for 
+  // both produce and fetch reqs and the more reqs added to Purgatory the greater the 
+  // delay in processing those reqs
+  const [purgatorySize, setPurgatorySize] = useState([])
+
+  // useEffect hook inside the component BrokerColumnContainer;  this tells your component 
+  // that after it renders it needs to do something 
+  // this effect hook will fetch all required data when page is rendered
+  useEffect(() => {
+    let totalBrokers = fetch(
+      `http://localhost:${props.port}/api/v1/query?query=kafka_controller_kafkacontroller_activecontrollercount`
+    ).then((response) => response.json());
+
+    Promise.all([totalBrokers])
+      .then((fetchReqData) => {
+        setTotalBrokerCount(fetchReqData[0].data.result.length - 1)
+      })
+
+  },[])
+
+  // const brokerArr = [];
+  // let n = 0;
+
+  // while (n < totalBrokerCount) {
+  //   brokerArr.push(
+  //     <Item> Broker
+  //       <br></br>
+
+  //     </Item>
+  //   )
+  // }
+
   return(
   <div style = {{
     textAlign: 'center',
@@ -23,7 +60,7 @@ export default function BrokerColumnContainer(){
     border: '2px solid blue'}}>
     <h3>Broker(s)</h3>
       <Stack direction="column">
-        <Item>Broker 1
+        <Item>
         <br></br>
         <br></br>
         Total Messages Sent : 800
