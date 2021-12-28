@@ -9,7 +9,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-
 function ClusterContainer(props){
 
   const [totalBrokerCount, setTotalBrokerCount] = useState([]);
@@ -39,20 +38,19 @@ function ClusterContainer(props){
 
         //3. set Total Consumer List
         setTotalConsumerList(allData[2].data.result);
-      }
-      )},[])
+      })
+    },[])
 
   const broker = [];
   let bCount = 1;
   while (bCount <= totalBrokerCount) {
     broker.push( 
-        <Button
-          variant="contained" 
-          style={{ display: "flex",  width: "25vw", height: "15vh", backgroundColor: "#0857a6", borderRadius: "5%", border: "2px solid black" }}
-        >
-          <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh" }}> Broker {bCount}</p>
-        </Button>
-      )
+      <Button
+        variant="contained" 
+        style={{ display: "flex",  width: "25vw", height: "15vh", backgroundColor: "#0857a6", borderRadius: "5%", border: "2px solid black" }}
+      >
+        <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh" }}> Broker {bCount}</p>
+      </Button>)
     bCount++;
   }
 
