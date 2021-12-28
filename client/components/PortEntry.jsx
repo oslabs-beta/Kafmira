@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Grid, TextField, Typography, Button } from '@material-ui/core';
-import MainPageContainer from './MainPageContainer.jsx';
 import { addPortAction, addConnectionTimeAction } from '../actions/action.js';
+import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    port: state.mainReducer.port,
+    port: state.mainReducer.port
   };
 };
 
@@ -33,22 +33,41 @@ const verifyPort = async (port) => {
   return valid;
 };
 
-export default function PortEntry(props){
+function PortEntry(props){
   const [port, setPort] = useState('');
   const [portError, setPortError] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-      e.preventDefault();
-      setPortError(false);
-      if(!port){
-        setPortError(true);
-        console.log('Missing port; please enter and resubmit');
-      }
-      if(port === '9090'){
-        navigate("/dashboard");
-      }
-  }
+  // Older code for hard-coded port:
+  //
+  // const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     setPortError(false);
+  //     if(!port){
+  //       setPortError(true);
+  //       console.log('Missing port; please enter and resubmit');
+  //     }
+  //     if(port === '9090'){
+  //       navigate("/dashboard");
+  //     }
+  // }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setPortError(false);
+    const userPort = document.getElementById('prometheus').value;
+    const verified = await verifyPort(userPort);
+    const timestamp = new Date().toISOString();
+    if (verified) {
+      props.addPortAction(userPort);
+      props.addConnectionTimeAction(timestamp);
+      navigate("/dashboard");
+    }
+    else if(!verified){
+      setPortError(true);
+      console.log('Missing and/or incorrect port; please enter and resubmit');
+    };
+  };
 
   return(
     <Grid
@@ -61,11 +80,12 @@ export default function PortEntry(props){
         color="primary"
         gutterBottom
       >
-        Enter the Prometheus port your Kafka cluster is located on:
+        Enter the Prometheus port your Kafka instance is located on:
       </Typography> 
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <TextField
           onChange={(e) => setPort(e.target.value)}
+          id="prometheus"
           variant="outlined"
           label="Enter port here..."
           size="small"
@@ -74,7 +94,6 @@ export default function PortEntry(props){
         />
         <Box>
           <Button
-            onClick={() => console.log('You clicked Add Port')}
             type="submit" 
             color="primary" 
             variant="contained" 
@@ -83,7 +102,6 @@ export default function PortEntry(props){
             Add Port
           </Button>
           <Button
-            onClick={() => console.log('You clicked Start')} 
             type="submit" 
             color="primary" 
             variant="contained" 
@@ -94,4 +112,6 @@ export default function PortEntry(props){
       </form>
     </Grid>
   )
-}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PortEntry);
