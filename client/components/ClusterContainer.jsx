@@ -19,7 +19,7 @@ function ClusterContainer(props){
 
   useEffect(() => {
     let totalBrokers = fetch(
-      `http://localhost:9090/api/v1/query?query=kafka_controller_kafkacontroller_activecontrollercount`
+      `http://localhost:${props.port}/api/v1/query?query=kafka_controller_kafkacontroller_activecontrollercount`
     ).then((response) => response.json());
 
     Promise.all([totalBrokers])
@@ -60,5 +60,5 @@ function ClusterContainer(props){
   )
 }
 
-//export default connect(mapStateToProps, null)(ClusterContainer);
-export default ClusterContainer
+// 
+export default connect(mapStateToProps, null)(ClusterContainer);
