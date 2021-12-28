@@ -1,8 +1,16 @@
 import React, { useState, useEffect }from 'react';
 import {Typography, Button, Container, Grid, Paper, Card, CardContent, Divider } from '@material-ui/core';
 import { Box, flexbox } from '@mui/system';
+import { connect } from 'react-redux';
 
+// import state saved from login
+const mapStateToProps = (state) => {
+  return {
+    port: state.mainReducer.port
+  };
+};
 
+<<<<<<< HEAD
 const MakeMetrics = () => {
 <<<<<<< HEAD
   useEffect(() => {
@@ -13,6 +21,9 @@ const MakeMetrics = () => {
   })
   
 =======
+>>>>>>> development
+=======
+const MakeMetrics = (props) => {
 >>>>>>> development
   
   const metric1 = 'Active Controller(s)'
@@ -33,10 +44,10 @@ const MakeMetrics = () => {
   // useEffect hook will make all fetch requests once page
   useEffect(() => {
     // identifies which controller in the cluster is the active controller
-    let activeControllers = fetch('http://localhost:9090/api/v1/query?query=kafka_controller_kafkacontroller_activecontrollercount'
+    let activeControllers = fetch(`http://localhost:${props.port}/api/v1/query?query=kafka_controller_kafkacontroller_activecontrollercount`
     ).then((respose) => respose.json());
     // returns the ammount of underreplicated partitions in each cluster
-    let underReplicated = fetch('http://localhost:9090/api/v1/query?query=kafka_server_replicamanager_underreplicatedpartitions')
+    let underReplicated = fetch(`http://localhost:${props.port}/api/v1/query?query=kafka_server_replicamanager_underreplicatedpartitions`)
   //creates an array of the different object that we have fetched  
   Promise.all([activeControllers, underReplicated])
     .then((allData) => {
@@ -55,10 +66,12 @@ const MakeMetrics = () => {
     })
 
     URP.forEach(ele=>{
-      if(ele.value[1] !== 0){git
-        value2 += ele.value[1];
+      if(ele.value[1] === 0){
+        value2 += 1
+        // ele.value[1];
 
       }
+    
     })
 
   
@@ -68,8 +81,6 @@ const MakeMetrics = () => {
 
 
 
-  const metric2 = 'Under-replicated Partitions'
-  const value2 = '0'
 
   const metric3 = 'Offline Partitions'
   const value3 = '0'
@@ -148,5 +159,5 @@ const MakeMetrics = () => {
     
   )
 }
-
-export default MakeMetrics;
+export default connect(mapStateToProps, null)(MakeMetrics);
+// export default MakeMetrics;
