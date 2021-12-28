@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import mainReducer from './metricsReducer';
 
 // import all reducers here like below
 import metricsReducer from './metricsReducer';
@@ -9,4 +10,5 @@ const reducers = combineReducers({
 });
 
 // make the combined reducers available for import
-export default reducers;
+// export default reducers;
+export default combineReducers({ mainReducer: mainReducer });
