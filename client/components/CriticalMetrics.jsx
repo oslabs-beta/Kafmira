@@ -10,21 +10,18 @@ const mapStateToProps = (state) => {
   };
 };
 
-<<<<<<< HEAD
+
 const MakeMetrics = () => {
-<<<<<<< HEAD
+
   useEffect(() => {
     let activeControllers = fetch(
     'http://localhost:9090/api/v1/query?query=kafka_controller_kafkacontroller_activecontrollercount'
     ).then((respose) => respose.json());
     
   })
-  
-=======
->>>>>>> development
-=======
+
 const MakeMetrics = (props) => {
->>>>>>> development
+
   
   const metric1 = 'Active Controller(s)'
   let controllerName = '';
