@@ -25,44 +25,62 @@ const MakeMetrics = (props) => {
   let value2 = 0;
   
 
+  const metric3 = 'Offline Partitions'
+  let value3 = 0;
 
   
   // Set state hooks that will save the json object from fetch request to a variable so we can use later 
   const [activeControllerArr, setActiveControllerArr] = useState([]);
   //save an array of objects with number of 
-  const [URP, setURP] = useState([])
+  const [uRP, setURP] = useState([]);
+  // saves an array of the Brokers of the cluster and any Offline Partitions
+  const [offlinePartitionsArr, setOfflinePartitionsArr] = useState([])
   // useEffect hook will make all fetch requests once page
   useEffect(() => {
     // identifies which controller in the cluster is the active controller
     let activeControllers = fetch(`http://localhost:${props.port}/api/v1/query?query=kafka_controller_kafkacontroller_activecontrollercount`
     ).then((respose) => respose.json());
     // returns the ammount of underreplicated partitions in each cluster
-    let underReplicated = fetch(`http://localhost:${props.port}/api/v1/query?query=kafka_server_replicamanager_underreplicatedpartitions`)
+    let underReplicated = fetch(`http://localhost:${props.port}/api/v1/query?query=kafka_server_replicamanager_underreplicatedpartitions`
+    ).then((response) => response.json());
+
+    let offlinePartitions = fetch(`http://localhost:${props.port}/api/v1/query?query=kafka_controller_kafkacontroller_offlinepartitionscount`
+    ).then((response) => response.json());
   //creates an array of the different object that we have fetched  
-  Promise.all([activeControllers, underReplicated])
+  Promise.all([activeControllers, underReplicated, offlinePartitions])
     .then((allData) => {
       // saves the array of which broker is a controller
-      setActiveControllerArr(allData[0].data.result)
+      setActiveControllerArr(allData[0].data.result);
       //save the array of under replicated partitions
-      setURP(allData[1].data.result)
+      setURP(allData[1].data.result);
+      // saves the array of offline partitions
+      setOfflinePartitionsArr(allData[2].data.result)
     },
     )}, []);
-    // iterates through object, finds the controller and saves instance name
+    // iterates through the Array and finds the controller and saves instance name
     activeControllerArr.forEach(ele =>{
       if(ele.value[1] === '1'){
         value1 += 1;
         controllerName = ele.metric.instance
       }
     })
-
-    URP.forEach(ele=>{
-      if(ele.value[1] === 0){
-        value2 += 1
-        // ele.value[1];
+    // iterates through Array and sums up the qty of underreplicated partitions (not enough backups)
+    uRP.forEach(ele=>{
+      if(ele.value[1] !== '0'){
+        value2 += Number(ele.value[1]);
+      }
+    })
+// iterates through Array and sums up the qty of  partitions without a Leader(not enough backups)
+    offlinePartitionsArr.forEach(ele => {
+      if(ele.value[1] === '0'){
+        value3 += Number(ele.value[1])
+        
 
       }
-    
+  
     })
+    
+    
 
   
 
@@ -72,8 +90,6 @@ const MakeMetrics = (props) => {
 
 
 
-  const metric3 = 'Offline Partitions'
-  const value3 = '0'
 
   // const metric4 = 'power level'
   // const value4 = 'over 9000'
