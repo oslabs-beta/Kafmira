@@ -60,5 +60,5 @@ function ClusterContainer(props){
   )
 }
 
+// 
 export default connect(mapStateToProps, null)(ClusterContainer);
-// export default ClusterContainer
