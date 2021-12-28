@@ -16,8 +16,8 @@ const mapStateToProps = (state) => {
 function ClusterContainer(props){
 
   const [totalBrokerCount, setTotalBrokerCount] = useState([]);
-  const [totalProducer, setTotalProducer] = useState([]);
-  // const [totalConsumerCount, setTotalConsumerCount] = useState([]);
+  const [totalProducerList, setTotalProducerList] = useState([]);
+  const [totalConsumerList, setTotalConsumerList] = useState([]);
 
   useEffect(() => {
     let totalBrokers = fetch(
@@ -25,23 +25,23 @@ function ClusterContainer(props){
     ).then((response) => response.json());
 
     let totalProducers = fetch(
-      `http://localhost:9090/api/v1/query?query=kafka_producer_producer_metrics_record_send_total`
+      `http://localhost:${props.port}/api/v1/query?query=kafka_producer_producer_metrics_record_send_total`
     ).then((response) => response.json());
 
-    // let totalConsumers = fetch(
-    //   `http://localhost:9090/api/v1/query?query=kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total`
-    // ).then((response) => response.json());
+    let totalConsumers = fetch(
+      `http://localhost:${props.port}/api/v1/query?query=kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total`
+    ).then((response) => response.json());
 
-    Promise.all([totalBrokers])
+    Promise.all([totalBrokers, totalProducers, totalConsumers])
       .then((allData) => {
         //1. set Total Broker Count
         setTotalBrokerCount(allData[0].data.result.length);
 
         //2. set Total Producer List
-        setTotalProducer(allData[1].data.result);
+        setTotalProducerList(allData[1].data.result);
 
-        // //3. set Total Consumer List
-        // setTotalBrokerCount(allData[2].data.result.length);
+        //3. set Total Consumer List
+        setTotalConsumerList(allData[2].data.result);
       }
       )},[])
 
@@ -56,6 +56,9 @@ function ClusterContainer(props){
       </Button>)
       n++;
   }
+
+  console.log(totalProducerList)
+  console.log(totalConsumerList)
 
   return(
     <Box sx={{ display: 'flex', justifyContent: 'space-between'}} >
