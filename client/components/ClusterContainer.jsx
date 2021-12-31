@@ -72,7 +72,7 @@ function ClusterContainer(props){
       )
     pCount++;
   }
-
+  
   const consumer = [];
   let cCount = 0;
   let consumerNum = 0;
