@@ -27,6 +27,7 @@ ChartJS.register(
 
 const MakeProducerBarGraph = () => {
   
+  
 
   return (
     <div>
