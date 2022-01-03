@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react';
 import {Typography, Button, Container, Grid, Paper, Card, CardContent, Divider } from '@material-ui/core';
-import { Box, flexbox } from '@mui/system';
+import { Box } from '@mui/system';
 import { connect } from 'react-redux';
 
 // import state saved from login
@@ -20,13 +20,16 @@ const MakeMetrics = (props) => {
   let controllerName = '';
   // if this number is not 1 no bueno
   let value1 = 0;
+  let controllerColor = ''
 
   const metric2 = 'Under-replicated Partitions'
   let value2 = 0;
+  let urpColor = ''
   
 
   const metric3 = 'Offline Partitions'
   let value3 = 0;
+  let offlinePartitionColor = ''
 
   
   // Set state hooks that will save the json object from fetch request to a variable so we can use later 
@@ -35,6 +38,8 @@ const MakeMetrics = (props) => {
   const [uRP, setURP] = useState([]);
   // saves an array of the Brokers of the cluster and any Offline Partitions
   const [offlinePartitionsArr, setOfflinePartitionsArr] = useState([])
+
+
   // useEffect hook will make all fetch requests once page
   useEffect(() => {
     // identifies which controller in the cluster is the active controller
@@ -57,48 +62,49 @@ const MakeMetrics = (props) => {
       setOfflinePartitionsArr(allData[2].data.result)
     },
     )}, []);
+
     // iterates through the Array and finds the controller and saves instance name
     activeControllerArr.forEach(ele =>{
       if(ele.value[1] === '1'){
         value1 += 1;
         controllerName = ele.metric.instance
       }
+
+// modifies color of Active Controller metrics if value is not 1
+      if (value1 !== 1) {
+        controllerColor = 'red'
+      }
     })
+
     // iterates through Array and sums up the qty of underreplicated partitions (not enough backups)
     uRP.forEach(ele=>{
       if(ele.value[1] !== '0'){
         value2 += Number(ele.value[1]);
+      }
+
+// modifies color of URP metrics if value is 1+
+      if (value2 !== 0) {
+        urpColor = 'red'
       }
     })
 // iterates through Array and sums up the qty of  partitions without a Leader(not enough backups)
     offlinePartitionsArr.forEach(ele => {
       if(ele.value[1] === '0'){
         value3 += Number(ele.value[1])
-        
-
       }
-  
+
+// modifies color of offlineParitions metrics if value is 1+
+      if (value3 !== 0) {
+        offlinePartitionColor = 'red'
+      }
     })
+
     
-    
-
-  
-
-
-  
-
-
-
-
-
-  // const metric4 = 'power level'
-  // const value4 = 'over 9000'
-
   return (
   <Box>
     <Grid container alignItems="stretch">
       <Card sx={{ minWidth: 275 }}>
-        <CardContent>
+        <CardContent style={{backgroundColor : controllerColor}}>
           <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
             {/* Checking value =  */}
             { metric1 }
@@ -114,55 +120,30 @@ const MakeMetrics = (props) => {
       </Card>
         
       <Card sx={{ minWidth: 275 }}>
-        <CardContent>
+        <CardContent style={{backgroundColor : urpColor}}>
           <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-            {/* Metric:  */}
             { metric2 }
           </Typography>
           <Divider/>
           <Typography sx={{fontSize:14}}>
-            {/* Value:  */}
             { value2 }
-
           </Typography>
         </CardContent>
       </Card>
 
         <Card sx={{ minWidth: 275 }}>
-        <CardContent>
+        <CardContent style={{backgroundColor : offlinePartitionColor}}>
           <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-            {/* Metric:  */}
             { metric3 }
           </Typography>
           <Divider/>
           <Typography sx={{fontSize:14}}>
-            {/* Value:  */}
             { value3 }
-
           </Typography>
         </CardContent>
-      </Card>
-
-        {/* <Card sx={{ minWidth: 275 }}>
-        <CardContent>
-          <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-            Metric: { metric4 }
-          </Typography>
-          <Typography sx={{fontSize:14}}>
-            Value: {value4}
-
-          </Typography>
-        </CardContent> */}
-
-
-
-      {/* </Card> */}
-    
-    
-    
+      </Card>    
     </Grid>
-  </Box>
-    
+  </Box>    
   )
 }
 export default connect(mapStateToProps, null)(MakeMetrics);
