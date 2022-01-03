@@ -5,10 +5,10 @@ import { Button, Stack } from '@mui/material';
 
 const mapStateToProps = (state) => {
   return {
-    port: state.mainReducer.port
+    port: state.mainReducer.port,
+    connectionTime: state.mainReducer.connectionTime
   };
 };
-
 
 function ClusterContainer(props){
 
@@ -89,7 +89,7 @@ function ClusterContainer(props){
       )
     cCount++;
   }
-
+console.log(props.connectionTime);
   return(
     <Box sx={{ display: 'flex', justifyContent: 'space-between'}} >
     <Grid container spacing={10}>

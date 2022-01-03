@@ -101,4 +101,181 @@ Kafka Broker State
     }
 }
 
-  
+  ###########################################################################################
+Kafka Producer Record Send total
+
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "kafka_producer_producer_metrics_record_send_total",
+                    "client_id": "producer-1",
+                    "env": "dev",
+                    "instance": "producer:1234",
+                    "job": "producer"
+                },
+                "value": [
+                    1640643038.839,
+                    "1245"
+                ]
+            }
+        ]
+    }
+}
+
+
+###########################################################################################
+Kafka Consumer Records Consumed total
+
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-1",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect"
+                },
+                "value": [
+                    1640642820.083,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-1",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect",
+                    "topic": "connect-offsets"
+                },
+                "value": [
+                    1640642820.083,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-2",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect"
+                },
+                "value": [
+                    1640642820.083,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-2",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect",
+                    "topic": "connect-status"
+                },
+                "value": [
+                    1640642820.083,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-3",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect"
+                },
+                "value": [
+                    1640642820.083,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-3",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect",
+                    "topic": "connect-configs"
+                },
+                "value": [
+                    1640642820.083,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-simple-consumer-1",
+                    "env": "dev",
+                    "instance": "consumer-1:1234",
+                    "job": "consumer"
+                },
+                "value": [
+                    1640642820.083,
+                    "1023"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-simple-consumer-1",
+                    "env": "dev",
+                    "instance": "consumer-1:1234",
+                    "job": "consumer",
+                    "topic": "sample"
+                },
+                "value": [
+                    1640642820.083,
+                    "1023"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-simple-consumer-1",
+                    "env": "dev",
+                    "instance": "consumer:1234",
+                    "job": "consumer"
+                },
+                "value": [
+                    1640642820.083,
+                    "1019"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-simple-consumer-1",
+                    "env": "dev",
+                    "instance": "consumer:1234",
+                    "job": "consumer",
+                    "topic": "sample"
+                },
+                "value": [
+                    1640642820.083,
+                    "1019"
+                ]
+            }
+        ]
+    }
+}
