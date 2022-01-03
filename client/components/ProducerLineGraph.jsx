@@ -324,11 +324,12 @@ const obj = {
   // push method to build x axis (times)
   obj.data.result[0].values.forEach(ele => {
     //   added element[0] here
-    const stringifiedNum = ele[0].toString();
-    const sliceNumber = stringifiedNum.slice(6, 9)
+    const humanDate = new Date(ele[0] * 1000)
+
+    // const sliceNumber = stringifiedNum.slice(6, 9)
     // Number(ele.slice(6, -4))
     
-    xArray.push(Number(sliceNumber))
+    xArray.push(humanDate)
   })
   // push method to build y-axis (values)
   obj.data.result[0].values.forEach(ele => {
