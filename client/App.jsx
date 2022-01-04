@@ -5,12 +5,14 @@ import BrokersPage from './components/BrokersPage.jsx'
 import ConsumersPage from './components/ConsumersPage.jsx'
 import ProducersPage from './components/ProducersPage.jsx'
 import LandingPage from './components/LandingPage.jsx';
+import PortEntryError from './components/PortEntryError.jsx';
 
 const App =() => {
   return (
     <HashRouter>
       <Routes>
         <Route path='/dashboard/*' element={<MainPageContainer />} />
+        <Route path='/error/*' element={<PortEntryError />} />
         <Route path='/brokers/*' element={<BrokersPage />} />
         <Route path='/producers/*' element={<ProducersPage />} />
         <Route path='/consumers/*' element={<ConsumersPage />} />

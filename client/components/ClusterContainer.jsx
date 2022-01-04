@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-
 function ClusterContainer(props){
 
   const [totalBrokerCount, setTotalBrokerCount] = useState([]);
@@ -91,9 +90,6 @@ function ClusterContainer(props){
       )
     cCount++;
   }
-
-  console.log(props.connectionTime)
-
   return(
     <Box sx={{ display: 'flex', justifyContent: 'space-between'}} >
     <Grid container spacing={10}>

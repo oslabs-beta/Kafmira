@@ -64,8 +64,9 @@ function PortEntry(props){
       navigate("/dashboard");
     }
     else if(!verified){
-      setPortError(true);
-      console.log('Missing and/or incorrect port; please enter and resubmit');
+      // setPortError(true);
+      // console.log('Missing and/or incorrect port; please enter and resubmit');
+      navigate("/error");
     };
   };
 
