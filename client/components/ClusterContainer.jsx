@@ -48,7 +48,7 @@ function ClusterContainer(props){
   while (bCount <= totalBrokerList.length) {
     //Assign the broker name and shorten the string if it's greater than 20 characters
     let brokerName = totalBrokerList[bIndex].metric.instance
-    let shortBrokerName = brokerName.slice(0, 20)
+    let shortBrokerName = brokerName.slice(0, 25)
     if (shortBrokerName.length < brokerName.length) {
       shortBrokerName += '...'
     }
