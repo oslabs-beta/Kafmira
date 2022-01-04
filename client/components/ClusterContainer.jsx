@@ -46,7 +46,7 @@ function ClusterContainer(props){
   let bCount = 1;
   let bIndex = 0
   while (bCount <= totalBrokerList.length) {
-    //Assign the broker name and shorten the string if it's greater than 20 characters
+    //Assign the broker name and shorten the string if it's greater than 25 characters
     let brokerName = totalBrokerList[bIndex].metric.instance
     let shortBrokerName = brokerName.slice(0, 25)
     if (shortBrokerName.length < brokerName.length) {
@@ -91,13 +91,14 @@ function ClusterContainer(props){
   }
 }
 
+
   const consumer = [];
   let cCount = 0;
   let consumerNum = 0;
   while (cCount < totalConsumerList.length) {
-    if (totalConsumerList[cCount].metric.job === 'consumer') {
+    if (totalConsumerList[cCount].metric.job === 'consumer' && totalConsumerList[cCount].metric.topic === undefined) {
     //Assign the consumer name and shorten the string if it's greater than 15 characters
-    let consumerName = totalConsumerList[cCount].metric.client_id
+    let consumerName = totalConsumerList[1].metric.client_id
     let shortConsumerName = consumerName.slice(0, 15)
     if (shortConsumerName.length < consumerName.length) {
       shortConsumerName += '...';
