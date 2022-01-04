@@ -1,6 +1,6 @@
-import React, { useState }  from "react";
+import React, { useState, useEffect }  from "react";
 // import { Line } from "react-chartjs-2";
-import { useEffect } from "react";
+import { connect } from 'react-redux';
 // import {CategoryScale, Chart} from 'chart.js'; 
 // Chart.register(CategoryScale) 
 import {
@@ -25,12 +25,36 @@ import {
   Legend
   ) 
 
-const MakeProducerLineGraph = () => {
+
+// import state saved from login
+const mapStateToProps = (state) => {
+    return {
+      port: state.mainReducer.port
+    };
+  };
+  
+
+const MakeProducerLineGraph = (props) => {
  
 
 /*
 will probably need useEffect to send a proper fetch request, then save to a variable, till then i have the object im assuming will be returned
 */
+// using setState so that we have a variable to save object to
+const [resRateData, setResRateData] = setState({});
+
+useEffect(() => {
+    // fetch request to prometheus 
+    let responseObj = fetch(''
+    ).then((response) => response.json());
+
+
+
+
+}, [])
+
+
+
 const obj = {
   "status": "success",
   "data": {
