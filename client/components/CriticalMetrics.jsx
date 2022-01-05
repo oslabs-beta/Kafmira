@@ -69,12 +69,11 @@ const MakeMetrics = (props) => {
         value1 += 1;
         controllerName = ele.metric.instance
       }
-
-// modifies color of Active Controller metrics if value is not 1
-      if (value1 !== 1) {
-        controllerColor = 'red'
-      }
     })
+    // modifies color of Active Controller metrics if value is not 1
+    if (value1 !== 1) {
+      controllerColor = 'red'
+    }
 
     // iterates through Array and sums up the qty of underreplicated partitions (not enough backups)
     uRP.forEach(ele=>{
