@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron . --no-sandbox .",
     "watch": "webpack --config webpack.config.js --watch",
-    "build": "electron-builder -mwl"
+    "build": "electron-builder build -mwl"
   },
   "nodemonConfig": {
     "ignore": [
@@ -79,7 +79,7 @@
     "directories": {
       "app": ".",
       "output": "dist",
-      "buildResources": "icon"
+      "buildResources": "logo"
     },
     "files": [
       "package.json",
