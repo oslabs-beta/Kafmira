@@ -47,12 +47,12 @@ function createWindow() {
   // win.webContents.openDevTools();
 }
 //requried for developer environment, comment this require fuction out before packaging in Electron
-require("electron-reload")(__dirname, {
-  electron: path.join(__dirname, "node_modules", ".bin", "electron"),
-});
+// require("electron-reload")(__dirname, {
+//   electron: path.join(__dirname, "node_modules", ".bin", "electron"),
+// });
 
-if (process.platform === 'darwin') {
-  //Property to update icon in MacOS dock
+//Property to update icon in MacOS dock
+if(process.platform === 'darwin'){
   app.dock.setIcon('./logo/KafmiraLogoFin.png');
 }
 

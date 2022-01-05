@@ -107,49 +107,318 @@ import {
     };
   };
 
-const ConsumerMakeLineChart = (props) => {
+const ConsumerMakeLineChart = () => {
+
+  const obj = {
+    "status": "success",
+    "data": {
+        "resultType": "matrix",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-1",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect"
+                },
+                "values": [
+                    [
+                        1640997701.199,
+                        "1"
+                    ],
+                    [
+                        1640997731.199,
+                        "4"
+                    ],
+                    [
+                        1640997761.199,
+                        "7"
+                    ],
+                    [
+                        1640997791.199,
+                        "8"
+                    ],
+                    [
+                        1640997821.199,
+                        "11"
+                    ]
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-1",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect",
+                    "topic": "connect-offsets"
+                },
+                "values": [
+                    [
+                        1640997701.199,
+                        "0"
+                    ],
+                    [
+                        1640997731.199,
+                        "0"
+                    ],
+                    [
+                        1640997761.199,
+                        "0"
+                    ],
+                    [
+                        1640997791.199,
+                        "0"
+                    ],
+                    [
+                        1640997821.199,
+                        "0"
+                    ]
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-2",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect"
+                },
+                "values": [
+                    [
+                        1640997701.199,
+                        "0"
+                    ],
+                    [
+                        1640997731.199,
+                        "0"
+                    ],
+                    [
+                        1640997761.199,
+                        "0"
+                    ],
+                    [
+                        1640997791.199,
+                        "0"
+                    ],
+                    [
+                        1640997821.199,
+                        "0"
+                    ]
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-2",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect",
+                    "topic": "connect-status"
+                },
+                "values": [
+                    [
+                        1640997701.199,
+                        "0"
+                    ],
+                    [
+                        1640997731.199,
+                        "0"
+                    ],
+                    [
+                        1640997761.199,
+                        "0"
+                    ],
+                    [
+                        1640997791.199,
+                        "0"
+                    ],
+                    [
+                        1640997821.199,
+                        "0"
+                    ]
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-3",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect"
+                },
+                "values": [
+                    [
+                        1640997701.199,
+                        "1"
+                    ],
+                    [
+                        1640997731.199,
+                        "1"
+                    ],
+                    [
+                        1640997761.199,
+                        "1"
+                    ],
+                    [
+                        1640997791.199,
+                        "1"
+                    ],
+                    [
+                        1640997821.199,
+                        "1"
+                    ]
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-3",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect",
+                    "topic": "connect-configs"
+                },
+                "values": [
+                    [
+                        1640997701.199,
+                        "1"
+                    ],
+                    [
+                        1640997731.199,
+                        "1"
+                    ],
+                    [
+                        1640997761.199,
+                        "1"
+                    ],
+                    [
+                        1640997791.199,
+                        "1"
+                    ],
+                    [
+                        1640997821.199,
+                        "1"
+                    ]
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-simple-consumer-1",
+                    "env": "dev",
+                    "instance": "consumer-1:1234",
+                    "job": "consumer"
+                },
+                "values": [
+                    [
+                        1640997701.199,
+                        "10"
+                    ],
+                    [
+                        1640997731.199,
+                        "22"
+                    ],
+                    [
+                        1640997761.199,
+                        "34"
+                    ],
+                    [
+                        1640997791.199,
+                        "55"
+                    ],
+                    [
+                        1640997821.199,
+                        "70"
+                    ]
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-simple-consumer-1",
+                    "env": "dev",
+                    "instance": "consumer:1234",
+                    "job": "consumer"
+                },
+                "values": [
+                    [
+                        1640997701.199,
+                        "8"
+                    ],
+                    [
+                        1640997731.199,
+                        "13"
+                    ],
+                    [
+                        1640997761.199,
+                        "15"
+                    ],
+                    [
+                        1640997791.199,
+                        "22"
+                    ],
+                    [
+                        1640997821.199,
+                        "32"
+                    ]
+                ]
+            }
+        ]
+    }
+}
  
   let xAxis = [];
   let yObjects = [];
   let consumerValues = [];
- 
-  useEffect(() => { 
-  fetch(`http://localhost:${props.port}/api/v1/query_range?query=kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total&start=${props.connectionTime}&end=${new Date().toISOString()}&step=200ms`)
-  // fetch('http://localhost:9090/api/v1/query_range?query=kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total&start=2022-01-04T16:59:20.053Z&end=2022-01-05T07:05:56.235Z&step=30s')
-  .then((response) => response.json())  
-  .then((res) => {
-      xAxis = res.data.result[0].values.map(el => {
-            let date = new Date(el[0]*1000);
-            return date.toLocaleTimeString('en-US');
+  
+  //FETCH REQUEST FOR DYNAMIC DATA
+  // fetch(`http://localhost:${props.port}/api/v1/query_range?query=kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total&start=${props.connectionTime}&end=${new Date().toISOString()}&step=30s`)
+  // .then((response) => response.json())  
+  // .then((res) => {
+  //     xAxis = res.data.result[0].values.map(el => {
+  //           let date = new Date(el[0]*1000);
+  //           return date.toLocaleTimeString('en-US');
+  //           });
+
+  //   res.data.result.map(el => {if(el.metric.job === 'consumer') yObjects.push(el.values);});
+  //   for(let i=0; i<yObjects.length; i++){
+  //     let secondary = [];
+	//     yObjects[i].forEach(el => secondary.push(Number(el[1])));
+  //     consumerValues.push(secondary);
+  //     };
+  //   }
+  // )
+  // .catch(err => console.log(err));
+
+  xAxis = obj.data.result[0].values.map(el => {
+        let date = new Date(el[0]*1000);
+        return date.toLocaleTimeString('en-US');
       });
-      // console.log('xAxis',xAxis);
-      // console.log(res.data.result)
 
-      res.data.result.map(el => {
-        if(el.metric.job === 'consumer') yObjects.push(el.values);
-      });
-      
-      // console.log('yObjects', yObjects)
+  obj.data.result.map(el => {if(el.metric.job === 'consumer') yObjects.push(el.values);});
+  
+  for(let i=0; i<yObjects.length; i++){
+          let secondary = [];
+          yObjects[i].forEach(el => secondary.push(Number(el[1])));
+          consumerValues.push(secondary);
+          };
+        
 
-      for(let i=0; i<yObjects.length; i++){
-        let secondary = [];
-        yObjects[i].forEach(el => secondary.push(Number(el[1])));
-        consumerValues.push(secondary);
-      };
-      console.log('consumer values', consumerValues)
-  })
-    .catch(err => console.log(err));
-  },[]);
-
-  // the lines below are executing before the promise above
-
-  const chartData = {
+  const data = {
     labels: [...xAxis],
     datasets: []
   };
- 
+  
   for(let i = 0; i < consumerValues.length; i++){
-    chartData.datasets.push({
+    data.datasets.push({
       label: `${i+1}th dataset`,
       data: consumerValues[i],
       fill: false,
@@ -158,16 +427,14 @@ const ConsumerMakeLineChart = (props) => {
     });
   };
 
-  console.log(chartData)
-
   return (
     <div>
-      <h3 style ={{textAlign: 'center'}}>Records Consumed per Second</h3>
+      <h3 style ={{textAlign: 'center'}}>Fetch Records Consumed Total</h3>
       <div style={{height:"300px", width:"300px"}}>
-          <Chart type='line' data={{ chartData }}/>
+          <Chart type='line' data={ data }/>
       </div>
     </div>
   );
 };
 
-export default connect(mapStateToProps, null)(ConsumerMakeLineChart);
+export default ConsumerMakeLineChart;

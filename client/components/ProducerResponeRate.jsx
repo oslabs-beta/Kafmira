@@ -38,7 +38,7 @@ const mapStateToProps = (state) => {
 const MakeResponseRateGraph = (props) => {
  
 
-// // using setState so that we have a variable to save object to
+// using setState so that we have a variable to save object to
 // const [resRateData, setResRateData] = useState({});
 
 // useEffect(() => {
@@ -58,50 +58,15 @@ const MakeResponseRateGraph = (props) => {
 
 
 
-  const resRateData = {
-    "status": "success",
-    "data": {
-        "resultType": "matrix",
-        "result": [
-            {
-                "metric": {
-                    "__name__": "kafka_producer_producer_metrics_response_rate",
-                    "client_id": "producer-1",
-                    "env": "dev",
-                    "instance": "producer:1234",
-                    "job": "producer"
-                },
-                "values": [
-                    [
-                        1640997701.199,
-                        "9.77008131983853"
-                    ],
-                    [
-                        1640997703.199,
-                        "9.77008131983853"
-                    ],
-                    [
-                        1640997705.199,
-                        "9.77008131983853"
-                    ],
-                    [
-                        1640997707.199,
-                        "9.77008131983853"
-                    ],
-                    [
-                        1640997709.199,
-                        "9.77008131983853"
-                    ],
-                    [
-                        1640997711.199,
-                        "9.77008131983853"
-                    ]
-                ]
-            },
-            {
+const resRateData = {
+  "status": "success",
+  "data": {
+      "resultType": "matrix",
+      "result": [
+          {
               "metric": {
                   "__name__": "kafka_producer_producer_metrics_response_rate",
-                  "client_id": "fucking second producer",
+                  "client_id": "producer-1",
                   "env": "dev",
                   "instance": "producer:1234",
                   "job": "producer"
@@ -109,71 +74,107 @@ const MakeResponseRateGraph = (props) => {
               "values": [
                   [
                       1640997701.199,
-                      "5.2342"
+                      "9.77008131983853"
                   ],
                   [
                       1640997703.199,
-                      "6.132"
+                      "9.77008131983853"
                   ],
                   [
                       1640997705.199,
-                      "7.234"
+                      "9.77008131983853"
                   ],
                   [
                       1640997707.199,
-                      "8.1321"
+                      "9.77008131983853"
                   ],
                   [
                       1640997709.199,
-                      "7.923"
+                      "9.77008131983853"
                   ],
                   [
                       1640997711.199,
-                      "9.2"
+                      "9.77008131983853"
                   ]
               ]
           },
           {
-              "metric": {
-                  "__name__": "kafka_producer_producer_metrics_response_rate",
-                  "client_id": "somes assholes third producer",
-                  "env": "dev",
-                  "instance": "producer:1234",
-                  "job": "producer"
-              },
-              "values": [
-                  [
-                      1640997701.199,
-                      "1"
-                  ],
-                  [
-                      1640997703.199,
-                      "3"
-                  ],
-                  [
-                      1640997705.199,
-                      "1"
-                  ],
-                  [
-                      1640997707.199,
-                      "4"
-                  ],
-                  [
-                      1640997709.199,
-                      "2"
-                  ],
-                  [
-                      1640997711.199,
-                      "5"
-                  ]
-              ]
-          }
-        ]
-    }
+            "metric": {
+                "__name__": "kafka_producer_producer_metrics_response_rate",
+                "client_id": "producer-2",
+                "env": "dev",
+                "instance": "producer:1234",
+                "job": "producer"
+            },
+            "values": [
+                [
+                    1640997701.199,
+                    "5.2342"
+                ],
+                [
+                    1640997703.199,
+                    "6.132"
+                ],
+                [
+                    1640997705.199,
+                    "7.234"
+                ],
+                [
+                    1640997707.199,
+                    "8.1321"
+                ],
+                [
+                    1640997709.199,
+                    "7.923"
+                ],
+                [
+                    1640997711.199,
+                    "9.2"
+                ]
+            ]
+        },
+        {
+            "metric": {
+                "__name__": "kafka_producer_producer_metrics_response_rate",
+                "client_id": "producer-3",
+                "env": "dev",
+                "instance": "producer:1234",
+                "job": "producer"
+            },
+            "values": [
+                [
+                    1640997701.199,
+                    "1"
+                ],
+                [
+                    1640997703.199,
+                    "3"
+                ],
+                [
+                    1640997705.199,
+                    "1"
+                ],
+                [
+                    1640997707.199,
+                    "4"
+                ],
+                [
+                    1640997709.199,
+                    "2"
+                ],
+                [
+                    1640997711.199,
+                    "5"
+                ]
+            ]
+        }
+      ]
   }
 
-  // const [xAxis, setXAxis ] = useState([]);
-  // const [yAxis, setYAxis ] = useState([]);
+  
+}
+// const [xAxis, setXAxis ] = useState([]);
+// const [yAxis, setYAxis ] = useState([]);
   
   const xArray = [];
  

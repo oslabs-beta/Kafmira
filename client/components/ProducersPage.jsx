@@ -7,7 +7,7 @@ import { Box, Grid } from '@material-ui/core';
 
 export default function ProducersPage(){
   return(
-<div style = {{backgroundImage: 'linear-gradient(to top right, #66a6ff, #89f7fe)'}}>
+<div style = {{backgroundImage: 'linear-gradient(to top right, #66a6ff, #89f7fe)'}}>''
 <TopBannerContainerProdPage/>
 <Box >
 {/* <Grid container > */}

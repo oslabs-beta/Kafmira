@@ -332,18 +332,18 @@ const reqTotal = {
       ]
   }
 }
-    const yArray = [];
-    const xArray = [];
-    const producerYStats = [];
-    // fills x array with the timestamps for each piece of data
-    reqTotal.data.result[0].values.forEach(ele => {
-        const humanDate = new Date(ele[0] * 1000)
-        xArray.push(humanDate)
-    });
-    // fills y array with the value of each piece of data
-    reqTotal.data.result[0].values.forEach(ele => {
-        yArray.push(ele[1])
-    })
+const yArray = [];
+const xArray =[];
+  // const producerYStats = [];
+  // fills x array with the timestamps for each piece of data
+  reqTotal.data.result[0].values.forEach(ele => {
+    const humanDate = new Date(ele[0] * 1000)
+    xArray.push(humanDate)
+  });
+  // fills y array with the value of each piece of data
+  reqTotal.data.result[0].values.forEach(ele => {
+    yArray.push(ele[1])
+  })
 
 // const innerFunc = () => {
 //     console.log('Entire Array: ', reqRateData.data.result[0].values);
