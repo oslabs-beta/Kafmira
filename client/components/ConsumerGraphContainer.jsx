@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Grid, Typography } from '@material-ui/core';
 import ConsumerBarDummyData from './ConsumerBarChart.jsx'
-import ConsumerLineDummyData from './ConsumerLineChart.jsx'
+import ConsumerMakeLineChart from './ConsumerLineChart.jsx'
 
 export default function ConsumerGraphContainer(){
   return(
@@ -20,7 +20,7 @@ export default function ConsumerGraphContainer(){
       </Grid>
       <Grid item xs={4}>
         {/* <Box border="1px solid black">Sample Graph Area 2</Box> */}
-        <ConsumerLineDummyData/>
+        <ConsumerMakeLineChart/>
       </Grid>
     </Grid>
     </Box>

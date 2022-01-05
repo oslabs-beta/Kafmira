@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Grid, Typography } from '@material-ui/core';
-import BrokerDummyData from './LineChart.jsx'
-import BrokerBarDummyData from './BarChart.jsx';
+import BrokerLineGraph from './BrokerLineGraph.jsx'
+import BrokerBarChart from './BrokerBarChart.jsx';
 
 
 
@@ -17,10 +17,10 @@ export default function BrokerGraphContainer(){
     alignItems="flex-start"
   >
     <Grid item xs={4}>
-      <BrokerBarDummyData/>
+      <BrokerBarChart />
     </Grid>
     <Grid item xs={4}>
-      <BrokerDummyData />
+      <BrokerLineGraph />
     </Grid>
   </Grid>
 </Box>
