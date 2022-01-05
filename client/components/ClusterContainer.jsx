@@ -87,8 +87,8 @@ function ClusterContainer(props){
           <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh" }}> {shortProducerName}</p>
         </Button>
       )
-    pCount++;
   }
+  pCount++;
 }
 
 
@@ -112,9 +112,10 @@ function ClusterContainer(props){
           <p style={{ color: 'white', textalign: 'center', verticalalign: 'middle', lineheight: '10vh' }}>{shortConsumerName}</p>
         </Button>
       )
-    cCount++;
       }
+      cCount++;
   }
+
   return(
     <Box sx={{ display: 'flex', justifyContent: 'space-between'}} >
     <Grid container spacing={10}>
