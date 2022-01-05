@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 function ClusterContainer(props){
 
-  const [totalBrokerCount, setTotalBrokerCount] = useState([]);
+  const [totalBrokerList, setTotalBrokerList] = useState([]);
   const [totalProducerList, setTotalProducerList] = useState([]);
   const [totalConsumerList, setTotalConsumerList] = useState([]);
 
@@ -32,7 +32,7 @@ function ClusterContainer(props){
     Promise.all([totalBrokers, totalProducers, totalConsumers])
       .then((allData) => {
         //1. set Total Broker Count
-        setTotalBrokerCount(allData[0].data.result.length);
+        setTotalBrokerList(allData[0].data.result);
 
         //2. set Total Producer List
         setTotalProducerList(allData[1].data.result);
@@ -40,20 +40,29 @@ function ClusterContainer(props){
         //3. set Total Consumer List
         setTotalConsumerList(allData[2].data.result);
       })
-
+      console.log(totalConsumerList)
   },[])
 
   const broker = [];
   let bCount = 1;
-  while (bCount <= totalBrokerCount) {
+  let bIndex = 0
+  while (bCount <= totalBrokerList.length) {
+    //Assign the broker name and shorten the string if it's greater than 25 characters
+    let brokerName = totalBrokerList[bIndex].metric.instance
+    let shortBrokerName = brokerName.slice(0, 25)
+    if (shortBrokerName.length < brokerName.length) {
+      shortBrokerName += '...'
+    }
     broker.push( 
       <Button
         variant="contained" 
-        style={{ display: "flex",  width: "25vw", height: "15vh", backgroundColor: "#0857a6", borderRadius: "5%", border: "2px solid black" }}
+        style={{ display: "flex", flexDirection: 'column',  width: "25vw", height: "15vh", backgroundColor: "#0857a6", borderRadius: "5%", border: "2px solid black" }}
       >
-        <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh" }}> Broker {bCount}</p>
+        <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh", fontSize: '12px' }}> Broker {bCount}</p>
+        <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh" }}> {shortBrokerName}</p>
       </Button>)
     bCount++;
+    bIndex++;
   }
 
   // array to store button elements for all producers
@@ -63,33 +72,68 @@ function ClusterContainer(props){
   // count for actual producers in the fetch query
   let producerNum = 0;
   while (pCount < totalProducerList.length) {
-    if (totalProducerList[pCount].metric.job === 'producer')
-      producer.push(
-        <Button
-          variant="contained" 
-          style={{ display: "flex",  width: "10vw", height: "10vh", backgroundColor: "#8d39fa", borderRadius: "50%", border: "2px solid black" }}
-        >
-          <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh" }}> Producer { ++producerNum }</p>
-        </Button>
-      )
+    if (totalProducerList[pCount].metric.job === 'producer') {
+    let producerName = totalProducerList[pCount].metric.client_id
+    let shortProducerName = producerName.slice(0, 15)
+    if (shortProducerName.length < producerName.length) {
+      shortProducerName += '...';
+    }
+    producer.push(
+      <Button
+        variant="contained" 
+        style={{ display: "flex", flexDirection: 'column',  width: "15vw", height: "15vh", backgroundColor: "#8d39fa", borderRadius: "50%", border: "2px solid black" }}
+      >
+        <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh", fontSize: '12px' }}> Prod { ++producerNum }</p>
+        <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh" }}> {shortProducerName}</p>
+      </Button>
+    )
     pCount++;
+    } 
   }
   
+  // const consumer = [];
+  // let cCount = 0;
+  // let consumerNum = 0;
+  // while (cCount < totalConsumerList.length) {
+  //   if (totalConsumerList[cCount].metric.job === 'consumer') {
+  //     consumer.push(
+  //       <Button 
+  //         variant="contained" 
+  //         style={{ display: 'flex', width: '10vw', height: '10vh', backgroundColor: '#089ba6', borderRadius: '50%', border: "2px solid black"}}
+  //       >
+  //         <p style={{ color: 'white', textalign: 'center', verticalalign: 'middle', lineheight: '10vh' }}> Consumer { ++consumerNum }</p>
+  //       </Button>
+  //     )
+  //   // cCount++;
+  //   }
+  //   cCount++;
+  // }
+
   const consumer = [];
   let cCount = 0;
   let consumerNum = 0;
   while (cCount < totalConsumerList.length) {
-    if (totalConsumerList[cCount].metric.job === 'consumer')
+    if (totalConsumerList[cCount].metric.job === 'consumer' && totalConsumerList[cCount].metric.topic === undefined) {
+      //Assign the consumer name and shorten the string if it's greater than 15 characters
+      let consumerName = totalConsumerList[1].metric.client_id
+      let shortConsumerName = consumerName.slice(0, 15)
+      if (shortConsumerName.length < consumerName.length) {
+        shortConsumerName += '...';
+      }
       consumer.push(
         <Button 
           variant="contained" 
-          style={{ display: 'flex', width: '10vw', height: '10vh', backgroundColor: '#089ba6', borderRadius: '50%', border: "2px solid black"}}
+          style={{ display: 'flex', flexDirection: 'column', width: '15vw', height: '15vh', backgroundColor: '#089ba6', borderRadius: '50%', border: "2px solid black"}}
         >
-          <p style={{ color: 'white', textalign: 'center', verticalalign: 'middle', lineheight: '10vh' }}> Consumer { ++consumerNum }</p>
+          <p style={{ color: 'white', textalign: 'center', verticalalign: 'middle', lineheight: '10vh', fontSize: '12px' }}> Consumer { consumerNum + 1 }</p>
+          <p style={{ color: 'white', textalign: 'center', verticalalign: 'middle', lineheight: '10vh' }}>{shortConsumerName}</p>
         </Button>
       )
+    // cCount++;
+    }
     cCount++;
   }
+
   return(
     <Box sx={{ display: 'flex', justifyContent: 'space-between'}} >
     <Grid container spacing={10}>

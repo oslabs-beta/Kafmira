@@ -51,8 +51,10 @@ require("electron-reload")(__dirname, {
   electron: path.join(__dirname, "node_modules", ".bin", "electron"),
 });
 
-//Property to update icon in MacOS dock
-app.dock.setIcon('./logo/KafmiraLogoFin.png');
+if (process.platform === 'darwin') {
+  //Property to update icon in MacOS dock
+  app.dock.setIcon('./logo/KafmiraLogoFin.png');
+}
 
 // whenReady is a method of App, that will wait till the app mounts than it will invoke creatWindow
 app.whenReady().then(createWindow);
