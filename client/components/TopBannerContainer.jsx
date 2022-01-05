@@ -103,6 +103,7 @@ const TopBannerContainer = () => {
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            backgroundColor: '#d9f0f9'
           },
         }}
         variant="persistent"
@@ -116,7 +117,7 @@ const TopBannerContainer = () => {
         </DrawerHeader>
         <Divider />
         <List>
-          {[['Ecosystem Overview', '/dashboard'], ['Producers', '/producers'], ['Consumers', '/consumers'], ['Brokers', '/brokers'], ['New Port(s)', '/']].map(([text, route]) => (
+          {[['Ecosystem Overview', '/dashboard'], ['Producers', '/producers'], ['Consumers', '/consumers'], ['Brokers', '/brokers'], ['Disconnect Cluster', '/']].map(([text, route]) => (
              <Link to={route}>
             <ListItem button key={text} >
               <ListItemText primary={text} />

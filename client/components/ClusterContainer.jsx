@@ -40,7 +40,7 @@ function ClusterContainer(props){
         // //3. set Total Consumer List
         setTotalConsumerList(allData[2].data.result);
       })
-
+      console.log(totalConsumerList)
   },[])
 
   const broker = [];
@@ -79,18 +79,18 @@ function ClusterContainer(props){
     if (shortProducerName.length < producerName.length) {
       shortProducerName += '...';
     }
-      producer.push(
-        <Button
-          variant="contained" 
-          style={{ display: "flex", flexDirection: 'column',  width: "15vw", height: "15vh", backgroundColor: "#8d39fa", borderRadius: "50%", border: "2px solid black" }}
-        >
-          <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh", fontSize: '12px' }}> Prod { ++producerNum }</p>
-          <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh" }}> {shortProducerName}</p>
-        </Button>
-      )
-    pCount++;
-    }
+    producer.push(
+      <Button
+        variant="contained" 
+        style={{ display: "flex", flexDirection: 'column',  width: "15vw", height: "15vh", backgroundColor: "#8d39fa", borderRadius: "50%", border: "2px solid black" }}
+      >
+        <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh", fontSize: '12px' }}> Prod { ++producerNum }</p>
+        <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh" }}> {shortProducerName}</p>
+      </Button>
+    )
   }
+  pCount++;
+}
 
 
   const consumer = [];
@@ -98,12 +98,12 @@ function ClusterContainer(props){
   let consumerNum = 0;
   while (cCount < totalConsumerList.length) {
     if (totalConsumerList[cCount].metric.job === 'consumer' && totalConsumerList[cCount].metric.topic === undefined) {
-    //Assign the consumer name and shorten the string if it's greater than 15 characters
-    let consumerName = totalConsumerList[1].metric.client_id
-    let shortConsumerName = consumerName.slice(0, 15)
-    if (shortConsumerName.length < consumerName.length) {
-      shortConsumerName += '...';
-    }
+      //Assign the consumer name and shorten the string if it's greater than 15 characters
+      let consumerName = totalConsumerList[1].metric.client_id
+      let shortConsumerName = consumerName.slice(0, 15)
+      if (shortConsumerName.length < consumerName.length) {
+        shortConsumerName += '...';
+      }
       consumer.push(
         <Button 
           variant="contained" 
@@ -113,9 +113,10 @@ function ClusterContainer(props){
           <p style={{ color: 'white', textalign: 'center', verticalalign: 'middle', lineheight: '10vh' }}>{shortConsumerName}</p>
         </Button>
       )
+    }
     cCount++;
-      }
   }
+
   return(
     <Box sx={{ display: 'flex', justifyContent: 'space-between'}} >
     <Grid container spacing={10}>
