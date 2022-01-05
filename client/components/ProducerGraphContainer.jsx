@@ -10,8 +10,6 @@ import MakeRequestTotalGraph from './ProducerRequestTotal.jsx';
 export default function ProducerGraphContainer(){
   return(
     <Box sx={{textAlign : 'center'}}>
-    <Typography variant ='h4'>Producer 1</Typography>
-    {/* <div style ={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}> */}
     <Grid
     container
     spacing={4}
