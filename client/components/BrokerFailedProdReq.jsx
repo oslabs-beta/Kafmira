@@ -37,7 +37,7 @@ const mapStateToProps = (state) => {
 
 
 function BrokerFailedProdReq(props) {
-    const data =
+    const BrokerFailedProdReqData =
     {
         "status": "success",
         "data": {
@@ -280,7 +280,80 @@ function BrokerFailedProdReq(props) {
             ]
         }
     }
+
+    const xTimeData = [];
+
+    // fills x array with the timestamps for each piece of data
+    BrokerFailedProdReqData.data.result[0].values.forEach(ele => {
+        const humanReadableDate = new Date(ele[0] * 1000)
+        // console.log(humanReadableDate)
+        xTimeData.push(humanReadableDate)
+    });
+
+    
+    
+    // each ele in the for each loop is an object fo each broker within the result array
+    // define array to push
+    const result = [];
+    const brokerNames = [];
+    const yFetchDataSet = [];
+    const brokerValues = [];
+
+    BrokerFailedProdReqData.data.result.map(ele => {
+        // this will add the instance as the first element in result array
+        brokerNames.push(ele.metric.instance);
+
+        // on each ele object there are two properties
+        // property value on key name values, is an array of arrays
+        // adds all the values to result array
+        brokerValues.push(ele.values)
+
+        // // push result array to the fetch data
+        // // result array of arrays to interate through
+        // yFetchDataSet.push(result);
+    });
+    
+    console.log('broker values', brokerValues)
+
+    for (let i = 0; i < brokerValues.length; i++) {
+        let secondary = [];
+        brokerValues[i].forEach(ele => secondary.push(Number(ele[1])));
+        yFetchDataSet.push(secondary);
+    };
+
+    console.log('x data', xTimeData)
+    // console.log('y data', yFetchDataSet)
+    
+    const chartData = {
+        labels: [...xTimeData],
+        datasets: []
+    }
+
+    console.log('broker names', brokerNames)
+
+    for (let i = 0; i < yFetchDataSet.length ; i++) {
+        chartData.datasets.push({
+            label: brokerNames[i],
+            data: yFetchDataSet[i],
+            fill: false,
+            backgroundColor: 'blue',
+            borderColor: 'black'
+        })
+    }
+
+    console.log('y data', yFetchDataSet)
+
+    // iterate through each array to build out graph
+    return (
+        <div>
+        {/* <h3 style ={{textAlign: 'center'}}>Request Total</h3> */}
+            <div style={{height:"1000px", width:"1000px"}}>
+                <Chart type='line' data={ chartData } />
+            </div>
+        </div>
+    );
 }
+
 
 
 export default BrokerFailedProdReq;

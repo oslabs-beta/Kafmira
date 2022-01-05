@@ -187,15 +187,15 @@ const BrokerTotalFetchReq = (props) => {
                         ],
                         [
                             1640997813.199,
-                            "1056185"
+                            "1156185" // "1056185"
                         ],
                         [
                             1640997821.199,
-                            "1056185"
+                            "1356185" // "1056185"
                         ],
                         [
                             1640997829.199,
-                            "1075447"
+                            "1475447" // "1075447"
                         ]
                     ]
                 },
@@ -282,43 +282,52 @@ const BrokerTotalFetchReq = (props) => {
         }
     }
 
-    const yFetchDataSet = [];
+    
     const xTimeData = [];
 
     // fills x array with the timestamps for each piece of data
     brokerTotalFetchReqData.data.result[0].values.forEach(ele => {
         const humanReadableDate = new Date(ele[0] * 1000)
-        console.log(humanReadableDate)
+        // console.log(humanReadableDate)
         xTimeData.push(humanReadableDate)
     });
 
     
-
+    
     // each ele in the for each loop is an object fo each broker within the result array
     // define array to push
     const result = [];
     const brokerNames = [];
-    brokerTotalFetchReqData.data.result.forEach(ele => {
+    const yFetchDataSet = [];
+    const brokerValues = [];
+
+    brokerTotalFetchReqData.data.result.map(ele => {
         // this will add the instance as the first element in result array
         brokerNames.push(ele.metric.instance);
 
         // on each ele object there are two properties
         // property value on key name values, is an array of arrays
         // adds all the values to result array
-        ele.values.forEach(ele => {
-            result.push(ele[1])
-        })
+        brokerValues.push(ele.values)
 
-        // push result array to the fetch data
-        // result array of arrays to interate through
-        yFetchDataSet.push(result);
+        // // push result array to the fetch data
+        // // result array of arrays to interate through
+        // yFetchDataSet.push(result);
     });
     
-    // console.log('x data', xTimeData)
+    console.log('broker values', brokerValues)
+
+    for (let i = 0; i < brokerValues.length; i++) {
+        let secondary = [];
+        brokerValues[i].forEach(ele => secondary.push(Number(ele[1])));
+        yFetchDataSet.push(secondary);
+    };
+
+    console.log('x data', xTimeData)
     // console.log('y data', yFetchDataSet)
     
     const chartData = {
-        labels: xTimeData,
+        labels: [...xTimeData],
         datasets: []
     }
 

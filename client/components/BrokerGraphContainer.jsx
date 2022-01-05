@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import { Box, Grid, Typography } from '@material-ui/core';
-import BrokerLineGraph from './BrokerLineGraph.jsx'
+// import BrokerLineGraph from './BrokerLineGraph.jsx'
 import BrokerTotalFetchReq from './BrokerTotalFetchReq.jsx'
 import BrokerFailedProdReq from './BrokerFailedProdReq.jsx';
 
-
-
 export default function BrokerGraphContainer(){
   return(
-    <Box sx={{textAlign : 'center'}}>
-      <Typography variant ='h4'>Broker 1</Typography>
+    <Box sx={{ display: 'flex', justifyContent: 'space-between', textAlign : 'center'}}>
       <Grid
       container
       spacing={4}
-      direction="row"
+      direction="column"
       justifyContent="center"
       alignItems="flex-start"
       >
@@ -21,10 +18,10 @@ export default function BrokerGraphContainer(){
           <BrokerTotalFetchReq />
           {/* <BrokerLineGraph /> */}
         </Grid>
-        {/* <Grid item xs={4}>
+        <Grid item xs={4}>
           <BrokerFailedProdReq />
-          <BrokerLineGraph />
-        </Grid> */}
+          {/* <BrokerLineGraph /> */}
+        </Grid>
       </Grid>
     </Box>
   )

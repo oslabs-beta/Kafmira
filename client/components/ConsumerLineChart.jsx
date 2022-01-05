@@ -378,7 +378,8 @@ const ConsumerMakeLineChart = () => {
   let xAxis = [];
   let yObjects = [];
   let consumerValues = [];
-  
+  const consumerNames = [];
+
   //FETCH REQUEST FOR DYNAMIC DATA
   // fetch(`http://localhost:${props.port}/api/v1/query_range?query=kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total&start=${props.connectionTime}&end=${new Date().toISOString()}&step=30s`)
   // .then((response) => response.json())  
@@ -430,7 +431,7 @@ const ConsumerMakeLineChart = () => {
   return (
     <div>
       <h3 style ={{textAlign: 'center'}}>Fetch Records Consumed Total</h3>
-      <div style={{height:"300px", width:"300px"}}>
+      <div style={{height:"1000px", width:"1000px"}}>
           <Chart type='line' data={ data }/>
       </div>
     </div>
