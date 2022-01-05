@@ -44,23 +44,23 @@ const ConsumerMakeLineChart = () => {
                 "values": [
                     [
                         1640997701.199,
-                        "0"
+                        "1"
                     ],
                     [
                         1640997731.199,
-                        "0"
+                        "4"
                     ],
                     [
                         1640997761.199,
-                        "0"
+                        "7"
                     ],
                     [
                         1640997791.199,
-                        "0"
+                        "8"
                     ],
                     [
                         1640997821.199,
-                        "0"
+                        "11"
                     ]
                 ]
             },
@@ -238,23 +238,23 @@ const ConsumerMakeLineChart = () => {
                 "values": [
                     [
                         1640997701.199,
-                        "0"
+                        "10"
                     ],
                     [
                         1640997731.199,
-                        "0"
+                        "22"
                     ],
                     [
                         1640997761.199,
-                        "0"
+                        "34"
                     ],
                     [
                         1640997791.199,
-                        "0"
+                        "55"
                     ],
                     [
                         1640997821.199,
-                        "0"
+                        "70"
                     ]
                 ]
             },
@@ -269,23 +269,23 @@ const ConsumerMakeLineChart = () => {
                 "values": [
                     [
                         1640997701.199,
-                        "0"
+                        "8"
                     ],
                     [
                         1640997731.199,
-                        "0"
+                        "13"
                     ],
                     [
                         1640997761.199,
-                        "0"
+                        "15"
                     ],
                     [
                         1640997791.199,
-                        "0"
+                        "22"
                     ],
                     [
                         1640997821.199,
-                        "0"
+                        "32"
                     ]
                 ]
             }
@@ -297,6 +297,7 @@ const ConsumerMakeLineChart = () => {
   const yObjects = [];
   const consumerValues = [];
   
+  //FETCH REQUEST FOR DYNAMIC DATA
   // fetch(`http://localhost:${props.port}/api/v1/query_range?query=kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total&start=${props.connectionTime}&end=${new Date().toISOString()}&step=30s`)
   // .then((response) => response.json())  
   // .then((res) => {
@@ -346,7 +347,7 @@ const ConsumerMakeLineChart = () => {
 
   return (
     <div>
-      <h3 style ={{textAlign: 'center'}}>Records Consumed per Second</h3>
+      <h3 style ={{textAlign: 'center'}}>Fetch Records Consumed Total</h3>
       <div style={{height:"300px", width:"300px"}}>
           <Chart type='line' data={ data }/>
       </div>
