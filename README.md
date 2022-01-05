@@ -1,4 +1,4 @@
-# Kafmira
+# KafMira
 
 <img src="https://i.imgur.com/aG2ttYV.png" width="500" height="300"></p>
 
