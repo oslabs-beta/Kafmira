@@ -332,8 +332,9 @@ const reqTotal = {
       ]
   }
 }
+const yArray = [];
 const xArray =[];
-  const producerYStats = [];
+  // const producerYStats = [];
   // fills x array with the timestamps for each piece of data
   reqTotal.data.result[0].values.forEach(ele => {
     const humanDate = new Date(ele[0] * 1000)
