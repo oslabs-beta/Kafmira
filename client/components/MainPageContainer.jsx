@@ -6,7 +6,7 @@ import MakeMetrics from './CriticalMetrics.jsx';
 // talk with group about possible style sheet
 const MainPageContainer =() => {
   return (
-    <div style = {{backgroundImage: 'linear-gradient(to bottom left, #66a6ff, #89f7fe)'}}>
+    <div style = {{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', backgroundImage: 'linear-gradient(to bottom left, #66a6ff, #89f7fe)'}}>
       <TopBannerContainer />
       <div style ={{display: 'flex', flexDirection: 'column' , alignItems: 'center'}}>
       <ClusterContainer />
