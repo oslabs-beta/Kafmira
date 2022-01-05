@@ -9,12 +9,8 @@ export default function ProducersPage(){
   return(
 <div style = {{backgroundImage: 'linear-gradient(to top right, #66a6ff, #89f7fe)'}}>''
 <TopBannerContainerProdPage/>
-<Box >
-{/* <Grid container > */}
-  {/* <Grid item xs={3}>
-  <ProducerColumnContainer />  
-  </Grid> */}
-  <Grid item xs={9} >
+<Box style={{display:'flex', flexDirection: 'column', justifyContent: 'center'}}>
+  <Grid item xs={9} style={{display:'flex', flexDirection: 'column', justifyContent: 'center'}}>
   <ProducerGraphContainer />
 </Grid>
 {/*  </Grid> */}
