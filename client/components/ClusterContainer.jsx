@@ -36,8 +36,8 @@ function ClusterContainer(props){
 
         //2. set Total Producer List
         setTotalProducerList(allData[1].data.result);
-
-        //3. set Total Consumer List
+      
+        // //3. set Total Consumer List
         setTotalConsumerList(allData[2].data.result);
       })
       console.log(totalConsumerList)
@@ -73,6 +73,7 @@ function ClusterContainer(props){
   let producerNum = 0;
   while (pCount < totalProducerList.length) {
     if (totalProducerList[pCount].metric.job === 'producer') {
+    //Assign the producer name and shorten the string if it's greater than 15 characters
     let producerName = totalProducerList[pCount].metric.client_id
     let shortProducerName = producerName.slice(0, 15)
     if (shortProducerName.length < producerName.length) {
@@ -87,27 +88,10 @@ function ClusterContainer(props){
         <p style={{ color: "white", textalign: "center", verticalalign: "middle", lineheight: "10vh" }}> {shortProducerName}</p>
       </Button>
     )
-    pCount++;
-    } 
   }
-  
-  // const consumer = [];
-  // let cCount = 0;
-  // let consumerNum = 0;
-  // while (cCount < totalConsumerList.length) {
-  //   if (totalConsumerList[cCount].metric.job === 'consumer') {
-  //     consumer.push(
-  //       <Button 
-  //         variant="contained" 
-  //         style={{ display: 'flex', width: '10vw', height: '10vh', backgroundColor: '#089ba6', borderRadius: '50%', border: "2px solid black"}}
-  //       >
-  //         <p style={{ color: 'white', textalign: 'center', verticalalign: 'middle', lineheight: '10vh' }}> Consumer { ++consumerNum }</p>
-  //       </Button>
-  //     )
-  //   // cCount++;
-  //   }
-  //   cCount++;
-  // }
+  pCount++;
+}
+
 
   const consumer = [];
   let cCount = 0;
@@ -125,11 +109,10 @@ function ClusterContainer(props){
           variant="contained" 
           style={{ display: 'flex', flexDirection: 'column', width: '15vw', height: '15vh', backgroundColor: '#089ba6', borderRadius: '50%', border: "2px solid black"}}
         >
-          <p style={{ color: 'white', textalign: 'center', verticalalign: 'middle', lineheight: '10vh', fontSize: '12px' }}> Consumer { consumerNum + 1 }</p>
+          <p style={{ color: 'white', textalign: 'center', verticalalign: 'middle', lineheight: '10vh', fontSize: '12px' }}> Consumer { ++consumerNum }</p>
           <p style={{ color: 'white', textalign: 'center', verticalalign: 'middle', lineheight: '10vh' }}>{shortConsumerName}</p>
         </Button>
       )
-    // cCount++;
     }
     cCount++;
   }
