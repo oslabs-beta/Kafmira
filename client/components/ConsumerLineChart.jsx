@@ -293,9 +293,9 @@ const ConsumerMakeLineChart = () => {
     }
 }
  
-  const xAxis = [];
-  const yObjects = [];
-  const consumerValues = [];
+  let xAxis = [];
+  let yObjects = [];
+  let consumerValues = [];
   
   //FETCH REQUEST FOR DYNAMIC DATA
   // fetch(`http://localhost:${props.port}/api/v1/query_range?query=kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total&start=${props.connectionTime}&end=${new Date().toISOString()}&step=30s`)

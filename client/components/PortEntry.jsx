@@ -93,21 +93,21 @@ function PortEntry(props){
           style={{marginBottom : "1em" }}
           error={portError}
         />
-        <Box>
-          <Button
+        <Box style={{display: 'flex', justifyContent: 'center'}}>
+          {/* <Button
             type="submit" 
             color="primary" 
             variant="contained" 
             style={{marginRight: "5px"}}
           >
             Add Port
-          </Button>
+          </Button> */}
           <Button
             type="submit" 
             color="primary" 
-            variant="contained" 
+            variant="contained"
           >
-            Start
+            Connect Cluster
           </Button>
         </Box>
       </form>
