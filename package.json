@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron . --no-sandbox .",
     "watch": "webpack --config webpack.config.js --watch",
-    "pack": "electron-builder -mwl"
+    "build": "electron-builder -mwl"
   },
   "nodemonConfig": {
     "ignore": [
@@ -44,8 +44,6 @@
     "concurrently": "^6.4.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
-    "electron": "^16.0.4",
-    "electron-builder": "^22.14.5",
     "electron-devtools-installer": "^3.2.0",
     "electron-is-dev": "^2.0.0",
     "electron-reload": "^2.0.0-alpha.1",
@@ -69,5 +67,57 @@
     "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0"
+  },
+  "devDependencies": {
+    "electron": "^16.0.6",
+    "electron-builder": "^22.14.5"
+  },
+  "build": {
+    "appId": "KafMira",
+    "productName": "KafMira",
+    "copyright": "SSHK Technology Group",
+    "directories": {
+      "app": ".",
+      "output": "dist",
+      "buildResources": "icon"
+    },
+    "files": [
+      "package.json",
+      "**/*",
+      "node_modules",
+      "!README.md",
+      "!.gitignore"
+    ],
+    "dmg": {
+      "background": null,
+      "backgroundColor": "#ffffff",
+      "window": {
+        "width": "400",
+        "height": "300"
+      },
+      "contents": [
+        {
+          "x": 100,
+          "y": 100
+        },
+        {
+          "x": 300,
+          "y": 100,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility"
+    }
   }
 }
