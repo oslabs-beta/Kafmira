@@ -332,17 +332,18 @@ const reqTotal = {
       ]
   }
 }
-const xArray =[];
-  const producerYStats = [];
-  // fills x array with the timestamps for each piece of data
-  reqTotal.data.result[0].values.forEach(ele => {
-    const humanDate = new Date(ele[0] * 1000)
-    xArray.push(humanDate)
-  });
-  // fills y array with the value of each piece of data
-  reqTotal.data.result[0].values.forEach(ele => {
-    yArray.push(ele[1])
-  })
+    const yArray = [];
+    const xArray = [];
+    const producerYStats = [];
+    // fills x array with the timestamps for each piece of data
+    reqTotal.data.result[0].values.forEach(ele => {
+        const humanDate = new Date(ele[0] * 1000)
+        xArray.push(humanDate)
+    });
+    // fills y array with the value of each piece of data
+    reqTotal.data.result[0].values.forEach(ele => {
+        yArray.push(ele[1])
+    })
 
 // const innerFunc = () => {
 //     console.log('Entire Array: ', reqRateData.data.result[0].values);
@@ -356,23 +357,23 @@ const xArray =[];
   return (
     <div>
     <h3 style ={{textAlign: 'center'}}>Request Total</h3>
-    <div style={{height:"1000px", width:"1000px"}}>
-        <Chart type='line' data={ {
-    labels: xArray,
-    datasets: [
-      {
-        label: 'Request Total',
-        data: yArray,
-        backgroundColor: 'rgba(75, 192, 192, 0.6)',
-        borderColor:'rgba(75, 192, 192, 1)',
-        borderWidth: 4
-      }
-    ]
-  }}  
-      />
+        <div style={{height:"1000px", width:"1000px"}}>
+            <Chart type='line' data={ {
+        labels: xArray,
+        datasets: [
+        {
+            label: 'Request Total',
+            data: yArray,
+            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+            borderColor:'rgba(75, 192, 192, 1)',
+            borderWidth: 4
+        }
+        ]
+            }}  
+        />
+        </div>
     </div>
-  </div>
-);
+    );
 }
 
 export default MakeRequestTotalGraph;

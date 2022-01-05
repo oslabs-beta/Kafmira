@@ -38,143 +38,142 @@ const mapStateToProps = (state) => {
 const MakeResponseRateGraph = (props) => {
  
 
-// using setState so that we have a variable to save object to
-const [resRateData, setResRateData] = useState({});
+// // using setState so that we have a variable to save object to
+// const [resRateData, setResRateData] = useState({});
 
-useEffect(() => {
-    // fetch request to prometheus 
-    let responseObj = fetch(`http://localhost:${props.port}/api/v1/query_range?query=kafka_producer_producer_metrics_response_rate&start=&${props.connectionTime}&end=${new Date().toISOString()}&step=2s`
-    ).then((response) => response.json());
+// useEffect(() => {
+//     // fetch request to prometheus 
+//     let responseObj = fetch(`http://localhost:${props.port}/api/v1/query_range?query=kafka_producer_producer_metrics_response_rate&start=&${props.connectionTime}&end=${new Date().toISOString()}&step=2s`
+//     ).then((response) => response.json());
 
-    Promise.all([responseObj])
-        .then((data) => {
-            setResRateData(data[0])
-        })
-
-
-
-
-}, [])
+//     Promise.all([responseObj])
+//         .then((data) => {
+//             setResRateData(data[0])
+//         })
 
 
 
-// const resRateData = {
-//   "status": "success",
-//   "data": {
-//       "resultType": "matrix",
-//       "result": [
-//           {
-//               "metric": {
-//                   "__name__": "kafka_producer_producer_metrics_response_rate",
-//                   "client_id": "producer-1",
-//                   "env": "dev",
-//                   "instance": "producer:1234",
-//                   "job": "producer"
-//               },
-//               "values": [
-//                   [
-//                       1640997701.199,
-//                       "9.77008131983853"
-//                   ],
-//                   [
-//                       1640997703.199,
-//                       "9.77008131983853"
-//                   ],
-//                   [
-//                       1640997705.199,
-//                       "9.77008131983853"
-//                   ],
-//                   [
-//                       1640997707.199,
-//                       "9.77008131983853"
-//                   ],
-//                   [
-//                       1640997709.199,
-//                       "9.77008131983853"
-//                   ],
-//                   [
-//                       1640997711.199,
-//                       "9.77008131983853"
-//                   ]
-//               ]
-//           },
-//           {
-//             "metric": {
-//                 "__name__": "kafka_producer_producer_metrics_response_rate",
-//                 "client_id": "fucking second producer",
-//                 "env": "dev",
-//                 "instance": "producer:1234",
-//                 "job": "producer"
-//             },
-//             "values": [
-//                 [
-//                     1640997701.199,
-//                     "5.2342"
-//                 ],
-//                 [
-//                     1640997703.199,
-//                     "6.132"
-//                 ],
-//                 [
-//                     1640997705.199,
-//                     "7.234"
-//                 ],
-//                 [
-//                     1640997707.199,
-//                     "8.1321"
-//                 ],
-//                 [
-//                     1640997709.199,
-//                     "7.923"
-//                 ],
-//                 [
-//                     1640997711.199,
-//                     "9.2"
-//                 ]
-//             ]
-//         },
-//         {
-//             "metric": {
-//                 "__name__": "kafka_producer_producer_metrics_response_rate",
-//                 "client_id": "somes assholes third producer",
-//                 "env": "dev",
-//                 "instance": "producer:1234",
-//                 "job": "producer"
-//             },
-//             "values": [
-//                 [
-//                     1640997701.199,
-//                     "1"
-//                 ],
-//                 [
-//                     1640997703.199,
-//                     "3"
-//                 ],
-//                 [
-//                     1640997705.199,
-//                     "1"
-//                 ],
-//                 [
-//                     1640997707.199,
-//                     "4"
-//                 ],
-//                 [
-//                     1640997709.199,
-//                     "2"
-//                 ],
-//                 [
-//                     1640997711.199,
-//                     "5"
-//                 ]
-//             ]
-//         }
-//       ]
-//   }
 
-  
-// }
-// const [xAxis, setXAxis ] = useState([]);
-// const [yAxis, setYAxis ] = useState([]);
+// }, [])
+
+
+
+  const resRateData = {
+    "status": "success",
+    "data": {
+        "resultType": "matrix",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "kafka_producer_producer_metrics_response_rate",
+                    "client_id": "producer-1",
+                    "env": "dev",
+                    "instance": "producer:1234",
+                    "job": "producer"
+                },
+                "values": [
+                    [
+                        1640997701.199,
+                        "9.77008131983853"
+                    ],
+                    [
+                        1640997703.199,
+                        "9.77008131983853"
+                    ],
+                    [
+                        1640997705.199,
+                        "9.77008131983853"
+                    ],
+                    [
+                        1640997707.199,
+                        "9.77008131983853"
+                    ],
+                    [
+                        1640997709.199,
+                        "9.77008131983853"
+                    ],
+                    [
+                        1640997711.199,
+                        "9.77008131983853"
+                    ]
+                ]
+            },
+            {
+              "metric": {
+                  "__name__": "kafka_producer_producer_metrics_response_rate",
+                  "client_id": "fucking second producer",
+                  "env": "dev",
+                  "instance": "producer:1234",
+                  "job": "producer"
+              },
+              "values": [
+                  [
+                      1640997701.199,
+                      "5.2342"
+                  ],
+                  [
+                      1640997703.199,
+                      "6.132"
+                  ],
+                  [
+                      1640997705.199,
+                      "7.234"
+                  ],
+                  [
+                      1640997707.199,
+                      "8.1321"
+                  ],
+                  [
+                      1640997709.199,
+                      "7.923"
+                  ],
+                  [
+                      1640997711.199,
+                      "9.2"
+                  ]
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kafka_producer_producer_metrics_response_rate",
+                  "client_id": "somes assholes third producer",
+                  "env": "dev",
+                  "instance": "producer:1234",
+                  "job": "producer"
+              },
+              "values": [
+                  [
+                      1640997701.199,
+                      "1"
+                  ],
+                  [
+                      1640997703.199,
+                      "3"
+                  ],
+                  [
+                      1640997705.199,
+                      "1"
+                  ],
+                  [
+                      1640997707.199,
+                      "4"
+                  ],
+                  [
+                      1640997709.199,
+                      "2"
+                  ],
+                  [
+                      1640997711.199,
+                      "5"
+                  ]
+              ]
+          }
+        ]
+    }
+  }
+
+  // const [xAxis, setXAxis ] = useState([]);
+  // const [yAxis, setYAxis ] = useState([]);
   
   const xArray = [];
  
@@ -201,12 +200,12 @@ useEffect(() => {
     xArray.push(humanDate)
   })
  
-// object to create graph
+  // object to create graph
   const chartData = {
       labels: xArray,
       datasets: []
-    };
-// for loop to iterate through each array to make graph, first element is the name of producer
+  };
+  // for loop to iterate through each array to make graph, first element is the name of producer
     for (let i = 0; i < producerYStats.length ; i++) {
         chartData.datasets.push({
             label:producerYStats[i].shift(),
@@ -220,8 +219,8 @@ useEffect(() => {
 
 
 
-
-return (
+  
+  return (
     <div>
       <h3 style ={{textAlign: 'center'}}>Response Rate per Second</h3>
       <div style={{height:"1000px", width:"1000px"}}>

@@ -17,9 +17,6 @@ export default function BrokerGraphContainer(){
     alignItems="flex-start"
   >
     <Grid item xs={4}>
-      <BrokerBarChart />
-    </Grid>
-    <Grid item xs={4}>
       <BrokerLineGraph />
     </Grid>
   </Grid>
