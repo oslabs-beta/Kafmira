@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    port: state.mainReducer.port
+    port: state.mainReducer.port,
   };
 };
 

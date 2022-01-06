@@ -70,7 +70,7 @@ const CriticalMetrics = (props) => {
         controllerName = ele.metric.instance
       }
     })
-    // modifies color of Active Controller metrics if value is not 1
+    
     if (value1 !== 1) {
       controllerColor = 'red'
     }
