@@ -32,7 +32,7 @@
 <br>
 <p align="center">Upon successful connection, critical information about your ecosystem, producers, consumers, and brokers becomes available </p>
 <p align="center">
-<img src="https://i.imgur.com/QKIJtLw.gif" alt="Cluster Overview">
+<img src="https://i.imgur.com/entQMmw.gif" alt="Cluster Overview">
 </p> 
 <br>
 
