@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 
 
 
-const MakeMetrics = (props) => {
+const CriticalMetrics = (props) => {
 
   
   const metric1 = 'Active Controller(s)'
@@ -109,10 +109,10 @@ const MakeMetrics = (props) => {
             { metric1 }
           </Typography>
           <Divider/>
-          <Typography sx={{fontSize:14 }}>
+          <Typography style={{display:'flex', flexDirection: 'row', justifyContent: 'center'}} sx={{fontSize:14 }}>
             { controllerName }
           </Typography>
-          <Typography>
+          <Typography style={{display:'flex', flexDirection: 'row', justifyContent: 'center'}} >
             { value1 }
           </Typography>
         </CardContent>
@@ -124,7 +124,7 @@ const MakeMetrics = (props) => {
             { metric2 }
           </Typography>
           <Divider/>
-          <Typography sx={{fontSize:14}}>
+          <Typography style={{display:'flex', flexDirection: 'row', justifyContent: 'center'}} sx={{fontSize:14}}>
             { value2 }
           </Typography>
         </CardContent>
@@ -136,7 +136,7 @@ const MakeMetrics = (props) => {
             { metric3 }
           </Typography>
           <Divider/>
-          <Typography sx={{fontSize:14}}>
+          <Typography style={{display:'flex', flexDirection: 'row', justifyContent: 'center'}} sx={{fontSize:14}}>
             { value3 }
           </Typography>
         </CardContent>
@@ -145,5 +145,5 @@ const MakeMetrics = (props) => {
   </Box>    
   )
 }
-export default connect(mapStateToProps, null)(MakeMetrics);
+export default connect(mapStateToProps, null)(CriticalMetrics);
 // export default MakeMetrics;
