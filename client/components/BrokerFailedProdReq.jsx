@@ -287,7 +287,7 @@ function BrokerFailedProdReq(props) {
     BrokerFailedProdReqData.data.result[0].values.forEach(ele => {
         const humanReadableDate = new Date(ele[0] * 1000)
         // console.log(humanReadableDate)
-        xTimeData.push(humanReadableDate)
+        xTimeData.push(humanReadableDate.toLocaleString('en-US'))
     });
 
     

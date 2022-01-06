@@ -48,7 +48,7 @@ const MakeRequestRateGraph = (props) => {
 //             setReqRateData(data[0])
 //         })
 
-//   }, [])
+//   }, []) 
   const reqRateData = {
     "status": "success",
     "data": {
@@ -334,17 +334,17 @@ const MakeRequestRateGraph = (props) => {
 }
 
 
-  const xArray =[];
-  const yArray = [];
-  // fills x array with the timestamps for each piece of data
-  reqRateData.data.result[0].values.forEach(ele => {
-    const humanDate = new Date(ele[0] * 1000)
-    xArray.push(humanDate)
-  });
-  // fills y array with the value of each piece of data
-  reqRateData.data.result[0].values.forEach(ele => {
-    yArray.push(ele[1])
-  })
+//   const xArray =[];
+//   const yArray = [];
+//   // fills x array with the timestamps for each piece of data
+//   reqRateData.data.result[0].values.forEach(ele => {
+//     const humanDate = new Date(ele[0] * 1000)
+//     xArray.push(humanDate)
+//   });
+//   // fills y array with the value of each piece of data
+//   reqRateData.data.result[0].values.forEach(ele => {
+//     yArray.push(ele[1])
+//   })
 
 // const innerFunc = () => {
 //     console.log('Entire Array: ', reqRateData.data.result[0].values);
@@ -355,26 +355,77 @@ const MakeRequestRateGraph = (props) => {
  
   
 
-  return (
-    <div>
-    <h3 style ={{textAlign: 'center'}}>Response Rate per Second</h3>
-    <div style={{height:"1000px", width:"1000px"}}>
-        <Chart type='line' data={ {
-    labels: xArray,
-    datasets: [
-      {
-        label: 'Request Rate per Second',
-        data: yArray,
-        backgroundColor: 'rgba(75, 192, 192, 0.6)',
-        borderColor:'rgba(75, 192, 192, 1)',
-        borderWidth: 4
-      }
-    ]
-  }}  
-      />
-    </div>
-  </div>
-);
+//   return (
+//     <div>
+//         <h3 style ={{textAlign: 'center'}}>Request Rate per Second</h3>
+//         <div style={{height:"1000px", width:"1000px"}}>
+//             <Chart type='line' data={{
+//                 labels: xArray,
+//                 datasets: [
+//                     {
+//                         label: `${reqRateData.data.result[0].client_id}Request Rate per Second`,
+//                         data: yArray,
+//                         backgroundColor: 'rgba(75, 192, 192, 0.6)',
+//                         borderColor:'rgba(75, 192, 192, 1)',
+//                         borderWidth: 4
+//                     }
+//                 ]
+//             }} />
+//         </div>
+//         </div>
+//     );
+
+const xArray = [];
+ 
+/*   iterate through results array and create arrays of data from each producer
+*/
+    const producerYStats = []
+
+    reqRateData.data.result.forEach(ele =>{
+        const result = [];
+        // this will add client_id as the first element in result array
+        result.push(ele.metric.client_id);
+        // adds all the values to result array
+        ele.values.forEach(ele => {
+            result.push(ele[1])
+        })
+        // push result array to producerYStats
+        producerYStats.push(result);
+    })
+
+
+  // push method to build x axis (times) will be the same for all data from query
+  reqRateData.data.result[0].values.forEach(ele => {
+    const humanDate = new Date(ele[0] * 1000)
+    xArray.push(humanDate.toLocaleString('en-US'))
+  })
+ 
+  // object to create graph
+  const chartData = {
+      labels: xArray,
+      datasets: []
+  };
+  // for loop to iterate through each array to make graph, first element is the name of producer
+    for (let i = 0; i < producerYStats.length ; i++) {
+        chartData.datasets.push({
+            label:producerYStats[i].shift(),
+            data: producerYStats[i],
+            fill: false,
+            backgroundColor: 'blue',
+            borderColor: 'black'
+        })
+
+    }
+  
+    return (
+        <div>
+            <h3 style ={{textAlign: 'center'}}>Message Request Rate per Second</h3>
+            <div style={{height:"1000px", width:"1000px"}}>
+                <Chart type='line' data={ chartData } />
+            </div>
+        </div>
+    );
+
 }
 
 export default MakeRequestRateGraph;

@@ -399,34 +399,37 @@ const ConsumerMakeLineChart = () => {
   // )
   // .catch(err => console.log(err));
 
-  xAxis = obj.data.result[0].values.map(el => {
+    xAxis = obj.data.result[0].values.map(el => {
         let date = new Date(el[0]*1000);
-        return date.toLocaleTimeString('en-US');
-      });
+        return date.toLocaleString('en-US');
+    });
 
-  obj.data.result.map(el => {if(el.metric.job === 'consumer') yObjects.push(el.values);});
+    obj.data.result.map(el => {
+        if(el.metric.job === 'consumer') 
+        yObjects.push(el.values);
+    });
   
-  for(let i=0; i<yObjects.length; i++){
-          let secondary = [];
-          yObjects[i].forEach(el => secondary.push(Number(el[1])));
-          consumerValues.push(secondary);
-          };
+    for(let i=0; i<yObjects.length; i++){
+        let secondary = [];
+        yObjects[i].forEach(el => secondary.push(Number(el[1])));
+        consumerValues.push(secondary);
+    };
         
 
-  const data = {
-    labels: [...xAxis],
-    datasets: []
-  };
+    const data = {
+        labels: [...xAxis],
+        datasets: []
+    };
   
-  for(let i = 0; i < consumerValues.length; i++){
-    data.datasets.push({
-      label: `${i+1}th dataset`,
-      data: consumerValues[i],
-      fill: false,
-      backgroundColor: "blue",
-      borderColor: "black"
-    });
-  };
+    for(let i = 0; i < consumerValues.length; i++){
+        data.datasets.push({
+            label: `${i+1}th dataset`,
+            data: consumerValues[i],
+            fill: false,
+            backgroundColor: "blue",
+            borderColor: "black"
+        });
+    };
 
   return (
     <div>
