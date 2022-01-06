@@ -45,10 +45,10 @@
 
 ## The KafMira Development Team
 
-[Robert Koulakes](https://github.com/Gibran-Haq)
+[Robert Koulakes](https://github.com/RobertKoulakes)
 | [Nicholaos Sofocleous](https://github.com/nsofocleous)
 | [Nicholas Suzuki](https://github.com/nicholassuzuki)
-| [Gibran Haq](https://github.com/RobertKoulakes)
+| [Gibran Haq](https://github.com/Gibran-Haq)
 
 Please visit our website here for more information and installation.
 
