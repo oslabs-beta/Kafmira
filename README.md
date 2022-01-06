@@ -52,7 +52,7 @@
 
 <h3> Our thanks... </h3>
   
-  <p>Please feel free to fork, clone, and contribute and help KafMira grow! Remember to leave a star if you'd like to support our work!</P>
+  <p>Please feel free to fork, clone, to contribute and help KafMira grow! Remember to leave a star if you'd like to support our work!</P>
   <p> - the KafMira Team </p>
   
 
