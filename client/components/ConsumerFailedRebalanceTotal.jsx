@@ -189,7 +189,8 @@ const ConsumerFailedRebalanceTotal = () => {
     xAxis = obj.data.result[0].values.map(el => {
         let date = new Date(el[0]*1000);
         console.log(el[0]);
-        return date.toLocaleString('en-US');
+        return date.toLocaleDateString('en-US');
+        // return date.toLocaleString('en-US');
     });
 
     obj.data.result.map(el => {
