@@ -5,6 +5,7 @@ import ConsumerColumnContainer from './ConsumersColumnContainer.jsx';
 import { Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@mui/styles';
 import ConsumerMakeLineChart from './ConsumerLineChart.jsx'
+import ConsumerFailedRebalanceTotal from './ConsumerFailedRebalanceTotal.jsx'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,10 +44,13 @@ export default function ConsumersPage() {
 
       <TopBannerContainerConsPage/>
         <Box >
-        <Grid container spacing={0} className={classes.graph}>
+        <Grid container spacing={2} className={classes.graph}>
           <Grid item className={classes.paper}>
             <ConsumerMakeLineChart />
           </Grid>
+          <Grid item className={classes.paper}>
+            <ConsumerFailedRebalanceTotal />
+          </Grid>         
         </Grid>
       </Box>
         
