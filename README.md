@@ -33,7 +33,7 @@
 2. To allow **Consumer** and **Producer** metrics to display properly, please ensure that your prometheus.yml targets are setup using the following parameters:
       - **Producers** to be monitored are labeled with job_name : 'producer'
       - **Consumers** to be monitored are labeled with job_name : 'consumer'
-3. To download our desktop application, navigate to our website and download the appropriate file for your OS.
+3. To download our desktop application, navigate to our [website](http://kafmira.io/) and download the appropriate file for your OS.
       - If you are using the desktop application, you may need to configure your privacy or security settings to allow the application to open without being             verified
       - Alternatively, you can also clone the repository directly from GitHub and run these commands in your terminal:
             - npm install
@@ -50,7 +50,7 @@
 | [Nicholas Suzuki](https://github.com/nicholassuzuki)
 | [Gibran Haq](https://github.com/Gibran-Haq)
 
-Please visit our website here for more information and installation.
+Please visit our [website](http://kafmira.io/) for more information and installation options.
 
 <h3> Our thanks... </h3>
   
