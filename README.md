@@ -9,7 +9,47 @@
   <img src="https://img.shields.io/github/stars/oslabs-beta/Kafmira?logoColor=%2334495e&style=social"> 
 </p>
 
-Setup Notes for Proper Kafka Cluster Visualization
-  - When setting up your Prometheus targets, please ensure the following parameters are met:
-    - Desired producers are labled with job_name 'producers'
-    - Desired consumers are labled with job_name 'consumers'
+## Table of Contents
+
+* [Key Features](#key-features)
+* [Walkthrough](#walkthrough)
+* [Setup](#setup)
+* [The Development Team](#sshk-technology-group)
+
+## Key Features
+
+- Intuitive Kafka ecosystem overview
+- Critical cluster health and network metrics - with <strong>alerts</strong> for critical failures
+- Graphical display of performance metrics for Brokers, Producers, and Consumers
+
+## Walkthrough
+
+
+
+
+## Setup
+
+1. KafMira requires an Apache Kafka Instance connected to Prometheus, via a JMX Exporter
+2. To allow Consumer and Producer metrics to display properly please ensure that your prometheus.yml targets are setup using the following parameters:
+      - Producers to be monitored are labeled with job_name : 'producer'
+      - Consumers to be monitored are labeled with job_name : 'consumer'
+3. To download our desktop application, navigate to our website and download the appropriate file for your OS.
+      - If you are using the desktop application, you may need to configure your privacy or security settings to allow the application to open without being             verified.)
+      - Alternatively, you can also clone the repository directly from GitHub and run these commands in your terminal:
+            - npm install
+            - npm run watch
+            - npm run start
+4. Enter your Prometheus port number for KafMira to verify the port connection
+5. Navigate through the various display
+6. Should you wish to disconnect or enter another port, use the 'Disconnect' option
+
+## SSHK Technology Group
+
+ [Gibran Haq](https://www.linkedin.com/in/gibran-haq/)
+| [Robert Koulakes](https://www.linkedin.com/in/robert-koulakes/)
+| [Nicholaos Sofocleous](https://www.linkedin.com/in/nicholaos-sofocleous/)
+| [Nicholas Suzuki](https://www.linkedin.com/in/nicholas-j-suzuki/)
+
+
+<h2> Our thanks... <h2>
+Please feel free to fork, clone, and  kindly leave a [![GitHub stars](https://img.shields.io/github/stars/oslabs-beta/monokl?style=social&label=Star&)](https://github.com/oslabs-beta/monokl/stargazers) if you'd like to support our work!
