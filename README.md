@@ -27,12 +27,12 @@
 <br>
 <p align="center">Enter the Prometheus port where your Kafka Instance is located</p>
 <p align="center">
-<img src="https://i.imgur.com/0otwaFE.mp4" alt="Enter Ports">
+<img src="https://i.imgur.com/0otwaFE.gif" alt="Enter Ports">
 </p>
 <br>
 <p align="center">Upon successful connection, critical information about your ecosystem, producers, consumers, and brokers becomes available </p>
 <p align="center">
-  <img src="https://i.imgur.com/QKIJtLw.mp4" alt="Cluster Overview">
+<img src="https://i.imgur.com/QKIJtLw.gif" alt="Cluster Overview">
 </p> 
 <br>
 
