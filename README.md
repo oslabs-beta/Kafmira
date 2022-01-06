@@ -40,16 +40,15 @@
             - npm run watch
             - npm run start
 4. Enter your Prometheus port number for KafMira to verify the port connection
-5. Navigate through the various display
+5. Navigate through the various displays
 6. Should you wish to disconnect or enter another port, use the 'Disconnect' option
 
 ## The KafMira Development Team
 
- [Gibran Haq](https://www.linkedin.com/in/gibran-haq/)
-| [Robert Koulakes](https://www.linkedin.com/in/robert-koulakes/)
-| [Nicholaos Sofocleous](https://www.linkedin.com/in/nicholaos-sofocleous/)
-| [Nicholas Suzuki](https://www.linkedin.com/in/nicholas-j-suzuki/)
-
+[Robert Koulakes](https://github.com/Gibran-Haq)
+| [Nicholaos Sofocleous](https://github.com/nsofocleous)
+| [Nicholas Suzuki](https://github.com/nicholassuzuki)
+| [Gibran Haq](https://github.com/RobertKoulakes)
 
 <h3> Our thanks... </h3>
   
