@@ -93,7 +93,7 @@ const TopBannerContainer = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center', marginRight: '5.5vw' }}>
+          <Typography variant="h6" component="div" sx={{ display: 'flex', flexGrow: 1, justifyContent: 'flex-start' }}>
             Ecosystem Overview
           </Typography>
         </Toolbar>

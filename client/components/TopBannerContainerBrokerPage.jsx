@@ -104,6 +104,7 @@ const TopBannerContainerBrokerPage = () => {
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            backgroundColor: '#d9f0f9'
           },
         }}
         variant="persistent"

@@ -406,14 +406,28 @@ const xArray = [];
       labels: xArray,
       datasets: []
   };
+
+    //  auto color generation
+    function randomColorGenerator() {
+        const r = Math.ceil(Math.random() * 255);
+        const g = Math.ceil(Math.random() * 255);
+        const b = Math.ceil(Math.random() * 255);
+        // const a = Math.floor(Math.random() * 1);
+
+        const randomColors = [];
+        console.log(`rgba(${r},${g},${b},1)`)
+        randomColors.push(`rgba(${r},${g},${b},1)`)
+        return randomColors
+    }
+
   // for loop to iterate through each array to make graph, first element is the name of producer
     for (let i = 0; i < producerYStats.length ; i++) {
         chartData.datasets.push({
             label:producerYStats[i].shift(),
             data: producerYStats[i],
             fill: false,
-            backgroundColor: 'blue',
-            borderColor: 'black'
+            // backgroundColor: 'blue',
+            borderColor: randomColorGenerator()
         })
 
     }
