@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from "react";
 // import { Line } from "react-chartjs-2";
 import { connect } from 'react-redux';
+import { Typography, Paper } from "@mui/material";
 // import {CategoryScale, Chart} from 'chart.js'; 
 // Chart.register(CategoryScale) 
 import {
@@ -36,7 +37,7 @@ const mapStateToProps = (state) => {
 
 
 
-function BrokerFailedProdReq(props) {
+function BrokerFailedProdReqRate(props) {
     const BrokerFailedProdReqData =
     {
         "status": "success",
@@ -287,7 +288,7 @@ function BrokerFailedProdReq(props) {
     BrokerFailedProdReqData.data.result[0].values.forEach(ele => {
         const humanReadableDate = new Date(ele[0] * 1000)
         // console.log(humanReadableDate)
-        xTimeData.push(humanReadableDate)
+        xTimeData.push(humanReadableDate.toLocaleString('en-US'))
     });
 
     
@@ -331,13 +332,27 @@ function BrokerFailedProdReq(props) {
 
     console.log('broker names', brokerNames)
 
+
+    //  auto color generation
+    function randomColorGenerator() {
+        const r = Math.ceil(Math.random() * 255);
+        const g = Math.ceil(Math.random() * 255);
+        const b = Math.ceil(Math.random() * 255);
+        // const a = Math.floor(Math.random() * 1);
+
+        const randomColors = [];
+        console.log(`rgba(${r},${g},${b},1)`)
+        randomColors.push(`rgba(${r},${g},${b},1)`)
+        return randomColors
+    }
+
     for (let i = 0; i < yFetchDataSet.length ; i++) {
         chartData.datasets.push({
             label: brokerNames[i],
             data: yFetchDataSet[i],
             fill: false,
-            backgroundColor: 'blue',
-            borderColor: 'black'
+            // backgroundColor: 'blue',
+            borderColor: randomColorGenerator()
         })
     }
 
@@ -345,15 +360,25 @@ function BrokerFailedProdReq(props) {
 
     // iterate through each array to build out graph
     return (
+        // <div>
+        // <h3 style ={{textAlign: 'center'}}>Request Total</h3>
+        //     <div style={{height:"1000px", width:"1000px"}}>
+        //         <Chart type='line' data={ chartData } />
+        //     </div>
+        // </div>
         <div>
-        {/* <h3 style ={{textAlign: 'center'}}>Request Total</h3> */}
-            <div style={{height:"1000px", width:"1000px"}}>
+            <Typography 
+                variant='h5'
+                style ={{textAlign: 'center'}}
+            >
+                Failed Producer Requests</Typography>
+            <Paper style={{height:"500px", width:"1000px"}}>
                 <Chart type='line' data={ chartData } />
-            </div>
+            </Paper>
         </div>
     );
 }
 
 
 
-export default BrokerFailedProdReq;
+export default BrokerFailedProdReqRate;

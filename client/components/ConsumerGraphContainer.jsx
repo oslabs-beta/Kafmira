@@ -8,11 +8,11 @@ export default function ConsumerGraphContainer(){
     <Box sx={{display: 'flex', justifyContent: 'space-between', textAlign : 'center'}}>
     {/* <Typography variant ='h4'>Consumer 1</Typography> */}
     <Grid
-    container
-    spacing={4}
-    direction="column"
-    justifyContent="center"
-    alignItems="flex-start"
+      container
+      spacing={4}
+      direction="column"
+      justifyContent="center"
+      alignItems="flex-start"
     >
       {/* <Grid item xs={4}>
         <Box border="1px solid black">Sample Graph Area 1</Box>

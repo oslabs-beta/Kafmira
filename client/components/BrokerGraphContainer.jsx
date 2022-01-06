@@ -6,23 +6,23 @@ import BrokerFailedProdReq from './BrokerFailedProdReq.jsx';
 
 export default function BrokerGraphContainer(){
   return(
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', textAlign : 'center'}}>
-      <Grid
-      container
-      spacing={4}
-      direction="column"
-      justifyContent="center"
-      alignItems="flex-start"
-      >
-        <Grid item xs={4}>
+    // <Box sx={{ display: 'flex', justifyContent: 'center', textAlign : 'center'}}>
+      // <Grid
+      //   container
+      //   spacing={2}
+      //   direction="column"
+      //   justifyContent="flex-start"
+      //   alignItems="center"
+      // >
+      <React.Fragment>
+        <Grid container item xs={2}>
           <BrokerTotalFetchReq />
-          {/* <BrokerLineGraph /> */}
         </Grid>
-        <Grid item xs={4}>
+        <Grid container item xs={2}>
           <BrokerFailedProdReq />
-          {/* <BrokerLineGraph /> */}
         </Grid>
-      </Grid>
-    </Box>
+      </React.Fragment>
+      // </Grid>
+    // </Box>
   )
 }

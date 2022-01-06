@@ -14,6 +14,7 @@ import {
   Legend,
 } from 'chart.js'
 import { Chart } from 'react-chartjs-2'
+import { Paper, Grid, Typography } from "@material-ui/core";
   
 ChartJS.register(
   CategoryScale,
@@ -34,7 +35,7 @@ const mapStateToProps = (state) => {
     };
 };
 
-const BrokerTotalFetchReq = (props) => {
+const BrokerTotalFetchReqRate = (props) => {
 
     const brokerTotalFetchReqData = {
         "status": "success",
@@ -191,11 +192,11 @@ const BrokerTotalFetchReq = (props) => {
                         ],
                         [
                             1640997821.199,
-                            "1356185" // "1056185"
+                            "1256185" // "1056185"
                         ],
                         [
                             1640997829.199,
-                            "1475447" // "1075447"
+                            "1275447" // "1075447"
                         ]
                     ]
                 },
@@ -289,14 +290,13 @@ const BrokerTotalFetchReq = (props) => {
     brokerTotalFetchReqData.data.result[0].values.forEach(ele => {
         const humanReadableDate = new Date(ele[0] * 1000)
         // console.log(humanReadableDate)
-        xTimeData.push(humanReadableDate)
+        xTimeData.push(humanReadableDate.toLocaleString('en-US'))
     });
 
     
     
     // each ele in the for each loop is an object fo each broker within the result array
     // define array to push
-    const result = [];
     const brokerNames = [];
     const yFetchDataSet = [];
     const brokerValues = [];
@@ -315,7 +315,7 @@ const BrokerTotalFetchReq = (props) => {
         // yFetchDataSet.push(result);
     });
     
-    console.log('broker values', brokerValues)
+    // console.log('broker values', brokerValues)
 
     for (let i = 0; i < brokerValues.length; i++) {
         let secondary = [];
@@ -323,7 +323,7 @@ const BrokerTotalFetchReq = (props) => {
         yFetchDataSet.push(secondary);
     };
 
-    console.log('x data', xTimeData)
+    // console.log('x data', xTimeData)
     // console.log('y data', yFetchDataSet)
     
     const chartData = {
@@ -331,29 +331,48 @@ const BrokerTotalFetchReq = (props) => {
         datasets: []
     }
 
-    console.log('broker names', brokerNames)
+    // console.log('broker names', brokerNames)
+
+
+    
+    //  auto color generation
+    function randomColorGenerator() {
+        const r = Math.ceil(Math.random() * 255);
+        const g = Math.ceil(Math.random() * 255);
+        const b = Math.ceil(Math.random() * 255);
+        // const a = Math.floor(Math.random() * 1);
+
+        const randomColors = [];
+        console.log(`rgba(${r},${g},${b},1)`)
+        randomColors.push(`rgba(${r},${g},${b},1)`)
+        return randomColors
+    }
 
     for (let i = 0; i < yFetchDataSet.length ; i++) {
         chartData.datasets.push({
             label: brokerNames[i],
             data: yFetchDataSet[i],
             fill: false,
-            backgroundColor: 'blue',
-            borderColor: 'black'
+            // backgroundColor: 'blue', 
+            borderColor: randomColorGenerator()
         })
     }
 
-    console.log('y data', yFetchDataSet)
+    // console.log('y data', yFetchDataSet)
 
-    // iterate through each array to build out graph
     return (
         <div>
-        {/* <h3 style ={{textAlign: 'center'}}>Request Total</h3> */}
-            <div style={{height:"1000px", width:"1000px"}}>
+            <Typography 
+                variant='h5'
+                style ={{textAlign: 'center'}}
+            >
+                Total Fetch Requests
+            </Typography>
+            <Paper style={{height:"500px", width:"1000px"}}>
                 <Chart type='line' data={ chartData } />
-            </div>
+            </Paper>
         </div>
     );
 }
 
-export default BrokerTotalFetchReq;
+export default BrokerTotalFetchReqRate;

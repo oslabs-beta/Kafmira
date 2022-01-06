@@ -76,8 +76,9 @@ const TopBannerContainerProdPage = () => {
     setOpen(false);
   };
 
+  // sx={{ flexGrow: 1 }}
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box >
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -90,7 +91,7 @@ const TopBannerContainerProdPage = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center'}}>
+          <Typography variant="h6" component="div" sx={{ display: 'flex', flexGrow: 1, justifyContent: 'flex-start'}}>
             Producers Overview
           </Typography>
         </Toolbar>

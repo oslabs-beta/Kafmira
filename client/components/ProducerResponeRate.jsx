@@ -14,6 +14,7 @@ import {
   Legend,
   } from 'chart.js'
   import { Chart } from 'react-chartjs-2'
+  import { Paper, Grid, Typography } from "@material-ui/core";
   
   ChartJS.register(
   CategoryScale,
@@ -72,102 +73,272 @@ const resRateData = {
                   "job": "producer"
               },
               "values": [
-                  [
-                      1640997701.199,
-                      "9.77008131983853"
-                  ],
-                  [
-                      1640997703.199,
-                      "9.77008131983853"
-                  ],
-                  [
-                      1640997705.199,
-                      "9.77008131983853"
-                  ],
-                  [
-                      1640997707.199,
-                      "9.77008131983853"
-                  ],
-                  [
-                      1640997709.199,
-                      "9.77008131983853"
-                  ],
-                  [
-                      1640997711.199,
-                      "9.77008131983853"
-                  ]
-              ]
+                    [
+                        1640997701.199,
+                        "9.77008131983853"
+                    ],
+                    [
+                        1640997703.199,
+                        "9.77008131983853"
+                    ],
+                    [
+                        1640997705.199,
+                        "9.77008131983853"
+                    ],
+                    [
+                        1640997707.199,
+                        "9.77008131983853"
+                    ],
+                    [
+                        1640997709.199,
+                        "9.77008131983853"
+                    ],
+                    [
+                        1640997711.199,
+                        "9.77008131983853"
+                    ],
+                    [
+                        1640997713.199,
+                        "9.799735691775947"
+                    ],
+                    [
+                        1640997715.199,
+                        "9.799735691775947"
+                    ],
+                    [
+                        1640997717.199,
+                        "9.799735691775947"
+                    ],
+                    [
+                        1640997719.199,
+                        "9.799735691775947"
+                    ],
+                    [
+                        1640997721.199,
+                        "9.799735691775947"
+                    ],
+                    [
+                        1640997723.199,
+                        "9.799735691775947"
+                    ],
+                    [
+                        1640997725.199,
+                        "9.799735691775947"
+                    ],
+                    [
+                        1640997727.199,
+                        "9.799735691775947"
+                    ],
+                    [
+                        1640997729.199,
+                        "9.84471139759742"
+                    ],
+                    [
+                        1640997731.199,
+                        "9.84471139759742"
+                    ],
+                    [
+                        1640997733.199,
+                        "9.84471139759742"
+                    ],
+                    [
+                        1640997735.199,
+                        "9.84471139759742"
+                    ],
+                    [
+                        1640997737.199,
+                        "9.84471139759742"
+                    ],
+                    [
+                        1640997739.199,
+                        "9.84471139759742"
+                    ],
+                    [
+                        1640997741.199,
+                        "9.84471139759742"
+                    ],
+                    [
+                        1640997743.199,
+                        "9.872371608280579"
+                    ],
+                    [
+                        1640997745.199,
+                        "9.872371608280579"
+                    ],
+                    [
+                        1640997747.199,
+                        "9.872371608280579"
+                    ],
+                    [
+                        1640997749.199,
+                        "9.872371608280579"
+                    ],
+                    [
+                        1640997751.199,
+                        "9.872371608280579"
+                    ],
+                    [
+                        1640997753.199,
+                        "9.872371608280579"
+                    ],
+                    [
+                        1640997755.199,
+                        "9.872371608280579"
+                    ],
+                    [
+                        1640997757.199,
+                        "9.872371608280579"
+                    ],
+                    [
+                        1640997759.199,
+                        "9.906503707611595"
+                    ],
+                    [
+                        1640997761.199,
+                        "9.906503707611595"
+                    ],
+                    [
+                        1640997763.199,
+                        "9.906503707611595"
+                    ],
+                    [
+                        1640997765.199,
+                        "9.906503707611595"
+                    ],
+                    [
+                        1640997767.199,
+                        "9.906503707611595"
+                    ],
+                    [
+                        1640997769.199,
+                        "9.906503707611595"
+                    ],
+                    [
+                        1640997771.199,
+                        "9.906503707611595"
+                    ],
+                    [
+                        1640997773.199,
+                        "9.911670126592583"
+                    ],
+                    [
+                        1640997775.199,
+                        "9.911670126592583"
+                    ],
+                    [
+                        1640997777.199,
+                        "9.911670126592583"
+                    ],
+                    [
+                        1640997779.199,
+                        "9.911670126592583"
+                    ],
+                    [
+                        1640997781.199,
+                        "9.911670126592583"
+                    ],
+                    [
+                        1640997783.199,
+                        "9.911670126592583"
+                    ],
+                    [
+                        1640997785.199,
+                        "9.911670126592583"
+                    ],
+                    [
+                        1640997787.199,
+                        "9.911670126592583"
+                    ],
+                    [
+                        1640997789.199,
+                        "9.906228872100884"
+                    ],
+                    [
+                        1640997791.199,
+                        "9.906228872100884"
+                    ],
+                    [
+                        1640997793.199,
+                        "9.906228872100884"
+                    ],
+                    [
+                        1640997795.199,
+                        "9.906228872100884"
+                    ],
+                    [
+                        1640997797.199,
+                        "9.906228872100884"
+                    ],
+                    [
+                        1640997799.199,
+                        "9.906228872100884"
+                    ],
+                    [
+                        1640997801.199,
+                        "9.906228872100884"
+                    ],
+                    [
+                        1640997803.199,
+                        "9.914725202986657"
+                    ],
+                    [
+                        1640997805.199,
+                        "9.914725202986657"
+                    ],
+                    [
+                        1640997807.199,
+                        "9.914725202986657"
+                    ],
+                    [
+                        1640997809.199,
+                        "9.914725202986657"
+                    ],
+                    [
+                        1640997811.199,
+                        "9.914725202986657"
+                    ],
+                    [
+                        1640997813.199,
+                        "9.914725202986657"
+                    ],
+                    [
+                        1640997815.199,
+                        "9.914725202986657"
+                    ],
+                    [
+                        1640997817.199,
+                        "9.914725202986657"
+                    ],
+                    [
+                        1640997819.199,
+                        "9.932506115712222"
+                    ],
+                    [
+                        1640997821.199,
+                        "9.932506115712222"
+                    ],
+                    [
+                        1640997823.199,
+                        "9.932506115712222"
+                    ],
+                    [
+                        1640997825.199,
+                        "9.932506115712222"
+                    ],
+                    [
+                        1640997827.199,
+                        "9.932506115712222"
+                    ],
+                    [
+                        1640997829.199,
+                        "9.932506115712222"
+                    ],
+                    [
+                        1640997831.199,
+                        "9.932506115712222"
+                    ]
+                ]
           },
-          {
-            "metric": {
-                "__name__": "kafka_producer_producer_metrics_response_rate",
-                "client_id": "producer-2",
-                "env": "dev",
-                "instance": "producer:1234",
-                "job": "producer"
-            },
-            "values": [
-                [
-                    1640997701.199,
-                    "5.2342"
-                ],
-                [
-                    1640997703.199,
-                    "6.132"
-                ],
-                [
-                    1640997705.199,
-                    "7.234"
-                ],
-                [
-                    1640997707.199,
-                    "8.1321"
-                ],
-                [
-                    1640997709.199,
-                    "7.923"
-                ],
-                [
-                    1640997711.199,
-                    "9.2"
-                ]
-            ]
-        },
-        {
-            "metric": {
-                "__name__": "kafka_producer_producer_metrics_response_rate",
-                "client_id": "producer-3",
-                "env": "dev",
-                "instance": "producer:1234",
-                "job": "producer"
-            },
-            "values": [
-                [
-                    1640997701.199,
-                    "1"
-                ],
-                [
-                    1640997703.199,
-                    "3"
-                ],
-                [
-                    1640997705.199,
-                    "1"
-                ],
-                [
-                    1640997707.199,
-                    "4"
-                ],
-                [
-                    1640997709.199,
-                    "2"
-                ],
-                [
-                    1640997711.199,
-                    "5"
-                ]
-            ]
-        }
       ]
   }
 
@@ -195,41 +366,64 @@ const resRateData = {
     })
 
 
-  // push method to build x axis (times) will be the same for all data from query
-  resRateData.data.result[0].values.forEach(ele => {
-    const humanDate = new Date(ele[0] * 1000)
-    xArray.push(humanDate)
-  })
- 
-  // object to create graph
-  const chartData = {
-      labels: xArray,
-      datasets: []
-  };
-  // for loop to iterate through each array to make graph, first element is the name of producer
+    // push method to build x axis (times) will be the same for all data from query
+    resRateData.data.result[0].values.forEach(ele => {
+        const humanDate = new Date(ele[0] * 1000)
+        xArray.push(humanDate.toLocaleString('en-US'))
+    })
+    
+    // object to create graph
+    const chartData = {
+        labels: xArray,
+        datasets: []
+    };
+
+    //  auto color generation
+    function randomColorGenerator() {
+        const r = Math.ceil(Math.random() * 255);
+        const g = Math.ceil(Math.random() * 255);
+        const b = Math.ceil(Math.random() * 255);
+        // const a = Math.floor(Math.random() * 1);
+
+        const randomColors = [];
+        console.log(`rgba(${r},${g},${b},1)`)
+        randomColors.push(`rgba(${r},${g},${b},1)`)
+        return randomColors
+    }
+
+    // for loop to iterate through each array to make graph, first element is the name of producer
     for (let i = 0; i < producerYStats.length ; i++) {
         chartData.datasets.push({
-            label:producerYStats[i].shift(),
+            label: producerYStats[i].shift(),
             data: producerYStats[i],
             fill: false,
-            backgroundColor: 'blue',
-            borderColor: 'black'
+            // backgroundColor: 'blue',
+            borderColor: randomColorGenerator()
         })
 
     }
-
-
-
   
-  return (
-    <div>
-      <h3 style ={{textAlign: 'center'}}>Response Rate per Second</h3>
-      <div style={{height:"1000px", width:"1000px"}}>
-          <Chart type='line' data={ chartData }  
-        />
-      </div>
-    </div>
-  );
+    return (
+        // <div>
+        // <h3 style ={{textAlign: 'center'}}>Response Rate per Second</h3>
+        //     <div style={{height:"1000px", width:"1000px"}}>
+        //         <Chart type='line' data={ chartData } />
+        //     </div>
+        // </div>
+
+        <div>
+            <Typography 
+                variant='h5'
+                style ={{textAlign: 'center'}}
+            >
+                Response from Broker per Second
+            </Typography>
+            <Paper style={{height:"500px", width:"1000px"}}>
+                <Chart type='line' data={ chartData } />
+            </Paper>
+        </div> 
+
+    );
 }
 
 export default MakeResponseRateGraph;

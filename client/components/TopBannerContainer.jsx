@@ -77,8 +77,10 @@ const TopBannerContainer = () => {
     setOpen(false);
   };
 
+  // sx={{ flexGrow: 1 }}
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box >
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -91,7 +93,7 @@ const TopBannerContainer = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center' }}>
+          <Typography variant="h6" component="div" sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center', marginRight: '5.5vw' }}>
             Ecosystem Overview
           </Typography>
         </Toolbar>

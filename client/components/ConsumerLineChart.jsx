@@ -89,6 +89,7 @@ import {
   Legend,
   } from 'chart.js'
   import { Chart } from 'react-chartjs-2'
+  import { Paper, Grid, Typography } from "@material-ui/core";
  
   ChartJS.register(
   CategoryScale,
@@ -117,201 +118,6 @@ const ConsumerMakeLineChart = () => {
             {
                 "metric": {
                     "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
-                    "client_id": "consumer-connect-cluster-1",
-                    "cluster": "cluster1",
-                    "env": "dev",
-                    "instance": "connect:1234",
-                    "job": "connect"
-                },
-                "values": [
-                    [
-                        1640997701.199,
-                        "1"
-                    ],
-                    [
-                        1640997731.199,
-                        "4"
-                    ],
-                    [
-                        1640997761.199,
-                        "7"
-                    ],
-                    [
-                        1640997791.199,
-                        "8"
-                    ],
-                    [
-                        1640997821.199,
-                        "11"
-                    ]
-                ]
-            },
-            {
-                "metric": {
-                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
-                    "client_id": "consumer-connect-cluster-1",
-                    "cluster": "cluster1",
-                    "env": "dev",
-                    "instance": "connect:1234",
-                    "job": "connect",
-                    "topic": "connect-offsets"
-                },
-                "values": [
-                    [
-                        1640997701.199,
-                        "0"
-                    ],
-                    [
-                        1640997731.199,
-                        "0"
-                    ],
-                    [
-                        1640997761.199,
-                        "0"
-                    ],
-                    [
-                        1640997791.199,
-                        "0"
-                    ],
-                    [
-                        1640997821.199,
-                        "0"
-                    ]
-                ]
-            },
-            {
-                "metric": {
-                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
-                    "client_id": "consumer-connect-cluster-2",
-                    "cluster": "cluster1",
-                    "env": "dev",
-                    "instance": "connect:1234",
-                    "job": "connect"
-                },
-                "values": [
-                    [
-                        1640997701.199,
-                        "0"
-                    ],
-                    [
-                        1640997731.199,
-                        "0"
-                    ],
-                    [
-                        1640997761.199,
-                        "0"
-                    ],
-                    [
-                        1640997791.199,
-                        "0"
-                    ],
-                    [
-                        1640997821.199,
-                        "0"
-                    ]
-                ]
-            },
-            {
-                "metric": {
-                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
-                    "client_id": "consumer-connect-cluster-2",
-                    "cluster": "cluster1",
-                    "env": "dev",
-                    "instance": "connect:1234",
-                    "job": "connect",
-                    "topic": "connect-status"
-                },
-                "values": [
-                    [
-                        1640997701.199,
-                        "0"
-                    ],
-                    [
-                        1640997731.199,
-                        "0"
-                    ],
-                    [
-                        1640997761.199,
-                        "0"
-                    ],
-                    [
-                        1640997791.199,
-                        "0"
-                    ],
-                    [
-                        1640997821.199,
-                        "0"
-                    ]
-                ]
-            },
-            {
-                "metric": {
-                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
-                    "client_id": "consumer-connect-cluster-3",
-                    "cluster": "cluster1",
-                    "env": "dev",
-                    "instance": "connect:1234",
-                    "job": "connect"
-                },
-                "values": [
-                    [
-                        1640997701.199,
-                        "1"
-                    ],
-                    [
-                        1640997731.199,
-                        "1"
-                    ],
-                    [
-                        1640997761.199,
-                        "1"
-                    ],
-                    [
-                        1640997791.199,
-                        "1"
-                    ],
-                    [
-                        1640997821.199,
-                        "1"
-                    ]
-                ]
-            },
-            {
-                "metric": {
-                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
-                    "client_id": "consumer-connect-cluster-3",
-                    "cluster": "cluster1",
-                    "env": "dev",
-                    "instance": "connect:1234",
-                    "job": "connect",
-                    "topic": "connect-configs"
-                },
-                "values": [
-                    [
-                        1640997701.199,
-                        "1"
-                    ],
-                    [
-                        1640997731.199,
-                        "1"
-                    ],
-                    [
-                        1640997761.199,
-                        "1"
-                    ],
-                    [
-                        1640997791.199,
-                        "1"
-                    ],
-                    [
-                        1640997821.199,
-                        "1"
-                    ]
-                ]
-            },
-            {
-                "metric": {
-                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
                     "client_id": "consumer-simple-consumer-1",
                     "env": "dev",
                     "instance": "consumer-1:1234",
@@ -319,55 +125,111 @@ const ConsumerMakeLineChart = () => {
                 },
                 "values": [
                     [
-                        1640997701.199,
-                        "10"
+                        1641446759.965,
+                        "49763"
                     ],
                     [
-                        1640997731.199,
-                        "22"
+                        1641446767.965,
+                        "49763"
                     ],
                     [
-                        1640997761.199,
-                        "34"
+                        1641446775.965,
+                        "49778"
                     ],
                     [
-                        1640997791.199,
-                        "55"
+                        1641446783.965,
+                        "49778"
                     ],
                     [
-                        1640997821.199,
-                        "70"
+                        1641446791.965,
+                        "49793"
+                    ],
+                    [
+                        1641446799.965,
+                        "49793"
+                    ],
+                    [
+                        1641446807.965,
+                        "49808"
+                    ],
+                    [
+                        1641446815.965,
+                        "49808"
+                    ],
+                    [
+                        1641446823.965,
+                        "49823"
+                    ],
+                    [
+                        1641446831.965,
+                        "49823"
+                    ],
+                    [
+                        1641446839.965,
+                        "49838"
+                    ],
+                    [
+                        1641446847.965,
+                        "49853"
                     ]
                 ]
             },
             {
                 "metric": {
                     "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
-                    "client_id": "consumer-simple-consumer-1",
+                    "client_id": "consumer-simple-consumer-2",
                     "env": "dev",
                     "instance": "consumer:1234",
                     "job": "consumer"
                 },
                 "values": [
                     [
-                        1640997701.199,
-                        "8"
+                        1641446759.965,
+                        "49760"
                     ],
                     [
-                        1640997731.199,
-                        "13"
+                        1641446767.965,
+                        "49760"
                     ],
                     [
-                        1640997761.199,
-                        "15"
+                        1641446775.965,
+                        "49775"
                     ],
                     [
-                        1640997791.199,
-                        "22"
+                        1641446783.965,
+                        "49775"
                     ],
                     [
-                        1640997821.199,
-                        "32"
+                        1641446791.965,
+                        "49790"
+                    ],
+                    [
+                        1641446799.965,
+                        "49805"
+                    ],
+                    [
+                        1641446807.965,
+                        "49805"
+                    ],
+                    [
+                        1641446815.965,
+                        "49820"
+                    ],
+                    [
+                        1641446823.965,
+                        "49820"
+                    ],
+                    [
+                        1641446831.965,
+                        "49835"
+                    ],
+                    [
+                        1641446839.965,
+                        "49835"
+                    ],
+                    [
+                        1641446847.965,
+                        "49850"
                     ]
                 ]
             }
@@ -399,42 +261,73 @@ const ConsumerMakeLineChart = () => {
   // )
   // .catch(err => console.log(err));
 
-  xAxis = obj.data.result[0].values.map(el => {
+    xAxis = obj.data.result[0].values.map(el => {
         let date = new Date(el[0]*1000);
-        return date.toLocaleTimeString('en-US');
-      });
+        return date.toLocaleString('en-US');
+    });
 
-  obj.data.result.map(el => {if(el.metric.job === 'consumer') yObjects.push(el.values);});
+    obj.data.result.map(el => {
+        if(el.metric.job === 'consumer') {
+            yObjects.push(el.values);
+            consumerNames.push(el.metric.client_id)
+        }
+    });
   
-  for(let i=0; i<yObjects.length; i++){
-          let secondary = [];
-          yObjects[i].forEach(el => secondary.push(Number(el[1])));
-          consumerValues.push(secondary);
-          };
+    for(let i=0; i<yObjects.length; i++){
+        let secondary = [];
+        yObjects[i].forEach(el => secondary.push(Number(el[1])));
+        consumerValues.push(secondary);
+    };
         
 
-  const data = {
-    labels: [...xAxis],
-    datasets: []
-  };
+    const chartData = {
+        labels: [...xAxis],
+        datasets: []
+    };
   
-  for(let i = 0; i < consumerValues.length; i++){
-    data.datasets.push({
-      label: `${i+1}th dataset`,
-      data: consumerValues[i],
-      fill: false,
-      backgroundColor: "blue",
-      borderColor: "black"
-    });
-  };
+    //  auto color generation
+    function randomColorGenerator() {
+        const r = Math.ceil(Math.random() * 255);
+        const g = Math.ceil(Math.random() * 255);
+        const b = Math.ceil(Math.random() * 255);
+        // const a = Math.floor(Math.random() * 1);
+
+        const randomColors = [];
+        console.log(`rgba(${r},${g},${b},1)`)
+        randomColors.push(`rgba(${r},${g},${b},1)`)
+        return randomColors
+    }
+    
+    for(let i = 0; i < consumerValues.length; i++){
+        chartData.datasets.push({
+            label: consumerNames[i],
+            data: consumerValues[i],
+            fill: false,
+            // backgroundColor: "blue",
+            borderColor: randomColorGenerator()
+        });
+    };
 
   return (
+    // <div>
+    //   <h3 style ={{textAlign: 'center'}}>Fetch Records Consumed Total</h3>
+    //   <div style={{height:"1000px", width:"1000px"}}>
+    //       <Chart type='line' data={ data }/>
+    //   </div>
+    // </div>
+
     <div>
-      <h3 style ={{textAlign: 'center'}}>Fetch Records Consumed Total</h3>
-      <div style={{height:"1000px", width:"1000px"}}>
-          <Chart type='line' data={ data }/>
-      </div>
+        <Typography 
+            variant='h5'
+            style ={{textAlign: 'center'}}
+        >
+            Total Fetch Requests
+        </Typography>
+        <Paper style={{height:"500px", width:"1000px"}}>
+            <Chart type='line' data={ chartData } />
+        </Paper>
     </div>
+    
   );
 };
 
