@@ -14,7 +14,7 @@
 * [Key Features](#key-features)
 * [Walkthrough](#walkthrough)
 * [Setup](#setup)
-* [The Development Team](#sshk-technology-group)
+* [The Development Team](#the-kafmira-development-team)
 
 ## Key Features
 
@@ -43,7 +43,7 @@
 5. Navigate through the various display
 6. Should you wish to disconnect or enter another port, use the 'Disconnect' option
 
-## SSHK Technology Group
+## The KafMira Development Team
 
  [Gibran Haq](https://www.linkedin.com/in/gibran-haq/)
 | [Robert Koulakes](https://www.linkedin.com/in/robert-koulakes/)
@@ -51,5 +51,9 @@
 | [Nicholas Suzuki](https://www.linkedin.com/in/nicholas-j-suzuki/)
 
 
-<h2> Our thanks... <h2>
-Please feel free to fork, clone, and  kindly leave a [![GitHub stars](https://img.shields.io/github/stars/oslabs-beta/monokl?style=social&label=Star&)](https://github.com/oslabs-beta/monokl/stargazers) if you'd like to support our work!
+<h2> Our thanks... </h2>
+  
+  <p>Please feel free to fork, clone, and contribute and help KafMira grow! Remember to leave a star if you'd like to support our work!</P>
+  <p> - the KafMira Team </p>
+  
+
