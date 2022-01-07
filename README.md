@@ -45,6 +45,7 @@
       - **Consumers** to be monitored are labeled with job_name : 'consumer'
 3. To download our desktop application, navigate to our [website](http://kafmira.io/) and download the appropriate file for your OS.
       - If you are using the desktop application, you may need to configure your privacy or security settings to allow the application to open without being             verified
+          - On Mac, after installation, run the command sudo xattr -cr /Applications/KafMira.app to allow the app to run
       - Alternatively, you can also clone the repository directly from GitHub and run these commands in your terminal:
             - npm install
             - npm run watch
