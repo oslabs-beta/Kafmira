@@ -87,7 +87,8 @@
       "**/*",
       "node_modules",
       "!README.md",
-      "!.gitignore"
+      "!.gitignore",
+      "Tests"
     ],
     "dmg": {
       "background": null,
