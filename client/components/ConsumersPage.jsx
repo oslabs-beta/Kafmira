@@ -39,7 +39,6 @@ export default function ConsumersPage() {
     <div 
       className={classes.root} 
       style={{ minHeight: '100vh' }}
-      // style = {{ backgroundImage: 'linear-gradient(to top right, #66a6ff, #89f7fe)'}}
       >
 
       <TopBannerContainerConsPage/>

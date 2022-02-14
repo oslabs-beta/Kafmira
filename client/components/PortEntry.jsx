@@ -4,6 +4,8 @@ import { Box, Grid, TextField, Typography, Button } from '@material-ui/core';
 import { addPortAction, addConnectionTimeAction } from '../actions/action.js';
 import { connect } from 'react-redux';
 
+//Storing entered port and connection time to Redux Store:
+
 const mapStateToProps = (state) => {
   return {
     port: state.mainReducer.port,
@@ -38,20 +40,6 @@ function PortEntry(props){
   const [portError, setPortError] = useState(false);
   const navigate = useNavigate();
 
-  // Older code for hard-coded port:
-  //
-  // const handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     setPortError(false);
-  //     if(!port){
-  //       setPortError(true);
-  //       console.log('Missing port; please enter and resubmit');
-  //     }
-  //     if(port === '9090'){
-  //       navigate("/dashboard");
-  //     }
-  // }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPortError(false);
@@ -64,8 +52,6 @@ function PortEntry(props){
       navigate("/dashboard");
     }
     else if(!verified){
-      // setPortError(true);
-      // console.log('Missing and/or incorrect port; please enter and resubmit');
       navigate("/error");
     };
   };
@@ -94,14 +80,6 @@ function PortEntry(props){
           error={portError}
         />
         <Box style={{display: 'flex', justifyContent: 'center'}}>
-          {/* <Button
-            type="submit" 
-            color="primary" 
-            variant="contained" 
-            style={{marginRight: "5px"}}
-          >
-            Add Port
-          </Button> */}
           <Button
             type="submit" 
             color="primary" 

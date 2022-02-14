@@ -25,6 +25,8 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+//If JMX exporter is configured correctly on Kafka instance, port verification will save port and connection time to Redux store; else redirection to Port Error page
+
 const verifyPort = async (port) => {
   let valid = false;
   const url = `http://localhost:${port}/api/v1/query?query=up`;
