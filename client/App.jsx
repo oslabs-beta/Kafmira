@@ -7,6 +7,8 @@ import ProducersPage from './components/ProducersPage.jsx'
 import LandingPage from './components/LandingPage.jsx';
 import PortEntryError from './components/PortEntryError.jsx';
 
+//Hash router implemented to circumvent file issues with Electron
+
 const App =() => {
   return (
     <HashRouter>

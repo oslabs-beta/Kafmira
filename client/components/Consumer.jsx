@@ -7,15 +7,6 @@ export default function Consumer() {
   return (
     <Box
       sx={{ flexGrow: 1 }}
-    //   p={1}
-    //   m={2}
-    //   align='center' 
-    //   color='black'
-    //   borderColor='black'
-    //   border='solid'
-    //   borderRadius='10px'
-    //   // display='flex'
-    //   width='25%'
     >
       <Grid container>
         <Stack 
@@ -24,14 +15,7 @@ export default function Consumer() {
         alignItems='center'
         justifyContent='space-around'
         >
-          {/* <ButtonGroup 
-            orientation='vertical'
-            color='primary' 
-            variant='contained'
-            disableElevation
-          > */}
             <Button 
-              // onClick=
               style={{ 
                 display: 'flex',  
                 width: '10vw', 
@@ -51,7 +35,6 @@ export default function Consumer() {
               </p>
             </Button>
             <Button 
-              // onClick=
               style={{ 
                 display: 'flex',  
                 width: '10vw', 
@@ -70,7 +53,6 @@ export default function Consumer() {
                 Consumer 2
               </p>
             </Button>
-          {/* </ButtonGroup> */}
         </Stack>
       </Grid>
     </Box>
