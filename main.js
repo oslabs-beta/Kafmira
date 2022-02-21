@@ -18,16 +18,13 @@ function createWindow() {
     width: 1200,
     height: 800,
     backgroundColor: "white",
-
-    //Assuming this are no unnecessary as all are default values
-
     webPreferences: {
       devTools: false
     },
     
   });
 
-//new code here to add react dev tools/redux dev tools if we're in dev mode (using electron is dev)
+//Add react dev tools/redux dev tools if we're in dev mode (using electron is dev)
   // if (isDev) {
   //   installExtension(REACT_DEVELOPER_TOOLS)
   //   .then((name) => console.log(`Added Extension:  ${name}`))

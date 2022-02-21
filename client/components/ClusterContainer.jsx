@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Box, Grid } from '@material-ui/core';
 import { Button, Stack } from '@mui/material';
 
+
+//import Prometheus port and connection time from state
 const mapStateToProps = (state) => {
   return {
     port: state.mainReducer.port,
@@ -17,14 +19,18 @@ function ClusterContainer(props){
   const [totalConsumerList, setTotalConsumerList] = useState([]);
 
   useEffect(() => {
+    
+    //query Prom server for active controller count
     let totalBrokers = fetch(
       `http://localhost:${props.port}/api/v1/query?query=kafka_controller_kafkacontroller_activecontrollercount`
     ).then((response) => response.json());
-
+    
+    //query Prom server for total producers records produced - to gather total producer count
     let totalProducers = fetch(
       `http://localhost:${props.port}/api/v1/query?query=kafka_producer_producer_metrics_record_send_total`
     ).then((response) => response.json());
 
+    //query Prom server for total consumer records consumed - to gather total consumer count
     let totalConsumers = fetch(
       `http://localhost:${props.port}/api/v1/query?query=kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total`
     ).then((response) => response.json());
@@ -43,6 +49,9 @@ function ClusterContainer(props){
       console.log(totalConsumerList)
   },[])
 
+
+  //Create broker componenets from totalBrokerList
+
   const broker = [];
   let bCount = 1;
   let bIndex = 0
@@ -50,6 +59,7 @@ function ClusterContainer(props){
     //Assign the broker name and shorten the string if it's greater than 25 characters
     let brokerName = totalBrokerList[bIndex].metric.instance
     let shortBrokerName = brokerName.slice(0, 25)
+    //if BrokerName is longer than 25 characters, shorten for viewing purposes
     if (shortBrokerName.length < brokerName.length) {
       shortBrokerName += '...'
     }
@@ -65,7 +75,7 @@ function ClusterContainer(props){
     bIndex++;
   }
 
-  // array to store button elements for all producers
+  //Create producer components from totalProducerList
   const producer = [];
   // count for loop execution
   let pCount = 0;
@@ -75,6 +85,7 @@ function ClusterContainer(props){
     if (totalProducerList[pCount].metric.job === 'producer') {
     //Assign the producer name and shorten the string if it's greater than 15 characters
     let producerName = totalProducerList[pCount].metric.client_id
+    //if ProducerName is longer than 15 characters, shorten for viewing purposes
     let shortProducerName = producerName.slice(0, 15)
     if (shortProducerName.length < producerName.length) {
       shortProducerName += '...';
@@ -92,7 +103,7 @@ function ClusterContainer(props){
   pCount++;
 }
 
-
+  //Create consumer components for totalConsumerList
   const consumer = [];
   let cCount = 0;
   let consumerNum = 0;
@@ -100,6 +111,7 @@ function ClusterContainer(props){
     if (totalConsumerList[cCount].metric.job === 'consumer' && totalConsumerList[cCount].metric.topic === undefined) {
       //Assign the consumer name and shorten the string if it's greater than 15 characters
       let consumerName = totalConsumerList[1].metric.client_id
+      //if consumerName is longer than 15 characters, shorten for viewing purposes
       let shortConsumerName = consumerName.slice(0, 15)
       if (shortConsumerName.length < consumerName.length) {
         shortConsumerName += '...';

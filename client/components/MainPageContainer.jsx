@@ -3,7 +3,7 @@ import TopBannerContainer from './TopBannerContainer.jsx';
 import ClusterContainer from './ClusterContainer.jsx';
 import BottomBanner from './BottomBanner.jsx';
 import CriticalMetrics from './CriticalMetrics.jsx';
-// talk with group about possible style sheet
+
 const MainPageContainer =() => {
   return (
     <div style = {{height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', backgroundImage: 'linear-gradient(to bottom left, #66a6ff, #89f7fe)'}}>
