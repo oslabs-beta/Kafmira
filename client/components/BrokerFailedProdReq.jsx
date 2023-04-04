@@ -1,9 +1,6 @@
 import React, { useState, useEffect }  from "react";
-// import { Line } from "react-chartjs-2";
 import { connect } from 'react-redux';
 import { Typography, Paper } from "@mui/material";
-// import {CategoryScale, Chart} from 'chart.js'; 
-// Chart.register(CategoryScale) 
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -26,15 +23,12 @@ ChartJS.register(
   Legend
 ) 
 
-
-// import state saved from login
 const mapStateToProps = (state) => {
     return {
         port: state.mainReducer.port,
         connectionTime: state.mainReducer.connectionTime
     };
 };
-
 
 
 function BrokerFailedProdReqRate(props) {

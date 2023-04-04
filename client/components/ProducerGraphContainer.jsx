@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
-import { Box, Grid, Typography } from '@material-ui/core';
+import React from 'react';
+import { Box, Grid } from '@material-ui/core';
 import MakeResponseRateGraph from './ProducerResponeRate.jsx';
 import MakeRequestRateGraph from './ProducerRequestRate.jsx';
 import MakeRequestTotalGraph from './ProducerRequestTotal.jsx';
-
-
-
 
 export default function ProducerGraphContainer(){
   return(

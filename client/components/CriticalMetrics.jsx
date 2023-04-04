@@ -1,5 +1,5 @@
 import React, { useState, useEffect }from 'react';
-import {Typography, Button, Container, Grid, Paper, Card, CardContent, Divider } from '@material-ui/core';
+import { Typography, Grid, Card, CardContent, Divider } from '@material-ui/core';
 import { Box } from '@mui/system';
 import { connect } from 'react-redux';
 
@@ -10,15 +10,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-
-
-
-const CriticalMetrics = (props) => {
-
-  
+const CriticalMetrics = (props) => {  
   const metric1 = 'Active Controller(s)'
   let controllerName = '';
-  // if this number is not 1 no bueno
   let value1 = 0;
   let controllerColor = ''
 
@@ -31,16 +25,10 @@ const CriticalMetrics = (props) => {
   let value3 = 0;
   let offlinePartitionColor = ''
 
-  
-  // Set state hooks that will save the json object from fetch request to a variable so we can use later 
   const [activeControllerArr, setActiveControllerArr] = useState([]);
-  //save an array of objects with number of 
   const [uRP, setURP] = useState([]);
-  // saves an array of the Brokers of the cluster and any Offline Partitions
   const [offlinePartitionsArr, setOfflinePartitionsArr] = useState([])
 
-
-  // useEffect hook will make all fetch requests once page
   useEffect(() => {
     // identifies which controller in the cluster is the active controller
     let activeControllers = fetch(`http://localhost:${props.port}/api/v1/query?query=kafka_controller_kafkacontroller_activecontrollercount`
@@ -64,7 +52,7 @@ const CriticalMetrics = (props) => {
     )}, []);
 
     // iterates through the Array and finds the controller and saves instance name
-    activeControllerArr.forEach(ele =>{
+    activeControllerArr.forEach(ele => {
       if(ele.value[1] === '1'){
         value1 += 1;
         controllerName = ele.metric.instance
@@ -146,4 +134,3 @@ const CriticalMetrics = (props) => {
   )
 }
 export default connect(mapStateToProps, null)(CriticalMetrics);
-// export default MakeMetrics;

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-import GetLogo from './GetLogo.jsx'
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,9 +13,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 const drawerWidth = 200;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -76,7 +75,6 @@ const TopBannerContainerProdPage = () => {
     setOpen(false);
   };
 
-  // sx={{ flexGrow: 1 }}
   return (
     <Box >
       <CssBaseline />

@@ -16,7 +16,6 @@ const Item = styled(Button)(({ theme }) => ({
 
 export default function BrokerColumnContainer(props){
 
-  // create hook state variable and func for data that will be queried and saved
   // Fetch active controller count to receive object of all Brokers in cluster
   const [totalBrokerCount, setTotalBrokerCount] = useState([]);
 
@@ -25,9 +24,6 @@ export default function BrokerColumnContainer(props){
   // delay in processing those reqs
   const [purgatorySize, setPurgatorySize] = useState([])
 
-  // useEffect hook inside the component BrokerColumnContainer;  this tells your component 
-  // that after it renders it needs to do something 
-  // this effect hook will fetch all required data when page is rendered
   useEffect(() => {
     let totalBrokers = fetch(
       `http://localhost:${props.port}/api/v1/query?query=kafka_controller_kafkacontroller_activecontrollercount`
@@ -39,18 +35,6 @@ export default function BrokerColumnContainer(props){
       })
 
   },[])
-
-  // const brokerArr = [];
-  // let n = 0;
-
-  // while (n < totalBrokerCount) {
-  //   brokerArr.push(
-  //     <Item> Broker
-  //       <br></br>
-
-  //     </Item>
-  //   )
-  // }
 
   return(
   <div style = {{

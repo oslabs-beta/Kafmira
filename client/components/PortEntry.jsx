@@ -4,8 +4,6 @@ import { Box, Grid, TextField, Typography, Button } from '@material-ui/core';
 import { addPortAction, addConnectionTimeAction } from '../actions/action.js';
 import { connect } from 'react-redux';
 
-//Storing entered port and connection time to Redux Store:
-
 const mapStateToProps = (state) => {
   return {
     port: state.mainReducer.port,

@@ -1,8 +1,5 @@
 import React, { useState }  from "react";
-// import { Line } from "react-chartjs-2";
 import { useEffect } from "react";
-// import {CategoryScale, Chart} from 'chart.js'; 
-// Chart.register(CategoryScale) 
 
 import {
   Chart as ChartJS,

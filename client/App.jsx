@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import MainPageContainer from './components/MainPageContainer.jsx';
 import BrokersPage from './components/BrokersPage.jsx'

@@ -74,16 +74,9 @@ const failedProdReqs = {
     }
 }
 
-
-console.log(failedProdReqs.data.result[0].values[0][0])
-console.log(failedProdReqs.data.result[0].values[1][0])
-console.log(failedProdReqs.data.result[0].values[2][0])
-
-
 // const xTimeVals = [];  --> this will be your x set state
 
 const xTimeVals = failedProdReqs.data.result[0].values.map(el => {
     let date = new Date(el[0]*1000);
     return date.toLocaleDateString('en-US')
 })
-// console.log(XTimeVals)
