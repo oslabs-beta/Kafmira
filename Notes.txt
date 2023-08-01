@@ -14,16 +14,16 @@ Start scripts
   }
 
 
-###################################################################################
+###############################################################################################
 
-Example request to Prometheus and Expected Data Structure
+Example request to Prometheus and Anticipated Data Structure
 
 //1. Under Replicated Partitions Count (Score Card)
     let underReplicated = fetch(
       `http://localhost:${props.port}/api/v1/query?query=kafka_server_replicamanager_underreplicatedpartitions`
     ).then((respose) => respose.json());
 
-//2. Actual request body - line 31 keys only needed for hard coding
+//2. Actual request body - line 31
 {
     "status": "success",
     "data": {
@@ -99,7 +99,7 @@ Kafka Broker State
     }
 }
 
-  ###########################################################################################
+###########################################################################################
 Kafka Producer Record Send total
 
 {
