@@ -1,0 +1,279 @@
+Start scripts
+  #1
+  "scripts": {
+    "start": "electron .",
+    "watch": "webpack --config webpack.config.js --watch",
+    "pack": "electron-builder -mwl"
+  }
+
+  #2
+  "scripts": {
+    "start": "electron . --no-sandbox .",
+    "watch": "webpack --config webpack.config.js --watch",
+    "pack": "electron-builder -mwl"
+  }
+
+
+###############################################################################################
+
+Example request to Prometheus and Anticipated Data Structure
+
+//1. Under Replicated Partitions Count (Score Card)
+    let underReplicated = fetch(
+      `http://localhost:${props.port}/api/v1/query?query=kafka_server_replicamanager_underreplicatedpartitions`
+    ).then((respose) => respose.json());
+
+//2. Actual request body - line 31
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "kafka_network_socketserver_memorypoolavailable",
+                    "instance": "kafka:7071",
+                    "job": "kafka"
+                },
+                "value": [
+                    1639262351.207,
+                    "9223372036854776000"
+                ]
+            }
+        ]
+    }
+}
+
+//3. Update page state
+
+ .then((allData) => {
+        //1. Under Replicated Partitions Chart
+        setURP(allData[0].data.result[0].value[1])
+
+
+###########################################################################################
+Kafka Broker State 
+
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "kafka_server_kafkaserver_brokerstate",
+                    "env": "dev",
+                    "instance": "kafka-1:1234",
+                    "job": "kafka"
+                },
+                "value": [
+                    1640646012.582,
+                    "3"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_server_kafkaserver_brokerstate",
+                    "env": "dev",
+                    "instance": "kafka-2:1234",
+                    "job": "kafka"
+                },
+                "value": [
+                    1640646012.582,
+                    "3"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_server_kafkaserver_brokerstate",
+                    "env": "dev",
+                    "instance": "kafka-3:1234",
+                    "job": "kafka"
+                },
+                "value": [
+                    1640646012.582,
+                    "3"
+                ]
+            }
+        ]
+    }
+}
+
+###########################################################################################
+Kafka Producer Record Send total
+
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "kafka_producer_producer_metrics_record_send_total",
+                    "client_id": "producer-1",
+                    "env": "dev",
+                    "instance": "producer:1234",
+                    "job": "producer"
+                },
+                "value": [
+                    1640643038.839,
+                    "1245"
+                ]
+            }
+        ]
+    }
+}
+
+
+###########################################################################################
+Kafka Consumer Records Consumed total
+
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-1",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect"
+                },
+                "value": [
+                    1640642820.083,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-1",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect",
+                    "topic": "connect-offsets"
+                },
+                "value": [
+                    1640642820.083,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-2",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect"
+                },
+                "value": [
+                    1640642820.083,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-2",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect",
+                    "topic": "connect-status"
+                },
+                "value": [
+                    1640642820.083,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-3",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect"
+                },
+                "value": [
+                    1640642820.083,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-connect-cluster-3",
+                    "cluster": "cluster1",
+                    "env": "dev",
+                    "instance": "connect:1234",
+                    "job": "connect",
+                    "topic": "connect-configs"
+                },
+                "value": [
+                    1640642820.083,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-simple-consumer-1",
+                    "env": "dev",
+                    "instance": "consumer-1:1234",
+                    "job": "consumer"
+                },
+                "value": [
+                    1640642820.083,
+                    "1023"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-simple-consumer-1",
+                    "env": "dev",
+                    "instance": "consumer-1:1234",
+                    "job": "consumer",
+                    "topic": "sample"
+                },
+                "value": [
+                    1640642820.083,
+                    "1023"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-simple-consumer-1",
+                    "env": "dev",
+                    "instance": "consumer:1234",
+                    "job": "consumer"
+                },
+                "value": [
+                    1640642820.083,
+                    "1019"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total",
+                    "client_id": "consumer-simple-consumer-1",
+                    "env": "dev",
+                    "instance": "consumer:1234",
+                    "job": "consumer",
+                    "topic": "sample"
+                },
+                "value": [
+                    1640642820.083,
+                    "1019"
+                ]
+            }
+        ]
+    }
+}
